@@ -1,19 +1,21 @@
 <template>
-  <div id="particles-js">
-    <div class="content text-xs-center">
-      <h3 class="title"><strong>{{ trans('Ready to move forward?') }}</strong></h3>
-      <h1 class="display-3">
-        <strong>
-          {{ trans('Explore our accessible and engaging innovations for learning and living') }}
-        </strong>
-      </h1>
-      <v-card-text>
-        <v-btn large color="accent">
-          {{ trans('Talk Us Now') }}
-        </v-btn>
-      </v-card-text>
+  <section>
+    <div id="particles-js">
+     <!--  <div class="content text-xs-center">
+        <h3 class="title"><strong>{{ trans('Ready to move forward?') }}</strong></h3>
+        <h1 class="display-3">
+          <strong>
+            {{ trans('Explore our accessible and engaging innovations for learning and living') }}
+          </strong>
+        </h1>
+        <v-card-text>
+          <v-btn large color="accent">
+            {{ trans('Talk Us Now') }}
+          </v-btn>
+        </v-card-text>
+      </div> -->
     </div>
-  </div>
+  </section>
 </template>
 
 <style>
@@ -28,7 +30,7 @@
     position:absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(75deg, #2E0069 0%, #B80080 100%) !important;
+    background: linear-gradient(75deg, #150041 0%, #4e2762 100%) !important;
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,7 +43,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 100%;
   }
 </style>
 
