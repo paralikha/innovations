@@ -17,7 +17,6 @@
       <v-layout row wrap>
         <v-flex xs12>
           <v-card>
-
             <v-data-table
               :headers="dataset.headers"
               :items="dataset.items"
@@ -25,7 +24,6 @@
               :search="dataset.search.query"
               >
             </v-data-table>
-
           </v-card>
         </v-flex>
       </v-layout>
