@@ -1,11 +1,29 @@
 <template>
   <section>
-    <div id="particles-js">
-     <!--  <div class="content text-xs-center">
-        <h3 class="title"><strong>{{ trans('Ready to move forward?') }}</strong></h3>
-        <h1 class="display-3">
+    <div id="particles-js" class="gradient--dynamic">
+      <!-- toolbar -->
+      <v-toolbar absolute dark flat class="transparent">
+        <v-toolbar-title>
+          <v-btn icon>
+            <v-icon>home</v-icon>
+          </v-btn>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat>{{ trans('Our Products') }}</v-btn>
+          <v-btn flat>{{ trans('About Us') }}</v-btn>
+          <v-btn flat>{{ trans('Blog') }}</v-btn>
+          <v-btn flat>{{ trans('Talk To Us') }}</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      <!-- toolbar -->
+
+      <!-- content description -->
+      <!-- <div class="content text-xs-center">
+        <h3 class="mb-4 title"><strong>{{ trans('Ready to move forward?') }}</strong></h3>
+        <h1 class="mb-4 display-1">
           <strong>
-            {{ trans('Explore our accessible and engaging innovations for learning and living') }}
+            {{ trans('Lorem ipsum dolor cit amet') }}
           </strong>
         </h1>
         <v-card-text>
@@ -14,6 +32,35 @@
           </v-btn>
         </v-card-text>
       </div> -->
+      <!-- content description -->
+
+      <!-- services -->
+      <div class="grid__system">
+        <v-layout row wrap>
+          <v-flex md4 xs12>
+            <v-card coor="cyan" height="200">
+              <v-card-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
+              </v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex md4 xs12>
+            <v-card coor="cyan" height="200">
+              <v-card-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
+              </v-card-text>
+            </v-card>
+          </v-flex>
+          <v-flex md4 xs12>
+            <v-card coor="cyan" height="200">
+              <v-card-text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </div>
+      <!-- services -->
     </div>
   </section>
 </template>
@@ -30,7 +77,7 @@
     position:absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(75deg, #150041 0%, #4e2762 100%) !important;
+    /*background: linear-gradient(75deg, #150041 0%, #4e2762 100%) !important;*/
     background-image: url("");
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,24 +92,20 @@
     transform: translate(-50%, -50%);
     width: 100%;
   }
+
+  .grid__system {
+    position: absolute;
+    bottom: 0;
+  }
 </style>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 import store from '@/store'
-import { Carousel, Slide } from 'vue-carousel'
-import VueParticles from 'vue-particles'
 
 export default {
   store,
-
   name: 'HomePublic',
-
-  components: {
-    Carousel,
-    Slide,
-    VueParticles
-  },
 
   mounted () {
     this.initParticleJS()
