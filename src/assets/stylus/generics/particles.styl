@@ -29,6 +29,20 @@ canvas {
 .grid__system {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
   background: rgba(0, 0, 0, 0.12);
   width: 100% !important;
+}
+
+.grid__system .v-card__media:hover {
+  bottom: 0;
+  height: 300px !important;
+  position: absolute;
+  // transform: translate3d(1.42109e-14px, 0px, 0px) scale(1, 1) rotate(0deg);
+  -webkit-transition: width 1s, height 2s;
+  transition: width .5s, height .5s;
+  display: flex;
+  overflow: hidden;
+  width: 32%;
 }

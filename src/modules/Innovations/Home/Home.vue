@@ -2,25 +2,75 @@
   <section>
     <div id="particles-js">
       <!-- toolbar -->
-      <v-toolbar absolute dark flat class="transparent">
-        <v-toolbar-title>
-          <v-btn icon>
-            <v-icon>home</v-icon>
-          </v-btn>
-        </v-toolbar-title>
+      <v-toolbar
+        absolute
+        class="transparent pa-4"
+        dark
+        flat
+        >
+        <logo-icon></logo-icon>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-          <v-btn flat>{{ trans('Our Products') }}</v-btn>
-          <v-btn flat>{{ trans('About Us') }}</v-btn>
-          <v-btn flat>{{ trans('Blog') }}</v-btn>
-          <v-btn flat>{{ trans('Talk To Us') }}</v-btn>
+          <template
+            v-for="(item, i) in home.menus"
+            >
+            <v-btn
+              flat
+              :key="i"
+              v-html="trans(item)"
+              >
+            </v-btn>
+          </template>
         </v-toolbar-items>
-        <v-btn
-          @click="openDialogbox"
-          icon
-          class="hidden-md-and-up"><v-icon>menu</v-icon>
-        </v-btn>
-        <dialogbox :items="dialogbox"></dialogbox>
+
+        <!-- fullscreen menu dialog -->
+        <v-dialog
+          v-model="home.menuDialog"
+          fullscreen hide-overlay
+          transition="dialog-transition">
+          <v-btn
+            slot="activator"
+            icon
+            dark
+            color="secondary"
+            class="hidden-md-and-up"
+            >
+            <v-icon v-html="trans('more_horiz')"></v-icon>
+          </v-btn>
+          <v-card dark color="blue-grey darken-4">
+            <v-toolbar
+              flat
+              class="transparent pa-4"
+              >
+              <!-- <logo></logo> -->
+              <v-spacer></v-spacer>
+              <v-btn
+                dark
+                icon
+                color="secondary"
+                @click.native="home.menuDialog = false"
+                >
+                <v-icon v-html="trans('remove')"></v-icon>
+              </v-btn>
+            </v-toolbar>
+            <v-divider></v-divider>
+            <v-list dark three-line class="transparent">
+              <v-list-tile
+                :key="i"
+                v-for="(item, i) in home.menus"
+                href="#!"
+                ripple
+                >
+                <v-list-tile-content>
+                  <v-list-tile-title>
+                    <strong v-html="trans(item)"></strong>
+                  </v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-card>
+        </v-dialog>
+        <!-- fullscreen menu dialog -->
       </v-toolbar>
       <!-- toolbar -->
 
@@ -32,30 +82,38 @@
       </div>
       <!-- description -->
 
-      <!-- services -->
+      <!-- products -->
       <div class="grid__system pt-3">
         <v-layout row wrap>
-          <template v-for="item in home.services">
-            <v-flex xs4>
-              <v-card-media
-                :src="item.thumbnail"
-                class="ml-3 mb-3"
-                :class="item.bindClass"
-                height="200px">
-                <v-layout
-                  fill-height justify-end align-end
-                  class="hidden-md-and-up"
+          <v-flex
+           xs4
+           :key="i"
+           v-for="(item, i) in home.products">
+            <v-card-media
+              :src="item.thumbnail"
+              class="ml-3 mb-3"
+              :class="item.bindClass"
+              height="200px">
+              <v-layout
+                fill-height
+                justify-end
+                align-end
+                class="hidden-md-and-up"
+                >
+                <v-btn
+                  small
+                  dark
+                  color="blue-grey darken-2"
+                  icon
                   >
-                  <v-btn small color="cyan" icon>
-                    <v-icon small>add</v-icon>
-                  </v-btn>
-                </v-layout>
-              </v-card-media>
-            </v-flex>
-          </template>
+                  <v-icon small v-html="trans('add')"></v-icon>
+                </v-btn>
+              </v-layout>
+            </v-card-media>
+          </v-flex>
         </v-layout>
       </div>
-      <!-- services -->
+      <!-- products -->
     </div>
   </section>
 </template>
@@ -72,7 +130,9 @@ export default {
   data () {
     return {
       home: {
-        services: [
+        menuDialog: false,
+        menus: ['Our Products', 'About Us', 'Blog', 'Talk To Us'],
+        products: [
           {
             thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4800893/isometric-01.jpg'
           },
@@ -203,44 +263,6 @@ export default {
         'retina_detect': true
       })
     },
-
-    openDialogbox () {
-      this.$store.dispatch(
-        'dialogbox/PROMPT_DIALOG',
-        Object.assign(
-          this.dialogbox,
-          {
-            model: true,
-            // icon: 'add',
-            // iconColor: 'success--text',
-            image: '//img.stackshare.io/stack/26394/laravel_logo-circle-tp-xs.png',
-            title: 'Delete Resources',
-            text: 'You are about to permanently delete those resources.This action is irreversible. Do you want to proceed?',
-            persistent: true,
-            fullscreen: true,
-            width: '100%',
-            alignedCenter: true,
-
-            actionText: 'Delete',
-            actionColor: 'error',
-            actionCallback () {
-              this.model = false
-              // store.dispatch.saveUserOrSomeShitLikeThat
-              // then...
-              alert('test')
-            },
-
-            discard: false,
-          }
-        )
-      )
-    },
-  },
-
-  computed: {
-    ...mapGetters({
-      dialogbox: 'dialogbox/dialogbox',
-    })
   },
 }
 </script>
