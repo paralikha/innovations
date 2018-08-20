@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div id="particles-js" class="gradient--dynamic">
+    <div id="particles-js">
       <!-- toolbar -->
       <v-toolbar absolute dark flat class="transparent">
         <v-toolbar-title>
@@ -15,49 +15,44 @@
           <v-btn flat>{{ trans('Blog') }}</v-btn>
           <v-btn flat>{{ trans('Talk To Us') }}</v-btn>
         </v-toolbar-items>
+        <v-btn
+          @click="openDialogbox"
+          icon
+          class="hidden-md-and-up"><v-icon>menu</v-icon>
+        </v-btn>
+        <dialogbox :items="dialogbox"></dialogbox>
       </v-toolbar>
       <!-- toolbar -->
 
-      <!-- content description -->
-      <!-- <div class="content text-xs-center">
-        <h3 class="mb-4 title"><strong>{{ trans('Ready to move forward?') }}</strong></h3>
-        <h1 class="mb-4 display-1">
-          <strong>
-            {{ trans('Lorem ipsum dolor cit amet') }}
-          </strong>
+      <!-- description -->
+      <div class="content text-xs-center">
+        <h1 class="mb-4">
+          {{ trans('Innovations.') }}
         </h1>
-        <v-card-text>
-          <v-btn large color="accent">
-            {{ trans('Talk Us Now') }}
-          </v-btn>
-        </v-card-text>
-      </div> -->
-      <!-- content description -->
+      </div>
+      <!-- description -->
 
       <!-- services -->
-      <div class="grid__system">
+      <div class="grid__system pt-3">
         <v-layout row wrap>
-          <v-flex md4 xs12>
-            <v-card coor="cyan" height="200">
-              <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex md4 xs12>
-            <v-card coor="cyan" height="200">
-              <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex md4 xs12>
-            <v-card coor="cyan" height="200">
-              <v-card-text>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, aliquam optio, odit nihil amet, facere delectus consequatur repudiandae perspiciatis ipsam consequuntur distinctio. Explicabo non nesciunt possimus qui nulla, consequuntur eveniet.
-              </v-card-text>
-            </v-card>
-          </v-flex>
+          <template v-for="item in home.services">
+            <v-flex xs4>
+              <v-card-media
+                :src="item.thumbnail"
+                class="ml-3 mb-3"
+                :class="item.bindClass"
+                height="200px">
+                <v-layout
+                  fill-height justify-end align-end
+                  class="hidden-md-and-up"
+                  >
+                  <v-btn small color="cyan" icon>
+                    <v-icon small>add</v-icon>
+                  </v-btn>
+                </v-layout>
+              </v-card-media>
+            </v-flex>
+          </template>
         </v-layout>
       </div>
       <!-- services -->
@@ -65,47 +60,33 @@
   </section>
 </template>
 
-<style>
-  /* reset */
-  canvas {
-    display: block;
-    vertical-align: bottom;
-  }
-
-  /* particle.js container */
-  #particles-js {
-    position:absolute;
-    width: 100%;
-    height: 100%;
-    /*background: linear-gradient(75deg, #150041 0%, #4e2762 100%) !important;*/
-    background-image: url("");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-  }
-
-  .content {
-    color: #ffff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-  }
-
-  .grid__system {
-    position: absolute;
-    bottom: 0;
-  }
-</style>
-
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 import store from '@/store'
+import { mapGetters } from 'vuex'
 
 export default {
   store,
   name: 'HomePublic',
+
+  data () {
+    return {
+      home: {
+        services: [
+          {
+            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4800893/isometric-01.jpg'
+          },
+          {
+            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4805755/isometric-02.jpg'
+          },
+          {
+            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4810861/isometric-03.jpg',
+            bindClass: 'mr-3'
+          }
+        ]
+      }
+    }
+  },
 
   mounted () {
     this.initParticleJS()
@@ -123,7 +104,7 @@ export default {
             }
           },
           'color': {
-            'value': '#ffffff'
+            'value': ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
           },
           'shape': {
             'type': 'circle',
@@ -221,7 +202,45 @@ export default {
         },
         'retina_detect': true
       })
-    }
-  }
+    },
+
+    openDialogbox () {
+      this.$store.dispatch(
+        'dialogbox/PROMPT_DIALOG',
+        Object.assign(
+          this.dialogbox,
+          {
+            model: true,
+            // icon: 'add',
+            // iconColor: 'success--text',
+            image: '//img.stackshare.io/stack/26394/laravel_logo-circle-tp-xs.png',
+            title: 'Delete Resources',
+            text: 'You are about to permanently delete those resources.This action is irreversible. Do you want to proceed?',
+            persistent: true,
+            fullscreen: true,
+            width: '100%',
+            alignedCenter: true,
+
+            actionText: 'Delete',
+            actionColor: 'error',
+            actionCallback () {
+              this.model = false
+              // store.dispatch.saveUserOrSomeShitLikeThat
+              // then...
+              alert('test')
+            },
+
+            discard: false,
+          }
+        )
+      )
+    },
+  },
+
+  computed: {
+    ...mapGetters({
+      dialogbox: 'dialogbox/dialogbox',
+    })
+  },
 }
 </script>

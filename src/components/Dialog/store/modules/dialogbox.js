@@ -5,6 +5,7 @@ export const state = () => ({
 
     // Settings
     persistent: false,
+    fullscreen: true,
 
     // Buttons visibility
     action: true,
