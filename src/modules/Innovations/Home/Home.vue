@@ -23,58 +23,61 @@
           </template>
         </v-toolbar-items>
 
-        <!-- fullscreen menu dialog -->
-        <v-dialog
-          v-model="home.menuDialog"
-          fullscreen
-          hide-overlay
-          transition="dialog-transition"
+        <!-- mobile menu button -->
+        <v-btn
+          @click.stop="home.drawer = !home.drawer"
+          icon
+          dark
+          color="secondary"
+          class="hidden-md-and-up"
           >
-          <v-btn
-            slot="activator"
-            icon
-            dark
-            color="secondary"
-            class="hidden-md-and-up"
-            >
-            <v-icon v-html="trans('more_horiz')"></v-icon>
-          </v-btn>
-          <v-card dark color="blue-grey darken-4">
-            <v-toolbar
-              flat
-              class="transparent pa-4"
-              >
-              <!-- <logo-icon></logo-icon> -->
-              <v-spacer></v-spacer>
-              <v-btn
-                dark
-                icon
-                color="secondary"
-                @click.native="home.menuDialog = false"
-                >
-                <v-icon v-html="trans('remove')"></v-icon>
-              </v-btn>
-            </v-toolbar>
-            <v-divider></v-divider>
-            <v-list dark three-line class="transparent">
-              <v-list-tile
-                :key="i"
-                v-for="(item, i) in home.menus"
-                href="#!"
-                ripple
-                >
-                <v-list-tile-content>
-                  <v-list-tile-title>
-                    <strong v-html="trans(item)"></strong>
-                  </v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-            </v-list>
-          </v-card>
-        </v-dialog>
-        <!-- fullscreen menu dialog -->
+          <v-icon>more_horiz</v-icon>
+        </v-btn>
+        <!-- mobile menu button -->
       </v-toolbar>
       <!-- toolbar -->
+
+      <!-- mobile menus -->
+      <v-navigation-drawer
+        v-model="home.drawer"
+        absolute
+        dark
+        right
+        width="3000"
+        temporary
+        >
+        <v-toolbar
+          flat
+          class="transparent pa-4"
+          >
+          <logo-icon></logo-icon>
+          <v-spacer></v-spacer>
+          <v-btn
+            dark
+            icon
+            color="secondary"
+            @click.native="home.drawer = !home.drawer"
+            >
+            <v-icon>remove</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <v-divider></v-divider>
+        <v-list three-line class="transparent">
+          <v-list-tile
+            :key="i"
+            v-for="(item, i) in home.menus"
+            href="#!"
+            ripple
+            >
+            <v-list-tile-content>
+              <v-list-tile-title>
+                <strong class="title" v-html="trans(item)"></strong>
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+      <!-- mobile menus -->
 
       <!-- description -->
       <div class="content text-xs-center">
@@ -108,7 +111,7 @@
                   color="secondary"
                   icon
                   >
-                  <v-icon small v-html="trans('add')"></v-icon>
+                  <v-icon small>add</v-icon>
                 </v-btn>
               </v-layout>
             </v-card-media>
@@ -137,6 +140,7 @@ export default {
   data () {
     return {
       home: {
+        drawer: null,
         menuDialog: false,
         menus: ['Our Products', 'About Us', 'Blog', 'Talk To Us'],
         products: [
