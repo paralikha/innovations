@@ -26,8 +26,10 @@
         <!-- fullscreen menu dialog -->
         <v-dialog
           v-model="home.menuDialog"
-          fullscreen hide-overlay
-          transition="dialog-transition">
+          fullscreen
+          hide-overlay
+          transition="dialog-transition"
+          >
           <v-btn
             slot="activator"
             icon
@@ -42,7 +44,7 @@
               flat
               class="transparent pa-4"
               >
-              <!-- <logo></logo> -->
+              <!-- <logo-icon></logo-icon> -->
               <v-spacer></v-spacer>
               <v-btn
                 dark
@@ -103,7 +105,7 @@
                 <v-btn
                   small
                   dark
-                  color="blue-grey darken-2"
+                  color="secondary"
                   icon
                   >
                   <v-icon small v-html="trans('add')"></v-icon>
@@ -122,10 +124,15 @@
 <script>
 import store from '@/store'
 import { mapGetters } from 'vuex'
+import LogoIcon from '@/components/Icons/LogoIcon'
 
 export default {
   store,
   name: 'HomePublic',
+
+  components: {
+    LogoIcon,
+  },
 
   data () {
     return {

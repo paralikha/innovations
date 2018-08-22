@@ -2,7 +2,6 @@
   <svg
     :height="height"
     :width="width"
-    id="logo"
     viewBox="0 0 600 600"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns="http://www.w3.org/2000/svg"
@@ -14,6 +13,7 @@
 
 <script>
 export default {
+  name: 'LogoIcon',
   props: {
     width: {
       type: [Number, String],
