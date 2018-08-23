@@ -43,7 +43,7 @@
         <v-list>
 
           <v-dialog v-model="newfolder.model" full-width lazy max-width="320px">
-            <v-list-tile slot="activator" @click="">
+            <v-list-tile slot="activator">
               <v-list-tile-action>
                 <v-icon>create_new_folder</v-icon>
               </v-list-tile-action>

@@ -91,7 +91,7 @@
             </v-list-tile>
 
             <v-menu offset-x right open-on-hover v-if="isFolder">
-              <v-list-tile ripple slot="activator" @click="">
+              <v-list-tile ripple slot="activator">
                 <v-list-tile-action>
                   <v-icon>mdi-shape</v-icon>
                 </v-list-tile-action>

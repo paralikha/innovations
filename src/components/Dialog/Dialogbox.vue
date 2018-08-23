@@ -3,6 +3,7 @@
     :persistent="dialogbox.persistent"
     max-width="450px"
     lazy
+    :fullscreen="dialogbox.fullscreen"
     v-model="dialogbox.model"
     v-shortkey="['esc']" @shortkey.native="dialogbox.cancelCallback() || hide()"
     >
@@ -87,11 +88,11 @@ export default {
   },
   methods: {
     show () {
-      this.$store.dispatch('dialogbox/PROMPT', { model: true })
+      this.$store.dispatch('dialogbox/PROMPT_DIALOG', { model: true })
     },
 
     hide () {
-      this.$store.dispatch('dialogbox/PROMPT', { model: false })
+      this.$store.dispatch('dialogbox/PROMPT_DIALOG', { model: false })
     }
   }
 }
