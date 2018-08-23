@@ -1,0 +1,44 @@
+.grid__layout {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.12);
+  width: 100% !important;
+
+  .v-card-media {
+    transition: transform .2s;
+  }
+}
+
+.grid__layout .v-card .v-card__media:hover {
+  // bottom: 0;
+  height: 300px !important;
+  // position: absolute;
+  transform: translate3d(1.42109e-14px, 0px, 0px) scale(1, 1) rotate(0deg);
+  -webkit-transition: width 1s, height 2s;
+  transition: width .5s, height .5s;
+  transform: scale(1.5);
+  // display: flex;
+  // overflow: hidden;
+  // width: 33%;
+}
+
+// follow mouse direction
+.left {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.right {
+  -moz-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+#bee {transition: transform .1s}

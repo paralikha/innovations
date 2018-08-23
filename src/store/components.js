@@ -5,6 +5,7 @@ import { dialogbox } from '@/components/Dialog/store/modules/dialogbox'
 import { progressbar } from '@/components/Progressbar/store/modules/progressbar'
 import { sidebar } from '@/components/Sidebar/store/modules/sidebar'
 import { utilitybar } from '@/components/Utilitybar/store/modules/utilitybar'
+import { dataiterator } from '@/components/DataIterator/store/modules/dataiterator'
 
 export const modules = {
   app,
@@ -14,4 +15,5 @@ export const modules = {
   progressbar,
   sidebar,
   utilitybar,
+  dataiterator,
 }

@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section id="home">
     <div id="particles-js">
       <!-- toolbar -->
       <v-toolbar
@@ -41,6 +41,7 @@
       <v-navigation-drawer
         v-model="home.drawer"
         absolute
+        transition="dialog-bottom-transition"
         dark
         right
         width="3000"
@@ -88,36 +89,15 @@
       <!-- description -->
 
       <!-- products -->
-      <div class="grid__system pt-3">
-        <v-layout row wrap>
-          <v-flex
-           xs4
-           :key="i"
-           v-for="(item, i) in home.products">
-            <v-card-media
-              :src="item.thumbnail"
-              class="ml-3 mb-3"
-              :class="item.bindClass"
-              height="200px">
-              <v-layout
-                fill-height
-                justify-end
-                align-end
-                class="hidden-md-and-up"
-                >
-                <v-btn
-                  small
-                  dark
-                  color="secondary"
-                  icon
-                  >
-                  <v-icon small>add</v-icon>
-                </v-btn>
-              </v-layout>
-            </v-card-media>
-          </v-flex>
-        </v-layout>
-      </div>
+      <!-- follow mouse button -->
+      <!-- <div id="bee">
+        <v-btn fab dark color="secondary">
+          <v-icon dark>add</v-icon>
+        </v-btn>
+      </div> -->
+      <!-- follow mouse button -->
+      <grid-layout></grid-layout>
+      <div class="grow"></div>
       <!-- products -->
     </div>
   </section>
@@ -126,35 +106,25 @@
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
 import store from '@/store'
-import { mapGetters } from 'vuex'
 import LogoIcon from '@/components/Icons/LogoIcon'
+import GridLayout from './partials/GridLayout'
+import 'particles.js/particles.js'
+// import './js/ButtonMouseDirection.js'
 
 export default {
   store,
-  name: 'HomePublic',
+  name: 'Home',
 
   components: {
     LogoIcon,
+    GridLayout,
   },
 
   data () {
     return {
       home: {
         drawer: null,
-        menuDialog: false,
         menus: ['Our Products', 'About Us', 'Blog', 'Talk To Us'],
-        products: [
-          {
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4800893/isometric-01.jpg'
-          },
-          {
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4805755/isometric-02.jpg'
-          },
-          {
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4810861/isometric-03.jpg',
-            bindClass: 'mr-3'
-          }
-        ]
       }
     }
   },
@@ -175,7 +145,7 @@ export default {
             }
           },
           'color': {
-            'value': ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
+            'value': ['#aa73ff', '#f8c210', '#83d238', '#33b1f8']
           },
           'shape': {
             'type': 'circle',
