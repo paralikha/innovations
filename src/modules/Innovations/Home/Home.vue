@@ -10,8 +10,9 @@
         >
         <logo-icon></logo-icon>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <template
+        <main-menu></main-menu>
+        <!-- <v-toolbar-items class="hidden-sm-and-down"> -->
+          <!-- <template
             v-for="(item, i) in home.menus"
             >
             <v-btn
@@ -20,8 +21,8 @@
               v-html="trans(item)"
               >
             </v-btn>
-          </template>
-        </v-toolbar-items>
+          </template> -->
+        <!-- </v-toolbar-items> -->
 
         <!-- mobile menu button -->
         <v-btn
