@@ -4,15 +4,15 @@
       <span class="steps text--disabled" v-html="currentStep"></span>
       <div class="form-fields slider">
         <vue-tiny-slider
-          :controls="false"
           :controls-container="false"
+          :controls="false"
           :loop="false"
-          mouse-drag
           :nav="false"
-          auto-height
-          nav-container="#nav-container"
           arrow-keys
+          auto-height
           axis="vertical"
+          mouse-drag
+          nav-container="#nav-container"
           next-button="#next-button"
           prev-button="#prev-button"
           ref="contact-form"
@@ -32,24 +32,25 @@
           </div>
 
           <div class="tns-item section">
-            <!-- <div class="field-group">
+            <div class="field-group">
               <v-text-field
                 :label="trans(`How can we reach you?`)"
                 :hint="trans(`Ideally an email will do, but feel free to use your business phone number as well.`)"
                 @keydown.enter.prevent="goTo('next')"
                 @keydown.tab.prevent="goTo('next')"
                 ></v-text-field>
-            </div> -->
+            </div>
+            <v-btn outline large @click="goTo('prev')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
             <v-btn outline large @click="goTo('next')" class="ma-0">{{ __('Next') }}</v-btn>
           </div>
 
           <div class="tns-item section">
-            <!-- <div class="field-group">
+            <div class="field-group">
               <v-text-field
                 :label="trans(`What do you have in mind?`)"
                 :hint="trans(`Anything under the sun (well, not everything).`)"
                 ></v-text-field>
-            </div> -->
+            </div>
             <v-btn color="primary" large @click="goTo('next')" class="ma-0">{{ __('Submit') }}</v-btn>
           </div>
         </vue-tiny-slider>
@@ -103,10 +104,10 @@ export default {
     },
 
     goTo (element) {
-      this.instance.goTo(element)
-      let index = JSON.parse(JSON.stringify(this.instance.getInfo().index))
+      let index = this.instance.getInfo().index
       this.instance.getInfo().slideItems[index].querySelector('input').focus()
-      this.steps.current = index + 1
+      this.instance.goTo(element)
+      this.steps.current = element === 'next' ? index + 1 : index - 1
     },
   },
 
@@ -149,12 +150,14 @@ export default {
   // overflow: hidden;
   .section {
     // border: 1px solid red;
-    // min-height: 100vh;
-    min-height: 500px;
-    height: 500px;
+    // min-height: 544px;
   }
 
   .field-group {
+    // min-height: 500px;
+    // height: 400px;
+    padding: 6em 0;
+    // border: 1px solid red;
     // padding-top: 2em;
     // transform: scale(2.3);
     // transform-origin: 0 0;
