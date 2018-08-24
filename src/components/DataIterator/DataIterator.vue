@@ -1,12 +1,5 @@
 <template>
   <v-slide-y-transition>
-   <!--  <v-text-field
-      append-icon="search"
-      hide-details
-      label="Search"
-      single-line
-      v-model="dataset.search"
-    ></v-text-field> -->
     <v-data-iterator
       :items="dataset.items"
       :pagination.sync="dataset.pagination"
@@ -39,17 +32,6 @@
               :src="props.item.thumbnail"
               slot="activator"
               >
-              <!-- <v-layout
-                align-start
-                justify-start
-                class="ma-3"
-                v-if="dataset.bookmark"
-                >
-                <v-btn icon>
-                  <v-icon v-html="dataset.bookmark"></v-icon>
-                </v-btn>
-              </v-layout> -->
-
               <v-layout
                 align-end
                 class="ma-2"
@@ -148,7 +130,7 @@
             <v-tooltip bottom>
               <h3
                 slot="activator"
-                class="title mb-3 title__text--ellipsis"
+                class="subheading font__weight--bold mb-3 title__text--ellipsis"
                 v-html="trans(props.item.title)"
                 >
               </h3>
@@ -172,8 +154,14 @@
               </v-list-tile-avatar>
 
               <v-list-tile-content>
-                <v-list-tile-title v-html="props.item.author"></v-list-tile-title>
-                <v-list-tile-sub-title v-html="props.item.timestamp"></v-list-tile-sub-title>
+                <v-list-tile-title
+                  class="mini__title"
+                  v-html="props.item.author">
+                </v-list-tile-title>
+                <v-list-tile-sub-title
+                  v-html="props.item.timestamp"
+                  >
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>

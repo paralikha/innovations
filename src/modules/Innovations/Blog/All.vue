@@ -1,135 +1,70 @@
 <template>
   <section>
     <!-- toolbar -->
-    <v-toolbar
-      id="blog"
-      class="transparent pa-4 mb-4 sticky"
-      dark
-      flat
-      >
-      <logo-icon></logo-icon>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <template
-          v-for="(item, i) in blog.menus"
-          >
-          <v-btn
-            flat
-            :key="i"
-            v-html="trans(item)"
-            >
-          </v-btn>
-        </template>
-      </v-toolbar-items>
-
-      <!-- mobile menu button -->
-      <v-btn
-        @click.stop="blog.drawer = !blog.drawer"
-        icon
-        dark
-        color="secondary"
-        class="hidden-md-and-up"
-        >
-        <v-icon>more_horiz</v-icon>
-      </v-btn>
-      <!-- mobile menu button -->
-    </v-toolbar>
-    <!-- toolbar -->
-
-    <!-- mobile menus -->
-    <v-navigation-drawer
-      v-model="blog.drawer"
-      absolute
-      transition="dialog-bottom-transition"
-      dark
-      right
-      width="3000"
-      temporary
-      >
+    <div class="scrolldown__wrapper">
       <v-toolbar
-        flat
-        class="transparent pa-4"
+        id="toolbarMenu"
+        class="pa-4 transparent"
+        dark
         >
         <logo-icon></logo-icon>
         <v-spacer></v-spacer>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <template
+            v-for="(item, i) in blog.menus"
+            >
+            <v-btn
+              flat
+              :key="i"
+              v-html="trans(item)"
+              >
+            </v-btn>
+          </template>
+        </v-toolbar-items>
+
+        <!-- mobile menu button -->
         <v-btn
-          dark
+          @click.stop="blog.drawer = !blog.drawer"
           icon
+          dark
           color="secondary"
-          @click.native="blog.drawer = !blog.drawer"
+          class="hidden-md-and-up"
           >
-          <v-icon>remove</v-icon>
+          <v-icon>more_horiz</v-icon>
         </v-btn>
+        <!-- mobile menu button -->
       </v-toolbar>
-      <v-divider></v-divider>
-      <v-list three-line class="transparent">
-        <v-list-tile
-          :key="i"
-          v-for="(item, i) in blog.menus"
-          href="#!"
-          ripple
-          >
-          <v-list-tile-content>
-            <v-list-tile-title>
-              <strong class="title" v-html="trans(item)"></strong>
-            </v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <!-- mobile menus -->
+    </div>
+    <!-- toolbar -->
 
     <v-container grid-list-lg>
       <v-layout row wrap>
         <v-flex xs12>
-          <h1>{{ trans('What\'s Brewing') }}</h1>
-          <p>{{ trans('Read some musings from our geniuses while caffeine is still kicking through their veins.') }}</p>
+          <v-card flat class="transparent">
+            <v-card-text class="px-0 py-4">
+              <h1>{{ trans('What\'s Brewing') }}</h1>
+              <p>{{ trans('Read some musings from our geniuses while caffeine is still kicking through their veins.') }}</p>
+            </v-card-text>
+          </v-card>
         </v-flex>
       </v-layout>
 
       <v-layout row wrap>
-        <v-flex md3 xs12>
-          <v-list class="transparent mb-3">
-            <v-subheader class="secondary--text"><strong>{{ trans('Archive') }}</strong></v-subheader>
-            <v-list-tile ripple href="blogs/show">
-              <v-list-tile-content>
-                <v-list-tile-title>
-                  {{ trans('October 2018') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile ripple href="blogs/show">
-              <v-list-tile-content>
-                <v-list-tile-title>
-                  {{ trans('September 2018') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
-          <v-list class="transparent mb-3">
-            <v-subheader class="secondary--text"><strong>{{ trans('Categories') }}</strong></v-subheader>
-            <v-list-tile ripple href="blogs/show">
-              <v-list-tile-content>
-                <v-list-tile-title>
-                  {{ trans('E-Learning') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile ripple href="blogs/show">
-              <v-list-tile-content>
-                <v-list-tile-title>
-                  {{ trans('Mobile Application') }}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list>
+        <v-flex md3 xs12 order-md1 order-sm2 order-xs2>
+          <list :items="archives"></list>
+          <list :items="categories"></list>
         </v-flex>
 
-        <v-flex md9 xs12>
-          <data-iterator class="mt-3" :items="blogs"></data-iterator>
+        <v-flex md9 xs12 order-md2 order-sm1 order-xs1>
+          <data-iterator class="mt-2" :items="blogs"></data-iterator>
         </v-flex>
       </v-layout>
     </v-container>
+
+    <!-- for bottom page -->
+    <v-card flat class="transparent" height="80"></v-card>
+    <!-- for bottom page -->
+    <footer-component></footer-component>
   </section>
 </template>
 
@@ -139,13 +74,11 @@ import store from '@/store'
 export default {
   store,
 
-  name: 'Blog',
+  name: 'AllBlog',
 
   data () {
     return {
-      null: null,
       blog: {
-        drawer: null,
         menus: ['Our Products', 'About Us', 'Blog', 'Talk To Us'],
       },
       blogs: {
@@ -169,7 +102,7 @@ export default {
             timestamp: '2 hours ago',
             description: 'People in middle age are flocking in record numbers to intense workouts and challenging races. What are they chasing?',
             author: 'Princess Alto',
-            avatar: '//source.unsplash.com/random'
+            avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg'
           },
           {
             id: '2',
@@ -179,7 +112,7 @@ export default {
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'John Dionisio',
-            avatar: '//source.unsplash.com/random'
+            avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif'
           },
           {
             id: '3',
@@ -189,7 +122,7 @@ export default {
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'Sandy Duaso',
-            avatar: '//source.unsplash.com/random'
+            avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif'
           },
           {
             id: '4',
@@ -203,7 +136,50 @@ export default {
           },
         ]
       },
+      archives: {
+        subheaderClass: 'secondary--text grey lighten-4',
+        link: 'archives',
+        headerTitle: 'Archives',
+        items: [
+          {
+            title: 'November 2018'
+          },
+          {
+            title: 'October 2018'
+          },
+          {
+            title: 'September 2018'
+          }
+        ]
+      },
+      categories: {
+        subheaderClass: 'secondary--text grey lighten-4',
+        link: 'categories',
+        headerTitle: 'Categories',
+        items: [
+          {
+            title: 'E-Learning'
+          },
+          {
+            title: 'Mobile Application'
+          },
+          {
+            title: 'Web Design and Animation'
+          }
+        ]
+      }
     }
   }
+}
+
+var prevScrollpos = window.pageYOffset
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById('toolbarMenu').style.top = '0'
+  } else {
+    document.getElementById('toolbarMenu').style.top = '-112px'
+  }
+  prevScrollpos = currentScrollPos
 }
 </script>

@@ -6,6 +6,8 @@ import { progressbar } from '@/components/Progressbar/store/modules/progressbar'
 import { sidebar } from '@/components/Sidebar/store/modules/sidebar'
 import { utilitybar } from '@/components/Utilitybar/store/modules/utilitybar'
 import { dataiterator } from '@/components/DataIterator/store/modules/dataiterator'
+import { list } from '@/components/List/store/modules/list'
+import { footer } from '@/components/Footer/store/modules/footer'
 
 export const modules = {
   app,
@@ -16,4 +18,6 @@ export const modules = {
   sidebar,
   utilitybar,
   dataiterator,
+  list,
+  footer,
 }
