@@ -1,6 +1,7 @@
 <template>
   <section>
     <main-toolbar></main-toolbar>
+
     <v-container grid-list-lg>
       <v-layout row wrap>
         <v-flex xs12>
@@ -20,10 +21,8 @@
     <v-card tile flat>
       <v-container grid-list-lg>
         <v-layout row wrap>
-          <v-flex xs12>
-
+          <v-flex xs8>
             <contact-form></contact-form>
-
           </v-flex>
         </v-layout>
       </v-container>

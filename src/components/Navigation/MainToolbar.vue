@@ -6,19 +6,42 @@
     >
 
     <logo-icon></logo-icon>
+
     <v-spacer></v-spacer>
-    <main-menu></main-menu>
+
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat large v-for="(menu, i) in menus" exact :to="menu.path" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
+    </v-toolbar-items>
 
     <!-- mobile menu button -->
-    <!-- <v-btn
-      @click.stop="home.drawer = !home.drawer"
-      icon
-      dark
-      color="secondary"
-      class="hidden-md-and-up"
-      >
-      <v-icon>more_horiz</v-icon>
-    </v-btn> -->
+    <mobile-nav></mobile-nav>
     <!-- mobile menu button -->
   </v-toolbar>
 </template>
+
+<script>
+import _public from '@/router/public'
+import { mapGetters } from 'vuex'
+
+export default {
+  name: 'MainToolbar',
+
+  computed: {
+    ...mapGetters({
+      mainmenu: 'mainmenu/mainmenu',
+    }),
+  },
+
+  data () {
+    return {
+      menus: _public.children
+    }
+  },
+
+  methods: {
+    toggle (item) {
+      // this.$store.dispatch('mainmenu/toggle', item)
+    },
+  }
+}
+</script>
