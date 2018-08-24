@@ -8,6 +8,7 @@ import { utilitybar } from '@/components/Utilitybar/store/modules/utilitybar'
 import { dataiterator } from '@/components/DataIterator/store/modules/dataiterator'
 import { list } from '@/components/List/store/modules/list'
 import { footer } from '@/components/Footer/store/modules/footer'
+import { mainmenu } from '@/components/Navigation/store/modules/mainmenu'
 
 export const modules = {
   app,
@@ -20,4 +21,5 @@ export const modules = {
   dataiterator,
   list,
   footer,
+  mainmenu,
 }

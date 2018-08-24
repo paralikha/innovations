@@ -1,5 +1,6 @@
 export const state = () => ({
   list: {
+    dense: false,
     listClass: 'mb-3 transparent',
     subheader: true,
     header: true,

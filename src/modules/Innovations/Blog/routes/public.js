@@ -1,31 +1,35 @@
 export default [
   {
     path: '/blogs',
+    name: 'blog.all',
+    component: () => import('../All.vue'),
+    meta: {
+      title: 'Blog',
+      sort: 1,
+      external: true,
+      excludeFromRoot: true,
+      authenticatable: false,
+      icon: 'mdi-book-multiple-variant',
+    },
+  },
+  {
+    path: 'blogs',
     component: () => import('@/components/Layouts/Public.vue'),
     meta: {
-      title: 'All Blogs',
-      sort: 5,
+      sort: 1,
+      external: true,
+      excludeFromRoot: true,
+      authenticatable: false,
+      icon: 'mdi-book-multiple-variant',
     },
+
     children: [
-      {
-        path: '',
-        name: 'blog.all',
-        component: () => import('../All.vue'),
-        meta: {
-          title: 'All Blogs',
-          sort: 5,
-          external: true,
-          excludeFromRoot: true,
-          authenticatable: false,
-          icon: 'mdi-book-multiple-variant',
-        },
-      },
       {
         path: 'single',
         name: 'blog.single',
         component: () => import('../Single.vue'),
         meta: {
-          title: 'Show Blog',
+          title: 'Single Blog',
           sort: 5,
           external: true,
           excludeFromRoot: true,

@@ -1,5 +1,7 @@
 <template>
-  <section>
+  <section id="public">
+    <main-toolbar></main-toolbar>
+
     <v-container grid-list-lg>
       <v-layout row wrap>
         <v-flex xs12>

@@ -24,10 +24,10 @@
               </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex md3 xs12>
+          <v-flex sm3 xs3>
             <list :items="footer.links"></list>
           </v-flex>
-          <v-flex md3 xs12>
+          <v-flex sm3 xs3>
             <list :items="footer.links"></list>
           </v-flex>
         </v-layout>
@@ -76,6 +76,7 @@ export default {
       dataset: {},
       footer: {
         links: {
+          dense: true,
           listClass: 'mb-0 transparent',
           dark: true,
           headerTitle: 'Links',

@@ -1,5 +1,6 @@
 <template>
   <v-list
+    :dense="dataset.dense"
     :dark="dataset.dark"
     :class="dataset.listClass"
     >

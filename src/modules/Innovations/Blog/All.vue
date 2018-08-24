@@ -1,41 +1,6 @@
 <template>
-  <section>
-    <!-- toolbar -->
-    <div class="scrolldown__wrapper">
-      <v-toolbar
-        id="toolbarMenu"
-        class="pa-4 transparent"
-        dark
-        >
-        <logo-icon></logo-icon>
-        <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-          <template
-            v-for="(item, i) in blog.menus"
-            >
-            <v-btn
-              flat
-              :key="i"
-              v-html="trans(item)"
-              >
-            </v-btn>
-          </template>
-        </v-toolbar-items>
-
-        <!-- mobile menu button -->
-        <v-btn
-          @click.stop="blog.drawer = !blog.drawer"
-          icon
-          dark
-          color="secondary"
-          class="hidden-md-and-up"
-          >
-          <v-icon>more_horiz</v-icon>
-        </v-btn>
-        <!-- mobile menu button -->
-      </v-toolbar>
-    </div>
-    <!-- toolbar -->
+  <section id="public">
+    <main-toolbar></main-toolbar>
 
     <v-container grid-list-lg>
       <v-layout row wrap>
@@ -64,7 +29,7 @@
     <!-- for bottom page -->
     <v-card flat class="transparent" height="80"></v-card>
     <!-- for bottom page -->
-    <footer-component></footer-component>
+  <footer-component></footer-component>
   </section>
 </template>
 
@@ -78,9 +43,6 @@ export default {
 
   data () {
     return {
-      blog: {
-        menus: ['Our Products', 'About Us', 'Blog', 'Talk To Us'],
-      },
       blogs: {
         selected: [],
         bulkDestroy: false,
@@ -137,6 +99,7 @@ export default {
         ]
       },
       archives: {
+        dense: true,
         subheaderClass: 'secondary--text grey lighten-4',
         link: 'archives',
         headerTitle: 'Archives',
@@ -153,6 +116,7 @@ export default {
         ]
       },
       categories: {
+        dense: true,
         subheaderClass: 'secondary--text grey lighten-4',
         link: 'categories',
         headerTitle: 'Categories',
@@ -170,16 +134,5 @@ export default {
       }
     }
   }
-}
-
-var prevScrollpos = window.pageYOffset
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById('toolbarMenu').style.top = '0'
-  } else {
-    document.getElementById('toolbarMenu').style.top = '-112px'
-  }
-  prevScrollpos = currentScrollPos
 }
 </script>
