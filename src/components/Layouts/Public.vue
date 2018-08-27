@@ -9,7 +9,6 @@
       <!-- Main -->
     </v-content>
     <!-- Main Content -->
-
     <progressbar></progressbar>
   </v-app>
 </template>

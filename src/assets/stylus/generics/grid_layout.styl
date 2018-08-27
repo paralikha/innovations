@@ -11,34 +11,42 @@
   }
 }
 
-.grid__layout .v-card .v-card__media:hover {
-  // bottom: 0;
-  height: 300px !important;
-  // position: absolute;
-  transform: translate3d(1.42109e-14px, 0px, 0px) scale(1, 1) rotate(0deg);
+.grid__layout .v-card:hover .v-card__media {
+  height: 400px !important;
+  -webkit-transform: translate3d(1.42109e -14px, 0px, 0px) scale(1, 1) rotate(0deg);
+  transform: translate3d(1.42109e -14px, 0px, 0px) scale(1, 1) rotate(0deg);
   -webkit-transition: width 1s, height 2s;
-  transition: width .5s, height .5s;
-  transform: scale(1.5);
-  // display: flex;
-  // overflow: hidden;
-  // width: 33%;
+  -webkit-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
 }
 
-// follow mouse direction
-.left {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+// show and hide card__media__text
+.grid__layout .v-card .v-card__media .grid__layout--text {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
-.right {
-  -moz-transform: scaleX(1);
-  -o-transform: scaleX(1);
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+
+.grid__layout .v-card:hover .v-card__media .grid__layout--text {
+  visibility: visible;
+  opacity: 1;
 }
-#bee {transition: transform .1s}
+
+#particles-js {
+  .grid__layout:hover + .content {
+    display: none;
+  }
+}
+
+.content {
+  color: #ffff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: block;
+}

@@ -19,7 +19,7 @@
       <v-card dark>
         <v-toolbar
           flat
-          class="transparent pa-4 px-5"
+          class="transparent pa-4"
           >
           <!-- <logo-icon></logo-icon> -->
           <v-spacer></v-spacer>
@@ -33,7 +33,7 @@
           </v-btn>
         </v-toolbar>
         <v-divider dark></v-divider>
-        <v-list three-line>
+        <!-- <v-list three-line>
           <v-list-tile
             :key="i"
             v-for="(item, i) in menus"
@@ -46,7 +46,8 @@
               </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
-        </v-list>
+        </v-list> -->
+        <main-menu></main-menu>
       </v-card>
     </v-dialog>
   </div>

@@ -21,6 +21,6 @@ export default {
   name: 'public',
   redirect: { name: 'home' },
   component: () => import('@/components/Layouts/Public.vue'),
-  meta: { title: 'Public', authenticatable: false },
+  meta: { title: 'Welcome', authenticatable: false },
   children: routes.sort((a, b) => { return a.meta.sort - b.meta.sort }),
 }

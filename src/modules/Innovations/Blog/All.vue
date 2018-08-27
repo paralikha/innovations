@@ -5,7 +5,7 @@
     <v-container grid-list-lg>
       <v-layout row wrap>
         <v-flex xs12>
-          <v-card flat class="transparent">
+          <v-card flat>
             <v-card-text class="px-0 py-4">
               <h1>{{ trans('What\'s Brewing') }}</h1>
               <p>{{ trans('Read some musings from our geniuses while caffeine is still kicking through their veins.') }}</p>
@@ -26,10 +26,7 @@
       </v-layout>
     </v-container>
 
-    <!-- for bottom page -->
-    <v-card flat class="transparent" height="80"></v-card>
-    <!-- for bottom page -->
-  <footer-component></footer-component>
+    <footer-component></footer-component>
   </section>
 </template>
 
@@ -48,7 +45,7 @@ export default {
         bulkDestroy: false,
         selectAll: true,
         search: '',
-        cardLink: 'blogs/show',
+        cardLink: '/blogs/single',
         chip: true,
         hover: true,
         lg3: false,
