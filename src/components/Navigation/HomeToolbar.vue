@@ -2,7 +2,6 @@
   <div>
     <v-toolbar
       class="pa-4 transparent"
-      absolute
       dark
       flat
       >
