@@ -3,6 +3,7 @@
     <v-form class="fs-form fs-form-full" autocomplete="off">
       <span class="steps text--disabled" v-html="currentStep"></span>
       <div class="form-fields slider">
+        <!-- nav-container="#nav-container" -->
         <vue-tiny-slider
           :controls-container="false"
           :controls="false"
@@ -12,7 +13,6 @@
           auto-height
           axis="vertical"
           mouse-drag
-          nav-container="#nav-container"
           next-button="#next-button"
           prev-button="#prev-button"
           ref="contact-form"
@@ -48,9 +48,9 @@
             <div class="field-group">
               <v-text-field
                 :label="trans(`What do you have in mind?`)"
-                :hint="trans(`Anything under the sun (well, not everything).`)"
                 ></v-text-field>
             </div>
+            <v-btn outline large @click="goTo('prev')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
             <v-btn color="primary" large @click="goTo('next')" class="ma-0">{{ __('Submit') }}</v-btn>
           </div>
         </vue-tiny-slider>
@@ -60,11 +60,11 @@
         <v-btn id="next-button" @click="goTo('next')" large outline>{{ __('Submit') }}</v-btn>
       </div> -->
     </v-form>
-    <div class="nav-wrap">
+    <!-- <div class="nav-wrap">
       <nav id="nav-container" class="nav-container">
         <v-btn v-for="i in steps.total" :key="i" icon @click="goTo(i-1)">{{ i }}</v-btn>
       </nav>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -105,9 +105,9 @@ export default {
 
     goTo (element) {
       let index = this.instance.getInfo().index
-      this.instance.getInfo().slideItems[index].querySelector('input').focus()
       this.instance.goTo(element)
       this.steps.current = element === 'next' ? index + 1 : index - 1
+      this.instance.getInfo().slideItems[index].querySelector('input').focus()
     },
   },
 
