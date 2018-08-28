@@ -18,7 +18,6 @@
                     clearable
                     clear-icon="cancel"
                     hide-details
-                    class="mb-3"
                   ></v-text-field>
                 </v-card>
               </v-flex>

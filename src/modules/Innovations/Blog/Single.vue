@@ -41,7 +41,7 @@
           </v-layout>
         </v-flex>
 
-        <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1>
+        <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1  >
           <v-card>
             <v-card-media
               :src="item.thumbnail"

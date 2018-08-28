@@ -3,7 +3,7 @@
     <v-container
       fluid
       grid-list-lg
-      class="pa-3 follower-container"
+      class="pa-2 follower-container"
       >
       <v-layout row wrap>
         <v-flex
@@ -91,6 +91,9 @@
 
 <script>
 import store from '@/store'
+import homepage1 from '@/assets/images/homepage-1.png'
+import homepage2 from '@/assets/images/homepage-2.png'
+import homepage3 from '@/assets/images/homepage-3.png'
 
 export default {
   store,
@@ -106,17 +109,17 @@ export default {
         products: [
           {
             title: 'Learning Management System',
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4800893/isometric-01.jpg',
+            thumbnail: homepage1,
             classMedia: 'first-child',
           },
           {
-            title: 'Mobile Application',
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4805755/isometric-02.jpg',
+            title: 'Computer-based Learning',
+            thumbnail: homepage2,
             classMedia: 'second-child',
           },
           {
-            title: 'Computer-based Learning',
-            thumbnail: '//cdn.dribbble.com/users/969366/screenshots/4810861/isometric-03.jpg',
+            title: 'Mobile Application',
+            thumbnail: homepage3,
             classMedia: 'third-child',
           }
         ]
