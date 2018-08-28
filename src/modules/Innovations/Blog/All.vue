@@ -1,5 +1,5 @@
 <template>
-  <section id="public">
+  <section>
     <main-toolbar></main-toolbar>
 
     <v-container grid-list-lg>

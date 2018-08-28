@@ -2,7 +2,7 @@
   <v-toolbar-items class="hidden-sm-and-down">
     <template v-for="(menu, i) in menus">
       <template v-if="menu.meta.excludeInMenu"></template>
-      <v-menu v-else-if="menu.meta.withSubmenu" :key="i">
+      <v-menu offset-y v-else-if="menu.meta.withSubmenu" :key="i">
         <v-btn slot="activator" flat large class="mx-1">{{ __(menu.meta.title) }} <v-icon right>keyboard_arrow_down</v-icon></v-btn>
         <v-list>
           <v-list-tile

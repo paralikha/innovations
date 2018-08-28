@@ -26,6 +26,32 @@ export default [
           icon: 'mdi-book-multiple-variant',
         },
       },
+      {
+        path: 'ripples',
+        name: 'products.ripples',
+        component: () => import('../Ripples.vue'),
+        meta: {
+          title: 'Ripples',
+          sort: 5,
+          external: true,
+          excludeFromRoot: true,
+          authenticatable: false,
+          icon: 'mdi-book-multiple-variant',
+        },
+      },
+      {
+        path: 'application',
+        name: 'products.application',
+        component: () => import('../Application.vue'),
+        meta: {
+          title: 'Application',
+          sort: 5,
+          external: true,
+          excludeFromRoot: true,
+          authenticatable: false,
+          icon: 'mdi-book-multiple-variant',
+        },
+      },
     ]
   },
 ]

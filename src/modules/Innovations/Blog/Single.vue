@@ -42,10 +42,17 @@
         </v-flex>
 
         <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1  >
-          <v-card>
+          <v-card class="hidden-sm-and-down">
             <v-card-media
               :src="item.thumbnail"
               height="500"
+              >
+            </v-card-media>
+          </v-card>
+          <v-card class="hidden-md-and-up">
+            <v-card-media
+              :src="item.thumbnail"
+              height="300"
               >
             </v-card-media>
           </v-card>

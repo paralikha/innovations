@@ -15,8 +15,10 @@
             ripple
             class="transparent project-card"
             flat
+            color="primary"
             exact to="/products/elearning">
             <v-card-media
+              color="secondary"
               :src="item.thumbnail"
               height="200px"
               class="pa-2"
@@ -40,7 +42,8 @@
               <v-layout
                 class="hidden-sm-and-down grid__layout--text"
                 >
-                <v-card-text class="text-xs-center">
+                <v-card-text>
+                  <p class="mb-3 body-2" v-html="trans(item.subtitle)"></p>
                   <h3
                     class="font__weight--bold"
                     v-html="trans(item.title)"
@@ -91,9 +94,9 @@
 
 <script>
 import store from '@/store'
-import homepage1 from '@/assets/images/homepage-1.png'
-import homepage2 from '@/assets/images/homepage-2.png'
-import homepage3 from '@/assets/images/homepage-3.png'
+import homepage1 from '@/assets/images/RipplesBanner.png'
+import homepage2 from '@/assets/images/ELearningBanner.png'
+import homepage3 from '@/assets/images/MobileAppBanner.png'
 
 export default {
   store,
@@ -108,17 +111,20 @@ export default {
       home: {
         products: [
           {
-            title: 'Learning Management System',
+            title: 'Customisable platform for collaborative learning anytime, anywhere',
+            subtitle: 'Rippl3s',
             thumbnail: homepage1,
             classMedia: 'first-child',
           },
           {
-            title: 'Computer-based Learning',
+            title: 'Immersive and interactive courses for the modern student',
+            subtitle: 'e-Learning',
             thumbnail: homepage2,
             classMedia: 'second-child',
           },
           {
-            title: 'Mobile Application',
+            title: 'Learning and training made engaging and fun',
+            subtitle: 'Training App',
             thumbnail: homepage3,
             classMedia: 'third-child',
           }
