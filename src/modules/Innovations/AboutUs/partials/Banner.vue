@@ -20,6 +20,7 @@
 <script>
 import store from '@/store'
 import VueFriendlyIframe from 'vue-friendly-iframe'
+// import MeetTheTeamWeb from './partials/Website/About-Us-H.html'
 
 export default {
   store,
@@ -28,6 +29,8 @@ export default {
 
   components: {
     VueFriendlyIframe,
+    // thumbnail: MeetTheTeamWeb,
+
   }
 }
 </script>

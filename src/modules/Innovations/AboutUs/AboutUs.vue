@@ -28,9 +28,8 @@
 <script>
 import store from '@/store'
 import Banner from './partials/Banner'
-import CoreValues from './partials/CoreValues'
 import HowWeWork from './partials/HowWeWork'
-// import MeetTheTeamWeb from './partials/Website/About-Us-H.html'
+import CoreValues from './partials/CoreValues'
 
 export default {
   store,
@@ -45,9 +44,6 @@ export default {
 
   data () {
     return {
-      item: {
-        // thumbnail: MeetTheTeamWeb,
-      }
     }
   }
 }
