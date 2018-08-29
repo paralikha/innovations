@@ -1,6 +1,22 @@
 <template>
   <v-toolbar-items class="hidden-sm-and-down">
-    <v-btn flat large v-for="(menu, i) in menus" exact :to="menu.path" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
+    <template v-for="(menu, i) in menus">
+      <template v-if="menu.meta.excludeInMenu"></template>
+      <v-menu v-else-if="menu.meta.withSubmenu" :key="i">
+        <v-btn slot="activator" flat large class="mx-1">{{ __(menu.meta.title) }} <v-icon right>keyboard_arrow_down</v-icon></v-btn>
+        <v-list>
+          <v-list-tile
+            exact
+            :key="j"
+            :to="{name: submenu.name}"
+            v-for="(submenu, j) in menu.children"
+            >
+            <v-list-tile-content>{{ submenu.meta.title }}</v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
+      <v-btn v-else flat large exact :to="{name: menu.name}" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
+    </template>
   </v-toolbar-items>
 </template>
 

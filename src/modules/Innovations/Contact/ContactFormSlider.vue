@@ -4,41 +4,56 @@
       <span class="steps text--disabled" v-html="currentStep"></span>
       <div class="form-fields slider">
         <!-- nav-container="#nav-container" -->
-        <div id="scroll-1" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`What's your name?`)"
-              :hint="trans(`It can be your name or your company's.`)"
-              v-focus
-              @keydown.enter.prevent="goTo('next')"
-              @keydown.tab.prevent="goTo('next')"
-              ></v-text-field>
+        <vue-tiny-slider
+          :controls-container="false"
+          :controls="false"
+          :loop="false"
+          :nav="false"
+          arrow-keys
+          auto-height
+          axis="vertical"
+          mouse-drag
+          next-button="#next-button"
+          prev-button="#prev-button"
+          ref="contact-form"
+          touch
+        >
+          <div class="tns-item section">
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`What's your name?`)"
+                :hint="trans(`It can be your name or your company's.`)"
+                v-focus
+                @keydown.enter.prevent="goTo('next')"
+                @keydown.tab.prevent="goTo('next')"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="goTo('next')" class="ma-0">{{ __('Next') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0">{{ __('Next') }}</v-btn>
-        </div>
 
-        <div id="scroll-2" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`How can we reach you?`)"
-              :hint="trans(`Ideally an email will do, but feel free to use your business phone number as well.`)"
-              @keydown.enter.prevent="goTo('next')"
-              @keydown.tab.prevent="goTo('next')"
-              ></v-text-field>
+          <div class="tns-item section">
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`How can we reach you?`)"
+                :hint="trans(`Ideally an email will do, but feel free to use your business phone number as well.`)"
+                @keydown.enter.prevent="goTo('next')"
+                @keydown.tab.prevent="goTo('next')"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="goTo('prev')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
+            <v-btn outline large @click="goTo('next')" class="ma-0">{{ __('Next') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-1')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
-          <v-btn outline large @click="scrollTo('#scroll-3')" class="ma-0">{{ __('Next') }}</v-btn>
-        </div>
 
-        <div id="scroll-3" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`What do you have in mind?`)"
-              ></v-text-field>
+          <div class="tns-item section">
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`What do you have in mind?`)"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="goTo('prev')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
+            <v-btn color="primary" large @click="goTo('next')" class="ma-0">{{ __('Submit') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
-          <v-btn color="primary" large class="ma-0">{{ __('Submit') }}</v-btn>
-        </div>
+        </vue-tiny-slider>
       </div>
       <!-- <div class="fs-form__actions mt-4">
         <v-btn id="prev-button" @click="goTo('prev')" large outline>{{ __('Previous') }}</v-btn>
@@ -54,10 +69,15 @@
 </template>
 
 <script>
-import { scrollIt } from './js/scrollIt.js'
+import VueTinySlider from 'vue-tiny-slider'
+import 'tiny-slider/dist/tiny-slider.css'
 
 export default {
   name: 'ContactForm',
+
+  components: {
+    VueTinySlider,
+  },
 
   computed: {
     currentStep () {
@@ -77,10 +97,10 @@ export default {
   },
 
   methods: {
-    scrollTo (el) {
-      let element = document.querySelector(el)
-      // console.log(element)
-      scrollIt(element)
+    init () {
+      this.instance = this.$refs['contact-form'].slider
+      this.instance.rebuild()
+      this.steps.total = this.instance.getInfo().slideItems.length
     },
 
     goTo (element) {
@@ -89,23 +109,15 @@ export default {
       this.steps.current = element === 'next' ? index + 1 : index - 1
       this.instance.getInfo().slideItems[index].querySelector('input').focus()
     },
-
-    onScroll (e) {
-      console.log(e)
-    }
   },
 
   mounted () {
-    // this.init()
+    this.init()
   },
 }
 </script>
 
 <style lang="stylus" scoped>
-body {
-  scroll-behavior: smooth;
-}
-
 .nav {
   &-wrap {
     position: relative;
@@ -138,7 +150,7 @@ body {
   // overflow: hidden;
   .section {
     // border: 1px solid red;
-    min-height: 100vh;
+    // min-height: 544px;
   }
 
   .field-group {
