@@ -36,6 +36,7 @@
       </particles>
     </v-card>
 
+    <!-- content -->
     <v-container grid-list-lg>
       <div class="py-5">
         <v-layout row wrap>
@@ -104,6 +105,8 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!-- content -->
+
     <footer-component></footer-component>
   </section>
 </template>
