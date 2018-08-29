@@ -13,7 +13,7 @@ export default [
     children: [
       {
         path: '',
-        name: 'blog.all',
+        name: 'about-us',
         component: () => import('../AboutUs.vue'),
         meta: {
           title: 'About Us',
@@ -25,5 +25,5 @@ export default [
         },
       },
     ]
-  },
+  }
 ]

@@ -24,26 +24,10 @@
               class="pa-2"
               >
               <v-layout
-                fill-height
-                justify-end
-                align-end
-                class="hidden-md-and-up"
-                >
-                <v-btn
-                  small
-                  dark
-                  color="secondary"
-                  icon
-                  >
-                  <v-icon small>add</v-icon>
-                </v-btn>
-              </v-layout>
-
-              <v-layout
-                class="hidden-sm-and-down grid__layout--text"
+                class="justify-end align-end grid__layout--text"
                 >
                 <v-card-text>
-                  <p class="mb-3 body-2" v-html="trans(item.subtitle)"></p>
+                  <p class="mb-2 body-2" v-html="trans(item.subtitle)"></p>
                   <h3
                     class="font__weight--bold"
                     v-html="trans(item.title)"
@@ -55,10 +39,12 @@
           </v-card>
         </v-flex>
       </v-layout>
-      <div id="follower">
-        <v-btn fab class="secondary elevation-5">
-          <v-icon>add</v-icon>
-        </v-btn>
+      <div>
+        <div id="follower">
+          <v-btn fab class="secondary elevation-5">
+            <v-icon>add</v-icon>
+          </v-btn>
+        </div>
       </div>
     </v-container>
   </div>
@@ -101,7 +87,7 @@ import homepage3 from '@/assets/images/MobileAppBanner.png'
 export default {
   store,
 
-  name: 'Gridlayout',
+  name: 'GridLayoutWeb',
 
   components: {
   },

@@ -1,7 +1,7 @@
 export const state = () => ({
   list: {
     dense: false,
-    listClass: 'mb-3 transparent',
+    listClass: 'mb-3 pt-2 transparent',
     subheader: true,
     header: true,
     headerTitle: 'List',

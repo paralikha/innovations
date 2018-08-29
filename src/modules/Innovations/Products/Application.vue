@@ -79,7 +79,7 @@
       <!-- video -->
       <v-layout row wrap>
         <v-flex xs12>
-          <!-- <v-card flat class="hidden-sm-and-down text-xs-center py-5">
+          <v-card flat class="hidden-sm-and-down text-xs-center py-5">
             <video loop width="80%" height="auto" controls>
               <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
               {{ trans('Your browser does not support HTML5 video.') }}
@@ -90,7 +90,7 @@
               <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
               {{ trans('Your browser does not support HTML5 video.') }}
             </video>
-          </v-card> -->
+          </v-card>
         </v-flex>
       </v-layout>
       <!-- video -->

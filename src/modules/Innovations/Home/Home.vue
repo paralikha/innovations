@@ -18,7 +18,12 @@
       <!-- page title -->
 
       <!-- products -->
-      <grid-layout></grid-layout>
+      <div class="hidden-sm-and-down">
+        <grid-layout-web></grid-layout-web>
+      </div>
+      <div class="hidden-md-and-up">
+        <grid-layout-app></grid-layout-app>
+      </div>
       <!-- products -->
     </particles>
   </section>
@@ -27,7 +32,8 @@
 <script>
 import store from '@/store'
 import LogoIcon from '@/components/Icons/LogoIcon'
-import GridLayout from './partials/GridLayout'
+import GridLayoutWeb from './partials/GridLayoutWeb'
+import GridLayoutApp from './partials/GridLayoutApp'
 // import FollowMouseButton from './partials/FollowMouseButton'
 
 export default {
@@ -37,7 +43,8 @@ export default {
 
   components: {
     LogoIcon,
-    GridLayout,
+    GridLayoutWeb,
+    GridLayoutApp,
     // FollowMouseButton,
   },
 
