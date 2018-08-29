@@ -37,70 +37,74 @@
     </v-card>
 
     <v-container grid-list-lg>
-      <div class="py-5">
-        <v-layout row wrap>
-          <v-flex sm3 xs12>
-            <h1
-              class="primary--text"
-              v-html="trans('Function better in a technological-driven society')">
-            </h1>
-          </v-flex>
-          <v-flex sm4 offset-sm1 xs12>
-            <v-card flat class="py-3">
-              <application-one-icon class="mb-3" width="50" height="50"></application-one-icon>
-              <h1 class="title mb-3" v-html="trans('Real-life simulations')"></h1>
-              <p>{{ trans('Familiarise with everyday hustles, without the worries of committing real errors') }}</p>
-            </v-card>
-          </v-flex>
-          <v-flex sm4 xs12>
-            <v-card flat class="py-3">
-              <application-three-icon class="mb-3" width="50" height="50"></application-three-icon>
-              <h1 class="title mb-3" v-html="trans('Integrated gamification')"></h1>
-              <p>{{ trans('Acquiring knowledge can still be fun') }}</p>
-            </v-card>
-          </v-flex>
-          <v-flex offset-sm4 sm4 xs12>
-            <v-card flat class="py-3">
-              <application-two-icon class="mb-3" width="50" height="50"></application-two-icon>
-              <h1 class="title mb-3" v-html="trans('Life-centric applications')"></h1>
-              <p>{{ trans('Equip yourself with essential life skills and knowledge for your professional growth') }}</p>
-            </v-card>
-          </v-flex>
-          <v-flex sm4 xs12>
-            <v-card flat class="py-3">
-              <application-four-icon class="mb-3" width="50" height="50"></application-four-icon>
-              <h1 class="title mb-3" v-html="trans('Digitised lifestyle toolkits')"></h1>
-              <p>{{ trans('Instantly available solutions whenever you need them') }}</p>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </div>
+      <v-layout row wrap justify-center align-center>
+        <v-flex lg10 md10 xs12>
+          <div class="py-5">
+            <v-layout row wrap>
+              <v-flex sm3 xs12>
+                <h1
+                  class="primary--text"
+                  v-html="trans('Function better in a technological-driven society')">
+                </h1>
+              </v-flex>
+              <v-flex sm4 offset-sm1 xs12>
+                <v-card flat class="py-3">
+                  <application-one-icon class="mb-3" width="50" height="50"></application-one-icon>
+                  <h1 class="title mb-3" v-html="trans('Real-life simulations')"></h1>
+                  <p>{{ trans('Familiarise with everyday hustles, without the worries of committing real errors') }}</p>
+                </v-card>
+              </v-flex>
+              <v-flex sm4 xs12>
+                <v-card flat class="py-3">
+                  <application-three-icon class="mb-3" width="50" height="50"></application-three-icon>
+                  <h1 class="title mb-3" v-html="trans('Integrated gamification')"></h1>
+                  <p>{{ trans('Acquiring knowledge can still be fun') }}</p>
+                </v-card>
+              </v-flex>
+              <v-flex offset-sm4 sm4 xs12>
+                <v-card flat class="py-3">
+                  <application-two-icon class="mb-3" width="50" height="50"></application-two-icon>
+                  <h1 class="title mb-3" v-html="trans('Life-centric applications')"></h1>
+                  <p>{{ trans('Equip yourself with essential life skills and knowledge for your professional growth') }}</p>
+                </v-card>
+              </v-flex>
+              <v-flex sm4 xs12>
+                <v-card flat class="py-3">
+                  <application-four-icon class="mb-3" width="50" height="50"></application-four-icon>
+                  <h1 class="title mb-3" v-html="trans('Digitised lifestyle toolkits')"></h1>
+                  <p>{{ trans('Instantly available solutions whenever you need them') }}</p>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
 
-      <!-- video -->
-      <v-layout row wrap>
-        <v-flex xs12>
-          <v-card flat class="hidden-sm-and-down text-xs-center py-5">
-            <video loop width="80%" height="auto" controls>
-              <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
-              {{ trans('Your browser does not support HTML5 video.') }}
-            </video>
-          </v-card>
-          <v-card flat class="hidden-md-and-up text-xs-center">
-            <video loop width="100%" height="auto" controls>
-              <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
-              {{ trans('Your browser does not support HTML5 video.') }}
-            </video>
-          </v-card>
-        </v-flex>
-      </v-layout>
-      <!-- video -->
+          <!-- video -->
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card flat class="hidden-sm-and-down text-xs-center py-5">
+                <video loop width="80%" height="auto" controls>
+                  <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
+                  {{ trans('Your browser does not support HTML5 video.') }}
+                </video>
+              </v-card>
+              <v-card flat class="text-xs-center">
+                <video loop width="100%" height="auto" controls>
+                  <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
+                  {{ trans('Your browser does not support HTML5 video.') }}
+                </video>
+              </v-card>
+            </v-flex>
+          </v-layout>
+          <!-- video -->
 
-      <v-layout row wrap>
-        <v-flex xs12>
-          <v-card flat class="py-5 text-xs-center">
-            <h1 class="mb-3">{{ trans('Try the future now!') }}</h1>
-            <v-btn color="secondary">{{ trans('Play Me') }}</v-btn>
-          </v-card>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card flat class="py-5 text-xs-center">
+                <h1 class="mb-3">{{ trans('Try the future now!') }}</h1>
+                <v-btn color="secondary">{{ trans('Play Me') }}</v-btn>
+              </v-card>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
     </v-container>
