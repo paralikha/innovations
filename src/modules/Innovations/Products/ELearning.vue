@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-card dark class="products__gradient">
+    <v-card dark class="gradient__withAnimation">
       <particles>
         <!-- toolbar -->
         <home-toolbar></home-toolbar>
