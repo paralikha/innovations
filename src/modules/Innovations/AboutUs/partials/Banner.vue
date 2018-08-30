@@ -11,7 +11,7 @@
     <vue-friendly-iframe
       width="400px"
       height="400px"
-      src="require('./partials/Website/images/About_Us_atlas_.png')"
+      src="require('./partials/Website/About-Us-H.html')"
       >
     </vue-friendly-iframe>
   </div>

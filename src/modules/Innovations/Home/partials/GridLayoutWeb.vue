@@ -39,6 +39,8 @@
           </v-card>
         </v-flex>
       </v-layout>
+
+      <!-- mouseover -->
       <div>
         <div id="follower">
           <v-btn fab class="secondary elevation-5">
@@ -46,6 +48,7 @@
           </v-btn>
         </div>
       </div>
+      <!-- mouseover -->
     </v-container>
   </div>
 </template>
@@ -170,7 +173,7 @@ export default {
         bee.style.left = beepos.x + 'px'
         bee.style.top = beepos.y + 'px'
 
-        // Apply css class
+        // Apply css to class
         if (dir === 'right') {
           bee.setAttribute('class', 'right')
         } else {
