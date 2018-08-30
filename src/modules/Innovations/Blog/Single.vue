@@ -30,6 +30,17 @@
             </v-list>
             <!-- author -->
 
+            <v-rating
+              v-model="rating"
+              background-color="white"
+              color="yellow accent-4"
+              dense
+              half-increments
+              hover
+              size="30"
+            ></v-rating>
+            ({{ rating }})
+
             <v-card class="mx-3 mb-3">
               <v-card-media
                 :src="item.thumbnail"
@@ -80,6 +91,7 @@ export default {
 
   data () {
     return {
+      rating: 4.3,
       item: {
         thumbnail: 'http://cdn.dribbble.com/users/904433/screenshots/3884727/usage_dribbble.png',
         category: 'E-Learning',
