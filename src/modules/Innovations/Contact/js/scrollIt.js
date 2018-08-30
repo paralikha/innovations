@@ -1,6 +1,6 @@
 /* eslint-disable */
 export const scrollIt = (element, behavior = 'smooth') => {
-  console.log('yeahh', element, element.offsetTop)
+  // element.scrollIntoView()
   window.scrollTo({
     'behavior': behavior,
     'left': 0,

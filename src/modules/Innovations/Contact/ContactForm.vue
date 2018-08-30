@@ -2,42 +2,48 @@
   <div id="form-container" class="form-wrap py-4">
     <v-form class="fs-form fs-form-full" autocomplete="off">
       <span class="steps text--disabled" v-html="currentStep"></span>
-      <div class="form-fields slider">
+      <div id="scroller" class="form-fields slider">
         <!-- nav-container="#nav-container" -->
-        <div id="scroll-1" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`What's your name?`)"
-              :hint="trans(`It can be your name or your company's.`)"
-              v-focus
-              @keydown.enter.prevent="goTo('next')"
-              @keydown.tab.prevent="goTo('next')"
-              ></v-text-field>
+        <div id="scroll-1" class="tns-item page-section section layout row wrap ma-0 align-center">
+          <div>
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`What's your name?`)"
+                :hint="trans(`It can be your name or your company's.`)"
+                v-focus
+                @keydown.enter.prevent="goTo('next')"
+                @keydown.tab.prevent="goTo('next')"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0">{{ __('Next') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0">{{ __('Next') }}</v-btn>
         </div>
 
-        <div id="scroll-2" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`How can we reach you?`)"
-              :hint="trans(`Ideally an email will do, but feel free to use your business phone number as well.`)"
-              @keydown.enter.prevent="goTo('next')"
-              @keydown.tab.prevent="goTo('next')"
-              ></v-text-field>
+        <div id="scroll-2" class="tns-item page-section section layout row wrap ma-0 align-center">
+          <div>
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`How can we reach you?`)"
+                :hint="trans(`Ideally an email will do, but feel free to use your business phone number as well.`)"
+                @keydown.enter.prevent="goTo('next')"
+                @keydown.tab.prevent="goTo('next')"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="scrollTo('#scroll-1')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
+            <v-btn outline large @click="scrollTo('#scroll-3')" class="ma-0">{{ __('Next') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-1')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
-          <v-btn outline large @click="scrollTo('#scroll-3')" class="ma-0">{{ __('Next') }}</v-btn>
         </div>
 
-        <div id="scroll-3" class="tns-item section justify-center">
-          <div class="field-group">
-            <v-text-field
-              :label="trans(`What do you have in mind?`)"
-              ></v-text-field>
+        <div id="scroll-3" class="tns-item page-section section layout row wrap ma-0 align-center">
+          <div>
+            <div class="field-group">
+              <v-text-field
+                :label="trans(`What do you have in mind?`)"
+                ></v-text-field>
+            </div>
+            <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
+            <v-btn color="primary" large class="ma-0">{{ __('Submit') }}</v-btn>
           </div>
-          <v-btn outline large @click="scrollTo('#scroll-2')" class="ma-0 mr-2">{{ __('Previous') }}</v-btn>
-          <v-btn color="primary" large class="ma-0">{{ __('Submit') }}</v-btn>
         </div>
       </div>
       <!-- <div class="fs-form__actions mt-4">
@@ -55,6 +61,7 @@
 
 <script>
 import { scrollIt } from './js/scrollIt.js'
+import { snapScroll } from './js/snapscroll.js'
 
 export default {
   name: 'ContactForm',
@@ -79,7 +86,6 @@ export default {
   methods: {
     scrollTo (el) {
       let element = document.querySelector(el)
-      // console.log(element)
       scrollIt(element)
     },
 
@@ -96,6 +102,7 @@ export default {
   },
 
   mounted () {
+    snapScroll('#scroller', document)
     // this.init()
   },
 }
@@ -137,7 +144,7 @@ body {
 .form-fields {
   // overflow: hidden;
   .section {
-    // border: 1px solid red;
+    border: 1px solid red;
     min-height: 100vh;
   }
 
@@ -163,5 +170,30 @@ body {
       line-height: 1;
     }
   }
+}
+
+/*= Parallax */
+#parallax-navigation {
+  position: fixed;
+  top: 50%;
+  z-index: 10000000;
+  width: 12px;
+  right: 1em;
+}
+
+#parallax-navigation a {
+  display: block;
+  width: 12px;
+  height: 12px;
+  text-indent: -9999em;
+  transition: all 400ms ease-in;
+  background: #fff;
+  border-radius: 50%;
+  margin-bottom: 0.9em;
+}
+
+#parallax-navigation a:hover,
+#parallax-navigation a.parallax-navigation-current {
+  background: #f30000;
 }
 </style>

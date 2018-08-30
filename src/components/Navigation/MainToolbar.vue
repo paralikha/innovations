@@ -48,10 +48,13 @@ export default {
 var prevScrollpos = window.pageYOffset
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById('toolbarMenu').style.top = '0'
-  } else {
-    document.getElementById('toolbarMenu').style.top = '-112px'
+  let toolbarMenu = document.getElementById('toolbarMenu')
+  if (toolbarMenu) {
+    if (prevScrollpos > currentScrollPos) {
+      toolbarMenu.style.top = '0'
+    } else {
+      toolbarMenu.style.top = '-112px'
+    }
   }
   prevScrollpos = currentScrollPos
 }
