@@ -17,7 +17,7 @@
             flat
             color="primary"
             exact to="/products/elearning">
-            <v-card-media
+            <v-img
               color="secondary"
               :src="item.thumbnail"
               height="200px"
@@ -37,7 +37,7 @@
                   <v-icon small>add</v-icon>
                 </v-btn>
               </v-layout>
-            </v-card-media>
+            </v-img>
           </v-card>
         </v-flex>
       </v-layout>

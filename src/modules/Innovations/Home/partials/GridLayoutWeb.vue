@@ -17,14 +17,14 @@
             flat
             color="primary"
             exact to="/products/elearning">
-            <v-card-media
+            <v-img
               color="secondary"
               :src="item.thumbnail"
               height="200px"
               class="pa-2"
               >
               <v-layout
-                class="justify-end align-end grid__layout--text"
+                class="justify-end align-end fill-height grid__layout--text"
                 >
                 <v-card-text>
                   <p class="mb-2 body-2" v-html="trans(item.subtitle)"></p>
@@ -35,7 +35,7 @@
                   </h3>
                 </v-card-text>
               </v-layout>
-            </v-card-media>
+            </v-img>
           </v-card>
         </v-flex>
       </v-layout>
@@ -143,11 +143,11 @@ export default {
       })
 
       bee.style.position = 'absolute'
-      var beepos = {x: 0, y: 0}
+      var beepos = { x: 0, y: 0 }
 
       setInterval(followMouse, 20)
 
-      var mouse = {x: 0, y: 0} // mouse.x, mouse.y
+      var mouse = { x: 0, y: 0 } // mouse.x, mouse.y
 
       var dir = 'right'
       function getMouse (e) {

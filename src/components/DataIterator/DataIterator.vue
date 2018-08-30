@@ -26,7 +26,7 @@
           :href="dataset.hover ? dataset.cardLink : ''"
           >
           <v-tooltip bottom>
-            <v-card-media
+            <v-img
               :class="dataset.cardMediaClass"
               :height="dataset.cardMediaHeight"
               :src="props.item.thumbnail"
@@ -48,7 +48,7 @@
                   {{ props.item.status }}
                 </v-chip>
               </v-layout>
-            </v-card-media>
+            </v-img>
             <span v-html="trans(props.item.title)"></span>
           </v-tooltip>
 

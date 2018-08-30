@@ -4,7 +4,7 @@
 
     <v-container grid-list-lg>
       <v-layout justify-center align-center row wrap>
-        <v-flex lg6 md9 xs12>
+        <v-flex lg7 md9 xs12>
           <v-card flat class="pt-4">
             <!-- author -->
             <v-list three-line>
@@ -30,23 +30,12 @@
             </v-list>
             <!-- author -->
 
-            <v-rating
-              v-model="rating"
-              background-color="white"
-              color="yellow accent-4"
-              dense
-              half-increments
-              hover
-              size="30"
-            ></v-rating>
-            ({{ rating }})
-
             <v-card class="mx-3 mb-3">
-              <v-card-media
+              <v-img
                 :src="item.thumbnail"
                 height="260"
                 >
-              </v-card-media>
+              </v-img>
             </v-card>
 
             <v-card-text>
@@ -91,7 +80,6 @@ export default {
 
   data () {
     return {
-      rating: 4.3,
       item: {
         thumbnail: 'http://cdn.dribbble.com/users/904433/screenshots/3884727/usage_dribbble.png',
         category: 'E-Learning',

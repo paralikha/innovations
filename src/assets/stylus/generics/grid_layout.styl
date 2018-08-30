@@ -6,12 +6,12 @@
   background: rgba(0, 0, 0, 0.12);
   width: 100% !important;
 
-  .v-card-media {
+  .v-image {
     transition: transform .2s;
   }
 }
 
-.grid__layout .v-card.project-card:hover .v-card__media {
+.grid__layout .v-card.project-card:hover .v-image {
   height: 400px !important;
   -webkit-transform: translate3d(1.42109e -14px, 0px, 0px) scale(1, 1) rotate(0deg);
   transform: translate3d(1.42109e -14px, 0px, 0px) scale(1, 1) rotate(0deg);
@@ -24,14 +24,14 @@
   background: #2e0069 !important;
 }
 
-// show and hide card__media__text
-.grid__layout .v-card .v-card__media .grid__layout--text {
+// show and hide image__text
+.grid__layout .v-card .v-image .grid__layout--text {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
 
-.grid__layout .v-card:hover .v-card__media .grid__layout--text {
+.grid__layout .v-card:hover .v-image .grid__layout--text {
   visibility: visible;
   opacity: 1;
 }
