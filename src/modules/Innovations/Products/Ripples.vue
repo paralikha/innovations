@@ -39,7 +39,7 @@
     <!-- content -->
     <v-container grid-list-lg>
       <v-layout row wrap justify-center align-center>
-        <v-flex lg10 md10 xs12>
+        <v-flex xs12>
           <div class="py-5">
             <v-layout row wrap>
               <v-flex sm3 xs12>

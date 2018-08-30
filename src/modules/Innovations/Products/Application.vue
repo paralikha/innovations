@@ -19,7 +19,7 @@
                     <h3 v-if="bannerSubtitle" v-html="item.bannerSubtitle"></h3>
                     <p class="font__weight--bold mb-3" v-html="item.bannerDescription">
                     </p>
-                    <v-btn color="secondary" v-html="item.bannerButton"></v-btn>
+                    <v-btn large color="secondary" v-html="item.bannerButton"></v-btn>
                   </v-card-text>
                 </v-card>
               </v-layout>
@@ -38,7 +38,7 @@
 
     <v-container grid-list-lg>
       <v-layout row wrap justify-center align-center>
-        <v-flex lg10 md10 xs12>
+        <v-flex xs12>
           <div class="py-5">
             <v-layout row wrap>
               <v-flex sm3 xs12>
@@ -49,29 +49,29 @@
               </v-flex>
               <v-flex sm4 offset-sm1 xs12>
                 <v-card flat class="py-3">
-                  <application-one-icon class="mb-3" width="50" height="50"></application-one-icon>
-                  <h1 class="title mb-3" v-html="trans('Real-life simulations')"></h1>
+                  <application-one-icon class="mb-3" width="70" height="70"></application-one-icon>
+                  <p class="mb-3"><strong v-html="trans('Real-life simulations')"></strong></p>
                   <p>{{ trans('Familiarise with everyday hustles, without the worries of committing real errors') }}</p>
                 </v-card>
               </v-flex>
               <v-flex sm4 xs12>
                 <v-card flat class="py-3">
-                  <application-three-icon class="mb-3" width="50" height="50"></application-three-icon>
-                  <h1 class="title mb-3" v-html="trans('Integrated gamification')"></h1>
+                  <application-three-icon class="mb-3" width="70" height="70"></application-three-icon>
+                  <p class="mb-3"><strong v-html="trans('Integrated gamification')"></strong>
                   <p>{{ trans('Acquiring knowledge can still be fun') }}</p>
                 </v-card>
               </v-flex>
               <v-flex offset-sm4 sm4 xs12>
                 <v-card flat class="py-3">
-                  <application-two-icon class="mb-3" width="50" height="50"></application-two-icon>
-                  <h1 class="title mb-3" v-html="trans('Life-centric applications')"></h1>
+                  <application-two-icon class="mb-3" width="70" height="70"></application-two-icon>
+                  <p class="mb-3"><strong v-html="trans('Life-centric applications')"></strong></p>
                   <p>{{ trans('Equip yourself with essential life skills and knowledge for your professional growth') }}</p>
                 </v-card>
               </v-flex>
               <v-flex sm4 xs12>
                 <v-card flat class="py-3">
-                  <application-four-icon class="mb-3" width="50" height="50"></application-four-icon>
-                  <h1 class="title mb-3" v-html="trans('Digitised lifestyle toolkits')"></h1>
+                  <application-four-icon class="mb-3" width="70" height="70"></application-four-icon>
+                  <p class="mb-3"><strong v-html="trans('Digitised lifestyle toolkits')"></strong></p>
                   <p>{{ trans('Instantly available solutions whenever you need them') }}</p>
                 </v-card>
               </v-flex>
@@ -81,12 +81,6 @@
           <!-- video -->
           <v-layout row wrap>
             <v-flex xs12>
-              <v-card flat class="hidden-sm-and-down text-xs-center py-5">
-                <video loop width="80%" height="auto" controls>
-                  <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
-                  {{ trans('Your browser does not support HTML5 video.') }}
-                </video>
-              </v-card>
               <v-card flat class="text-xs-center">
                 <video loop width="100%" height="auto" controls>
                   <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
