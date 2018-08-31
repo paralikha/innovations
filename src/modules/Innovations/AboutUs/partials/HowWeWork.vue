@@ -31,6 +31,10 @@
           </v-card-actions>
         </v-layout>
 
+        <v-card flat class="text-xs-center" absolute>
+          <arrow-right-icon></arrow-right-icon>
+        </v-card>
+
         <v-layout>
           <v-card-actions class="my-3">
               <step-three-icon class="mr-4"></step-three-icon>
@@ -51,7 +55,7 @@
           </v-card-actions>
         </v-layout>
 
-        <arrow-left-icon></arrow-left-icon>
+        <arrow-down-icon></arrow-down-icon>
       </v-flex>
     </v-layout>
   </v-card>
