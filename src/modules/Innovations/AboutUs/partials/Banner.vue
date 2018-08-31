@@ -8,12 +8,12 @@
       name="MeetTheTeam"
       >
     </iframe> -->
-    <vue-friendly-iframe
+    <!-- <vue-friendly-iframe
       width="400px"
       height="400px"
       src="require('./partials/Website/About-Us-H.html')"
       >
-    </vue-friendly-iframe>
+    </vue-friendly-iframe> -->
   </div>
 </template>
 

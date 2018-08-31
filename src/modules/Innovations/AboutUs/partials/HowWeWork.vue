@@ -1,6 +1,6 @@
 <template>
-  <v-card flat class="py-5 text-xs-center">
-    <v-card-text>
+  <v-card flat class="py-5">
+    <v-card-text class="text-xs-center">
       <h1 class="primary--text mb-3">{{ trans('How We Work') }}</h1>
       <p
         class="mb-3"
@@ -9,34 +9,68 @@
       </p>
     </v-card-text>
 
-    <v-layout row fill-height align-center justify-center>
-      <v-flex xs6>
-        <step-one-icon></step-one-icon>
-      </v-flex>
-      <v-flex xs6>
-        <v-card flat>
-          <v-card-text>
-            lorem ipsum dolor
-          </v-card-text>
-        </v-card>
-      </v-flex>
+    <v-layout row wrap fill-height align-center justify-center>
+      <v-flex md6 xs12>
+        <v-layout>
+          <v-card-actions class="my-3">
+            <step-one-icon class="mr-4"></step-one-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 1') }}</h4>
+              <div>{{ trans('We brainstorm') }}</div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
 
-      <!-- <step-two-icon></step-two-icon>
-      <step-three-icon></step-three-icon>
-      <step-four-icon></step-four-icon>
-      <step-five-icon></step-five-icon>
-      <step-six-icon></step-six-icon>
-      <step-seven-icon></step-seven-icon> -->
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-two-icon class="mr-4"></step-two-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 2') }}</h4>
+              <div v-html="trans('Our writers write <br> the script <br> and storyboard, <br> while our designer <br> start world building')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
+
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-three-icon class="mr-4"></step-three-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 3') }}</h4>
+              <div v-html="trans('Our designers start <br> to bring the storyboard <br> to their world through <br> dope animation')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
+
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-four-icon class="mr-4"></step-four-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 4') }}</h4>
+              <div v-html="trans('Our developers <br> start to do some <br> mad coding magic')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
+
+        <arrow-left-icon></arrow-left-icon>
+      </v-flex>
     </v-layout>
   </v-card>
 </template>
 
 <script>
 import store from '@/store'
+import Infographics from '@/assets/images/howWeWork.svg'
 
 export default {
   store,
-
   name: 'HowWeWork',
+
+  data () {
+    return {
+      item: {
+        thumbnail: Infographics
+      }
+    }
+  }
 }
 </script>
