@@ -4,7 +4,7 @@
 
     <v-container grid-list-lg>
       <v-layout justify-center align-center row wrap>
-        <v-flex lg7 md9 xs12>
+        <v-flex xl7 lg8 md9 xs12>
           <v-card flat class="pt-4">
             <!-- author -->
             <v-list three-line>

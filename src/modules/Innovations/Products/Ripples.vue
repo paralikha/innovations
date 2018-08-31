@@ -8,7 +8,7 @@
 
         <!-- banner -->
         <v-container grid-list-lg>
-          <v-layout row wrap>
+          <v-layout row wrap justify-center align-center>
             <v-flex md5 xs12 order-md1 order-sm2 order-xs2>
               <v-layout align-center justify-center row fill-height>
                 <v-card flat class="pt-4 transparent">
@@ -39,65 +39,77 @@
     <!-- content -->
     <v-container grid-list-lg>
       <v-layout row wrap justify-center align-center>
-        <v-flex xs12>
-          <div class="py-5">
-            <v-layout row wrap>
-              <v-flex sm3 xs12>
-                <h1
-                  class="primary--text"
-                  v-html="trans('Interactive learning anytime, anywhere')">
-                </h1>
-              </v-flex>
-              <v-flex sm4 offset-sm1 xs12>
-                <v-card flat class="py-3">
-                  <ripples-one-icon class="mb-3" width="50" height="50"></ripples-one-icon>
-                  <h1 class="title mb-3" v-html="trans('Organised course content and analytics tools')"></h1>
-                  <p>{{ trans('Easily keep track of your progress and milestones with just a click of a button') }}</p>
-                </v-card>
-              </v-flex>
-              <v-flex sm4 xs12>
-                <v-card flat class="py-3">
-                  <ripples-three-icon class="mb-3" width="50" height="50"></ripples-three-icon>
-                  <h1 class="title mb-3" v-html="trans('Collaborative and social learning')"></h1>
-                  <p>{{ trans('Share videos and links, and even chat with classmates and trainers') }}</p>
-                </v-card>
-              </v-flex>
-              <v-flex offset-sm4 sm4 xs12>
-                <v-card flat class="py-3">
-                  <ripples-two-icon class="mb-3" width="50" height="50"></ripples-two-icon>
-                  <h1 class="title mb-3" v-html="trans('Learner-centric platform')"></h1>
-                  <p>{{ trans('Assess understanding with interactive online exams, quizzes, and simulations') }}</p>
-                </v-card>
-              </v-flex>
-              <v-flex sm4 xs12>
-                <v-card flat class="py-3">
-                  <ripples-four-icon class="mb-3" width="50" height="50"></ripples-four-icon>
-                  <h1 class="title mb-3" v-html="trans('Portable and convenient')"></h1>
-                  <p>{{ trans('Learn at your own pace on any electronic device of your choice') }}</p>
-                </v-card>
-              </v-flex>
-            </v-layout>
-          </div>
-
-          <!-- video -->
+        <v-flex xl8 lg9 md12 xs12>
           <v-layout row wrap>
             <v-flex xs12>
-              <v-card flat class="text-xs-center py-5">
-                <video loop width="100%" height="auto" controls>
-                  <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4">
-                  {{ trans('Your browser does not support HTML5 video.') }}
-                </video>
-              </v-card>
-            </v-flex>
-          </v-layout>
-          <!-- video -->
+              <div class="py-5">
+                <v-layout row wrap>
+                  <v-flex sm3 xs12>
+                    <h1
+                      class="primary--text"
+                      v-html="trans('Interactive learning anytime, anywhere')">
+                    </h1>
+                  </v-flex>
+                  <v-flex sm4 offset-sm1 xs12>
+                    <v-card flat class="py-3">
+                      <ripples-one-icon class="mb-3" width="50" height="50"></ripples-one-icon>
+                      <p class="mb-3">
+                        <strong v-html="trans('Organised course content and analytics tools')"></strong>
+                      </p>
+                      <p>{{ trans('Easily keep track of your progress and milestones with just a click of a button') }}</p>
+                    </v-card>
+                  </v-flex>
+                  <v-flex sm4 xs12>
+                    <v-card flat class="py-3">
+                      <ripples-three-icon class="mb-3" width="50" height="50"></ripples-three-icon>
+                      <p class="mb-3">
+                        <strong v-html="trans('Collaborative and social learning')"></strong>
+                      </p>
+                      <p>{{ trans('Share videos and links, and even chat with classmates and trainers') }}</p>
+                    </v-card>
+                  </v-flex>
+                  <v-flex offset-sm4 sm4 xs12>
+                    <v-card flat class="py-3">
+                      <ripples-two-icon class="mb-3" width="50" height="50"></ripples-two-icon>
+                      <p class="mb-3">
+                        <strong v-html="trans('Learner-centric platform')"></strong>
+                      </p>
+                      <p>{{ trans('Assess understanding with interactive online exams, quizzes, and simulations') }}</p>
+                    </v-card>
+                  </v-flex>
+                  <v-flex sm4 xs12>
+                    <v-card flat class="py-3">
+                      <ripples-four-icon class="mb-3" width="50" height="50"></ripples-four-icon>
+                      <p class="mb-3">
+                        <strong v-html="trans('Portable and convenient')"></strong>
+                      </p>
+                      <p>{{ trans('Learn at your own pace on any electronic device of your choice') }}</p>
+                    </v-card>
+                  </v-flex>
+                </v-layout>
+              </div>
 
-          <v-layout row wrap>
-            <v-flex xs12>
-              <v-card flat class="py-5 text-xs-center">
-                <h1 class="mb-3">{{ trans('Make every Ripple count today') }}</h1>
-                <v-btn color="secondary">{{ trans('Let\'s Start') }}</v-btn>
-              </v-card>
+              <!-- video -->
+              <v-layout row wrap>
+                <v-flex xs12>
+                  <v-card flat class="text-xs-center py-5">
+                    <video loop width="100%" height="auto" controls>
+                      <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4">
+                      {{ trans('Your browser does not support HTML5 video.') }}
+                    </video>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+              <!-- video -->
+
+              <v-layout row wrap>
+                <v-flex xs12>
+                  <v-card flat class="py-5 text-xs-center">
+                    <h1 class="mb-3">{{ trans('Make every Ripple count today') }}</h1>
+                    <v-btn color="secondary">{{ trans('Let\'s Start') }}</v-btn>
+                  </v-card>
+                </v-flex>
+              </v-layout>
             </v-flex>
           </v-layout>
         </v-flex>

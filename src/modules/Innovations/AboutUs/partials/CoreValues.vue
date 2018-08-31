@@ -1,7 +1,7 @@
 <template>
   <v-card flat class="py-5 text-xs-center">
     <v-layout justify-center align-center row wrap>
-      <v-flex lg9 md10 xs12>
+      <v-flex xl8 lg9 md10 xs12>
         <v-card-text class="mb-4">
           <h1 class="primary--text mb-3">
             {{ trans('Our Core Values') }}
