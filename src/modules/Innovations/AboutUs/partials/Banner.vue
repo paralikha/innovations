@@ -1,12 +1,13 @@
 <template>
   <div class="text-xs-center">
-    <!-- <iframe
+    <iframe
       width="100%"
-      :src="item.thumbnail"
+      height="300px"
+      src="https://vuetifyjs.com/en/components/lists#examples"
       frameborder="0"
       name="MeetTheTeam"
       >
-    </iframe> -->
+    </iframe>
    <!--  <vue-friendly-iframe
       width="400px"
       height="400px"
