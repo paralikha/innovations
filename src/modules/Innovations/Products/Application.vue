@@ -113,7 +113,7 @@
 
 <script>
 import store from '@/store'
-import MobileAppBanner from '@/assets/images/MobileAppBanner.png'
+import MobileAppBanner from '@/assets/images/MobileAppBanner.svg'
 
 export default {
   store,

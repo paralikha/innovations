@@ -123,7 +123,7 @@
 
 <script>
 import store from '@/store'
-import RipplesBanner from '@/assets/images/RipplesBanner.png'
+import RipplesBanner from '@/assets/images/RipplesBanner.svg'
 
 export default {
   store,

@@ -17,7 +17,6 @@
       <!-- mobile menu button -->
     </v-toolbar>
   </div>
-
 </template>
 
 <script>
@@ -39,21 +38,27 @@ export default {
     }
   },
 
+  mounted () {
+    this.showToolbar()
+  },
+
   methods: {
     toggle (item) {
       // this.$store.dispatch('mainmenu/toggle', item)
     },
-  }
-}
 
-var prevScrollpos = window.pageYOffset
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById('toolbarMenu').style.top = '0'
-  } else {
-    document.getElementById('toolbarMenu').style.top = '-112px'
+    showToolbar () {
+      var prevScrollpos = window.pageYOffset
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById('toolbarMenu').style.top = '0'
+        } else {
+          document.getElementById('toolbarMenu').style.top = '-112px'
+        }
+        prevScrollpos = currentScrollPos
+      }
+    }
   }
-  prevScrollpos = currentScrollPos
 }
 </script>

@@ -83,9 +83,9 @@
 
 <script>
 import store from '@/store'
-import homepage1 from '@/assets/images/RipplesBanner.png'
-import homepage2 from '@/assets/images/ELearningBanner.png'
-import homepage3 from '@/assets/images/MobileAppBanner.png'
+import Ripples from '@/assets/images/RipplesBanner.svg'
+import ELearning from '@/assets/images/ELearningBanner.png'
+import Application from '@/assets/images/MobileAppBanner.svg'
 
 export default {
   store,
@@ -102,19 +102,19 @@ export default {
           {
             title: 'Customisable platform for collaborative learning anytime, anywhere',
             subtitle: 'Rippl3s',
-            thumbnail: homepage1,
+            thumbnail: Ripples,
             classMedia: 'first-child',
           },
           {
             title: 'Immersive and interactive courses for the modern student',
             subtitle: 'e-Learning',
-            thumbnail: homepage2,
+            thumbnail: ELearning,
             classMedia: 'second-child',
           },
           {
             title: 'Learning and training made engaging and fun',
             subtitle: 'Training App',
-            thumbnail: homepage3,
+            thumbnail: Application,
             classMedia: 'third-child',
           }
         ]

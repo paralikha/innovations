@@ -9,6 +9,10 @@
       </p>
     </v-card-text>
 
+    <div class="to-left hidden-md-and-down">
+      <arrow-left-icon></arrow-left-icon>
+    </div>
+
     <v-layout row wrap fill-height align-center justify-center>
       <v-flex md6 xs12>
         <v-layout>
@@ -21,6 +25,10 @@
           </v-card-actions>
         </v-layout>
 
+        <!-- <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
+        </v-card> -->
+
         <v-layout>
           <v-card-actions class="my-3">
               <step-two-icon class="mr-4"></step-two-icon>
@@ -31,8 +39,8 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card flat class="text-xs-center" absolute>
-          <arrow-right-icon></arrow-right-icon>
+        <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
         </v-card>
 
         <v-layout>
@@ -45,6 +53,10 @@
           </v-card-actions>
         </v-layout>
 
+        <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
+        </v-card>
+
         <v-layout>
           <v-card-actions class="my-3">
               <step-four-icon class="mr-4"></step-four-icon>
@@ -55,7 +67,47 @@
           </v-card-actions>
         </v-layout>
 
-        <arrow-down-icon></arrow-down-icon>
+        <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
+        </v-card>
+
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-five-icon class="mr-4"></step-five-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 5') }}</h4>
+              <div v-html="trans('We mix them up <br> in our patented <br> Cement Mixer 9000 tm')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
+
+        <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
+        </v-card>
+
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-six-icon class="mr-4"></step-six-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 6') }}</h4>
+              <div v-html="trans('We test it and <br> make sure it\'s <br> 101% awesome')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
+
+        <v-card class="ml-3" flat>
+          <arrow-down-icon></arrow-down-icon>
+        </v-card>
+
+        <v-layout>
+          <v-card-actions class="my-3">
+              <step-seven-icon class="mr-4"></step-seven-icon>
+            <v-card flat>
+              <h4>{{ trans('Step 7') }}</h4>
+              <div v-html="trans('After making sure <br> that it\'s 101% awesome, <br> we unleash it, <br> to the world')"></div>
+            </v-card>
+          </v-card-actions>
+        </v-layout>
       </v-flex>
     </v-layout>
   </v-card>
@@ -63,7 +115,6 @@
 
 <script>
 import store from '@/store'
-import Infographics from '@/assets/images/howWeWork.svg'
 
 export default {
   store,
@@ -72,7 +123,6 @@ export default {
   data () {
     return {
       item: {
-        thumbnail: Infographics
       }
     }
   }
