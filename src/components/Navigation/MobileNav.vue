@@ -33,20 +33,6 @@
           </v-btn>
         </v-toolbar>
         <v-divider dark></v-divider>
-        <!-- <v-list three-line>
-          <v-list-tile
-            :key="i"
-            v-for="(item, i) in menus"
-            href=""
-            ripple
-            >
-            <v-list-tile-content>
-              <v-list-tile-title>
-                <strong class="title" v-html="trans(item.meta.title)"></strong>
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list> -->
         <main-menu></main-menu>
       </v-card>
     </v-dialog>

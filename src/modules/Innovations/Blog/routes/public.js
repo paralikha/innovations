@@ -37,6 +37,19 @@ export default [
           icon: 'mdi-book-multiple-variant',
         },
       },
+      {
+        path: '/first',
+        name: 'blog.first',
+        component: () => import('../First.vue'),
+        meta: {
+          title: 'First Post',
+          sort: 1,
+          external: true,
+          excludeFromRoot: true,
+          authenticatable: false,
+          icon: 'mdi-book-multiple-variant'
+        }
+      }
     ]
   },
 ]

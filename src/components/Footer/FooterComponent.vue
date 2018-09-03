@@ -6,14 +6,13 @@
           <v-flex md5 xs12>
             <v-layout fill-height align-end>
               <v-flex>
-                <v-card dark flat class="transparent">
-                  <h3 class="subheading mb-3 font__weight--bold">
+                <v-card-actions dark flat class="transparent">
+                  <h3 class="subheading mb-3 white--text font__weight--bold">
                     {{ trans('SIGN UP TO OUR NEWS LETTER') }}
                   </h3>
                   <v-text-field
                     label="Email Address"
                     dark
-                    append-icon="alternate_email"
                     box
                     clearable
                     clear-icon="cancel"
@@ -21,17 +20,18 @@
                   ></v-text-field>
 
                   <v-slide-x-reverse-transition
-                    slot="append-outer"
                     mode="out-in"
                     >
                     <v-icon
-                      :color="isEditing ? 'success' : 'info'"
+                      color="secondary"
+                      large
+                      class="ml-2"
                       :key="`icon-${isEditing}`"
                       @click="isEditing = !isEditing"
                       v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
                     ></v-icon>
                   </v-slide-x-reverse-transition>
-                </v-card>
+                </v-card-actions>
               </v-flex>
             </v-layout>
           </v-flex>
