@@ -19,15 +19,43 @@
                     clear-icon="cancel"
                     hide-details
                   ></v-text-field>
+
+                  <v-slide-x-reverse-transition
+                    slot="append-outer"
+                    mode="out-in"
+                    >
+                    <v-icon
+                      :color="isEditing ? 'success' : 'info'"
+                      :key="`icon-${isEditing}`"
+                      @click="isEditing = !isEditing"
+                      v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+                    ></v-icon>
+                  </v-slide-x-reverse-transition>
                 </v-card>
               </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex sm3 xs3>
-            <list :items="footer.links"></list>
+          <v-flex offset-xs1 xs3>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('Home') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('About') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('Blogs') }}</a>
+            </div>
           </v-flex>
-          <v-flex sm3 xs3>
-            <list :items="footer.links"></list>
+          <v-flex xs3>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('Rippl3s') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('E - Learning') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text" href="">{{ trans('Mobile Application') }}</a>
+            </div>
           </v-flex>
         </v-layout>
         <v-divider class="grey darken-1"></v-divider>
@@ -73,28 +101,8 @@ export default {
   data () {
     return {
       dataset: {},
+      isEditing: false,
       footer: {
-        links: {
-          dense: true,
-          listClass: 'mb-0 transparent',
-          dark: true,
-          headerTitle: 'Links',
-          subheaderClass: 'secondary--text',
-          items: [
-            {
-              title: 'About Us'
-            },
-            {
-              title: 'Our Products'
-            },
-            // {
-            //   title: 'Blog'
-            // },
-            // {
-            //   title: 'Talk To Us'
-            // }
-          ]
-        },
       }
     }
   },

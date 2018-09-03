@@ -9,11 +9,7 @@
       </p>
     </v-card-text>
 
-    <div class="to-left hidden-md-and-down">
-      <arrow-left-icon></arrow-left-icon>
-    </div>
-
-    <!-- <v-layout row wrap fill-height align-center justify-center>
+    <v-layout row wrap fill-height align-center justify-center>
       <v-flex md6 xs12>
         <v-layout>
           <v-card-actions class="my-3">
@@ -25,7 +21,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -39,7 +35,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -53,7 +49,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -67,7 +63,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -81,7 +77,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -95,7 +91,7 @@
           </v-card-actions>
         </v-layout>
 
-        <v-card class="ml-3" flat>
+        <v-card class="ml-3 hidden-sm-and-up" flat>
           <arrow-down-icon></arrow-down-icon>
         </v-card>
 
@@ -109,7 +105,7 @@
           </v-card-actions>
         </v-layout>
       </v-flex>
-    </v-layout> -->
+    </v-layout>
   </v-card>
 </template>
 
@@ -123,7 +119,6 @@ export default {
   data () {
     return {
       item: {
-
       }
     }
   }
