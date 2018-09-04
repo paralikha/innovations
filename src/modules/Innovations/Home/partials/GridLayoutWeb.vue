@@ -67,16 +67,12 @@
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: 'FlipH';
   }
   .right {
     -moz-transform: scaleX(1);
     -o-transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
-    filter: FlipH;
-    -ms-filter: 'FlipH';
   }
   #bee {transition: transform .1s}
 </style>
@@ -124,7 +120,6 @@ export default {
 
   mounted () {
     this.followEase()
-    // this.initMouseFollower()
   },
 
   methods: {
@@ -137,9 +132,6 @@ export default {
       })
       container.addEventListener('mouseover', function (e) {
         bee.style.display = 'block'
-        // let x = e.clientX
-        // let y = e.clientY
-        // // let elementMouseIsOver = document.elementFromPoint(x, y)
       })
 
       bee.style.position = 'absolute'

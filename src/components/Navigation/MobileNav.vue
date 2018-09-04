@@ -33,7 +33,56 @@
           </v-btn>
         </v-toolbar>
         <v-divider dark></v-divider>
-        <main-menu></main-menu>
+
+        <!-- mobile-menu -->
+        <v-list two-line>
+          <template
+            v-for="(menu, i) in menus"
+            >
+            <template v-if="menu.meta.excludeInMenu"></template>
+
+            <v-list-group
+              :key="i"
+              no-action
+              ripple
+              v-else-if="menu.meta.withSubmenu"
+              >
+              <v-list-tile
+                ripple
+                slot="activator"
+                >
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+
+              <v-list-tile
+                :key="j"
+                :to="{name: submenu.name}"
+                exact
+                ripple
+                v-for="(submenu, j) in menu.children"
+                >
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ __(submenu.meta.title) }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list-group>
+
+            <v-list-tile
+              :key="i"
+              :to="{name: menu.name}"
+              exact
+              ripple
+              v-else
+              >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </template>
+        </v-list>
+        <!-- mobile-menu -->
       </v-card>
     </v-dialog>
   </div>
@@ -61,7 +110,7 @@ export default {
 
   methods: {
     toggle (model) {
-      this.$store.dispatch('mainmenu/toggle', {model: model})
+      this.$store.dispatch('mainmenu/toggle', { model: model })
     },
   }
 }

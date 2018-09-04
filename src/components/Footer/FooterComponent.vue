@@ -6,32 +6,31 @@
           <v-flex md5 xs12>
             <v-layout fill-height align-end>
               <v-flex>
-                <v-card-actions dark flat class="transparent">
-                  <h3 class="subheading mb-3 white--text font__weight--bold">
-                    {{ trans('SIGN UP TO OUR NEWS LETTER') }}
-                  </h3>
-                  <v-text-field
-                    label="Email Address"
-                    dark
-                    box
-                    clearable
-                    clear-icon="cancel"
-                    hide-details
-                  ></v-text-field>
-
-                  <v-slide-x-reverse-transition
-                    mode="out-in"
-                    >
-                    <v-icon
-                      color="secondary"
-                      large
-                      class="ml-2"
-                      :key="`icon-${isEditing}`"
-                      @click="isEditing = !isEditing"
-                      v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
-                    ></v-icon>
-                  </v-slide-x-reverse-transition>
-                </v-card-actions>
+                <h3 class="subheading mb-3 white--text font__weight--bold">
+                  {{ trans('SIGN UP TO OUR NEWS LETTER') }}
+                </h3>
+                <v-text-field
+                  label="Email Address"
+                  dark
+                  box
+                  clearable
+                  clear-icon="cancel"
+                  hide-details
+                ></v-text-field>
+              </v-flex>
+              <v-flex>
+                <v-slide-x-reverse-transition
+                  mode="out-in"
+                  >
+                  <v-icon
+                    color="secondary"
+                    large
+                    class="ml-2"
+                    :key="`icon-${isEditing}`"
+                    @click="isEditing = !isEditing"
+                    v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
+                  ></v-icon>
+                </v-slide-x-reverse-transition>
               </v-flex>
             </v-layout>
           </v-flex>

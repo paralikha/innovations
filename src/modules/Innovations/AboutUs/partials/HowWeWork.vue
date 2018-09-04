@@ -9,7 +9,13 @@
       </p>
     </v-card-text>
 
-    <v-layout row wrap fill-height align-center justify-center>
+    <v-layout row wrap fill-height align-start justify-center>
+      <v-flex xs2>
+        <v-card flat class="transparent" absolute>
+          <arrow-left-icon class="hidden-md-and-down" style="position: absolute; top: 100px;"></arrow-left-icon>
+          <arrow-left-icon class="hidden-md-and-down" style="position: absolute; top: 600px;"></arrow-left-icon>
+        </v-card>
+      </v-flex>
       <v-flex md6 xs12>
         <v-layout>
           <v-card-actions class="my-3">
@@ -104,6 +110,11 @@
             </v-card>
           </v-card-actions>
         </v-layout>
+      </v-flex>
+      <v-flex xs2>
+        <v-card flat class="transparent" absolute>
+          <arrow-right-icon class="hidden-md-and-down" style="position: absolute; top: 300px;"></arrow-right-icon>
+        </v-card>
       </v-flex>
     </v-layout>
   </v-card>
