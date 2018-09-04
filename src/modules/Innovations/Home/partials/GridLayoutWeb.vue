@@ -16,7 +16,8 @@
             class="transparent project-card"
             flat
             color="primary"
-            exact to="/products/elearning">
+            exact
+            :to="item.link">
             <v-img
               color="secondary"
               :src="item.thumbnail"
@@ -26,7 +27,7 @@
               <v-layout
                 class="justify-end align-end fill-height grid__layout--text"
                 >
-                <v-card-text>
+                <v-card-text class="fade__gradient--overlay">
                   <p class="mb-2 body-2" v-html="trans(item.subtitle)"></p>
                   <h3
                     class="font__weight--bold"
@@ -100,18 +101,21 @@ export default {
             subtitle: 'Rippl3s',
             thumbnail: Ripples,
             classMedia: 'first-child',
+            link: '/products/ripples',
           },
           {
             title: 'Immersive and interactive courses for the modern student',
             subtitle: 'e-Learning',
             thumbnail: ELearning,
             classMedia: 'second-child',
+            link: '/products/elearning',
           },
           {
             title: 'Learning and training made engaging and fun',
             subtitle: 'Training App',
             thumbnail: Application,
             classMedia: 'third-child',
+            link: '/products/application',
           }
         ]
       }

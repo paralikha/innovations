@@ -33,7 +33,7 @@
 
         <v-layout>
           <v-card-actions class="my-3">
-              <step-two-icon class="mr-4"></step-two-icon>
+            <step-two-icon class="mr-4"></step-two-icon>
             <v-card flat>
               <h4>{{ trans('Step 2') }}</h4>
               <div v-html="trans('Our writers write <br> the script <br> and storyboard, <br> while our designer <br> start world building')"></div>

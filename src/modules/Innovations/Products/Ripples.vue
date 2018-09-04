@@ -26,7 +26,10 @@
             </v-flex>
 
             <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1>
-              <v-card flat class="transparent mb-4">
+              <v-card
+                flat
+                class="transparent mb-4"
+                >
                 <img :src="item.thumbnail" alt="" width="100%">
               </v-card>
             </v-flex>
@@ -46,13 +49,25 @@
                 <v-layout row wrap>
                   <v-flex sm3 xs12>
                     <h1
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
                       class="primary--text"
                       v-html="trans('Interactive learning anytime, anywhere')">
                     </h1>
                   </v-flex>
                   <v-flex sm4 offset-sm1 xs12>
-                    <v-card flat class="py-3">
-                      <ripples-one-icon class="mb-3" width="50" height="50"></ripples-one-icon>
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
+                      <ripples-one-icon
+                        class="mb-3"
+                        width="50"
+                        height="50"
+                        >
+                      </ripples-one-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Organised course content and analytics tools')"></strong>
                       </p>
@@ -60,8 +75,18 @@
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
-                      <ripples-three-icon class="mb-3" width="50" height="50"></ripples-three-icon>
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
+                      <ripples-three-icon
+                        class="mb-3"
+                        width="50"
+                        height="50"
+                        >
+                      </ripples-three-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Collaborative and social learning')"></strong>
                       </p>
@@ -69,8 +94,18 @@
                     </v-card>
                   </v-flex>
                   <v-flex offset-sm4 sm4 xs12>
-                    <v-card flat class="py-3">
-                      <ripples-two-icon class="mb-3" width="50" height="50"></ripples-two-icon>
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
+                      <ripples-two-icon
+                        class="mb-3"
+                        width="50"
+                        height="50"
+                        >
+                      </ripples-two-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Learner-centric platform')"></strong>
                       </p>
@@ -78,8 +113,18 @@
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
-                      <ripples-four-icon class="mb-3" width="50" height="50"></ripples-four-icon>
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
+                      <ripples-four-icon
+                        class="mb-3"
+                        width="50"
+                        height="50"
+                        >
+                      </ripples-four-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Portable and convenient')"></strong>
                       </p>
@@ -92,7 +137,12 @@
               <!-- video -->
               <v-layout row wrap>
                 <v-flex xs12>
-                  <v-card flat class="text-xs-center py-5">
+                  <v-card
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    flat
+                    class="text-xs-center py-5 transparent"
+                    >
                     <video loop width="100%" height="auto" controls>
                       <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
@@ -104,7 +154,12 @@
 
               <v-layout row wrap>
                 <v-flex xs12>
-                  <v-card flat class="py-5 text-xs-center">
+                  <v-card
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    flat
+                    class="py-5 text-xs-center"
+                    >
                     <h1 class="mb-3">{{ trans('Make every Ripple count today') }}</h1>
                     <v-btn color="secondary">{{ trans('Let\'s Start') }}</v-btn>
                   </v-card>
@@ -124,10 +179,20 @@
 <script>
 import store from '@/store'
 import RipplesBanner from '@/assets/images/RipplesBanner.svg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'Ripples',
+
+  components: {
+    AOS
+  },
+
+  created () {
+    AOS.init()
+  },
 
   data () {
     return {
