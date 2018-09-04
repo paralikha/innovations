@@ -9,7 +9,11 @@
         </v-card-text>
         <v-layout row wrap>
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-one-icon class="mb-3" width="50" height="50"></core-values-one-icon>
               <p>
                 <strong v-html="trans('Creativity')"></strong>
@@ -19,7 +23,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-two-icon class="mb-3" width="50" height="50"></core-values-two-icon>
               <p>
                 <strong v-html="trans('Teamwork')"></strong>
@@ -29,7 +37,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-three-icon class="mb-3" width="50" height="50"></core-values-three-icon>
               <p>
                 <strong v-html="trans('Fun')"></strong>
@@ -39,7 +51,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-four-icon class="mb-3" width="50" height="50"></core-values-four-icon>
               <p>
                 <strong v-html="trans('Communication')"></strong>
@@ -49,7 +65,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-five-icon class="mb-3" width="50" height="50"></core-values-five-icon>
               <p>
                 <strong v-html="trans('Quality')"></strong>
@@ -59,7 +79,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-six-icon class="mb-3" width="50" height="50"></core-values-six-icon>
               <p>
                 <strong v-html="trans('Mutual Respect')"></strong>
@@ -69,7 +93,11 @@
           </v-flex>
 
           <v-flex sm4 xs6>
-            <v-card flat class="py-3">
+            <v-card
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              flat
+              class="py-3">
               <core-values-seven-icon class="mb-3" width="50" height="50"></core-values-seven-icon>
               <p>
                 <strong v-html="trans('Mutual Trust')"></strong>
@@ -85,10 +113,19 @@
 
 <script>
 import store from '@/store'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
-
   name: 'CoreValues',
+
+  components: {
+    AOS
+  },
+
+  created () {
+    AOS.init()
+  },
 }
 </script>

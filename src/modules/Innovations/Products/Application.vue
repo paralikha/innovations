@@ -50,28 +50,48 @@
                     </h1>
                   </v-flex>
                   <v-flex sm4 offset-sm1 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <application-one-icon class="mb-3" width="60" height="60"></application-one-icon>
                       <p class="mb-3"><strong v-html="trans('Real-life simulations')"></strong></p>
                       <p>{{ trans('Familiarise with everyday hustles, without the worries of committing real errors') }}</p>
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <application-three-icon class="mb-3" width="60" height="60"></application-three-icon>
                       <p class="mb-3"><strong v-html="trans('Integrated gamification')"></strong>
                       <p>{{ trans('Acquiring knowledge can still be fun') }}</p>
                     </v-card>
                   </v-flex>
                   <v-flex offset-sm4 sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <application-two-icon class="mb-3" width="60" height="60"></application-two-icon>
                       <p class="mb-3"><strong v-html="trans('Life-centric applications')"></strong></p>
                       <p>{{ trans('Equip yourself with essential life skills and knowledge for your professional growth') }}</p>
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <application-four-icon class="mb-3" width="60" height="60"></application-four-icon>
                       <p class="mb-3"><strong v-html="trans('Digitised lifestyle toolkits')"></strong></p>
                       <p>{{ trans('Instantly available solutions whenever you need them') }}</p>
@@ -83,7 +103,12 @@
               <!-- video -->
               <v-layout row wrap>
                 <v-flex xs12>
-                  <v-card flat class="text-xs-center">
+                  <v-card
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    flat
+                    class="text-xs-center"
+                    >
                     <video loop width="100%" height="auto" controls>
                       <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
@@ -114,10 +139,20 @@
 <script>
 import store from '@/store'
 import MobileAppBanner from '@/assets/images/MobileAppBanner.svg'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'Application',
+
+  components: {
+    AOS
+  },
+
+  created () {
+    AOS.init()
+  },
 
   data () {
     return {

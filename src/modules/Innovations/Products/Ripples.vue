@@ -76,8 +76,6 @@
                   </v-flex>
                   <v-flex sm4 xs12>
                     <v-card
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
                       flat
                       class="py-3"
                       >
@@ -155,8 +153,6 @@
               <v-layout row wrap>
                 <v-flex xs12>
                   <v-card
-                    data-aos="fade-up"
-                    data-aos-duration="1000"
                     flat
                     class="py-5 text-xs-center"
                     >

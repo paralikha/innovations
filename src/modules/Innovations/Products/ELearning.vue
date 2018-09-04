@@ -51,7 +51,12 @@
                     </h1>
                   </v-flex>
                   <v-flex sm4 offset-sm1 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <e-learning-one-icon class="mb-3" width="50" height="50"></e-learning-one-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Captivating storylines')"></strong>
@@ -60,7 +65,12 @@
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <e-learning-three-icon class="mb-3" width="50" height="50"></e-learning-three-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Wide scope of curriculum')"></strong>
@@ -69,7 +79,12 @@
                     </v-card>
                   </v-flex>
                   <v-flex offset-sm4 sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <e-learning-two-icon class="mb-3" width="50" height="50"></e-learning-two-icon>
                       <p class="mb-3">
                         <strong v-html="trans('Adaptive degree of complexity')"></strong>
@@ -78,7 +93,12 @@
                     </v-card>
                   </v-flex>
                   <v-flex sm4 xs12>
-                    <v-card flat class="py-3">
+                    <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
+                      flat
+                      class="py-3"
+                      >
                       <e-learning-four-icon class="mb-3" width="50" height="50"></e-learning-four-icon>
                       <p class="mb-3">
                         <strong v-html="trans('In depth evaluations')"></strong>
@@ -92,7 +112,12 @@
               <!-- video -->
               <v-layout row wrap>
                 <v-flex xs12>
-                  <v-card flat class="text-xs-center py-5">
+                  <v-card
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    flat
+                    class="text-xs-center py-5"
+                    >
                     <video loop width="100%" height="auto" controls>
                       <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
@@ -124,10 +149,20 @@
 <script>
 import store from '@/store'
 import ELearningBanner from '@/assets/images/ELearningBanner.png'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'ELearning',
+
+  components: {
+    AOS
+  },
+
+  created () {
+    AOS.init()
+  },
 
   data () {
     return {

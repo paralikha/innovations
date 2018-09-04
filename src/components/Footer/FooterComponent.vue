@@ -36,24 +36,24 @@
           </v-flex>
           <v-flex offset-xs1 xs3>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('Home') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('Home') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('About') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('About') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('Blogs') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('Blogs') }}</a>
             </div>
           </v-flex>
-          <v-flex xs3>
+          <v-flex xs4>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('Rippl3s') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('Rippl3s') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('E - Learning') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('E - Learning') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text" href="">{{ trans('Mobile Application') }}</a>
+              <a class="white--text t__d--n" href="">{{ trans('Mobile Application') }}</a>
             </div>
           </v-flex>
         </v-layout>
@@ -102,6 +102,7 @@ export default {
       dataset: {},
       isEditing: false,
       footer: {
+
       }
     }
   },
