@@ -119,7 +119,7 @@
                     class="text-xs-center py-5"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4">
+                      <!-- <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4"> -->
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>

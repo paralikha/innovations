@@ -3,7 +3,7 @@
     <!-- Main Content -->
     <v-content>
       <!-- Main -->
-      <v-slide-y-transition mode="out-in">
+      <v-slide-y-transition mode="fade">
         <router-view></router-view>
       </v-slide-y-transition>
       <!-- Main -->

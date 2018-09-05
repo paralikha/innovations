@@ -1,5 +1,5 @@
 <template>
-  <section id="home">
+  <div class="home-gradient">
     <particles>
       <!-- toolbar -->
       <home-toolbar></home-toolbar>
@@ -26,7 +26,7 @@
       </div>
       <!-- products -->
     </particles>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -46,19 +46,6 @@ export default {
     GridLayoutWeb,
     GridLayoutApp,
     // FollowMouseButton,
-  },
-
-  data () {
-    return {
-    }
-  },
-
-  mounted () {
-    //
-  },
-
-  methods: {
-    //
   },
 }
 </script>

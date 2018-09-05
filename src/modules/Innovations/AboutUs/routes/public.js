@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/about-us',
+    path: 'about-us',
     name: 'about-us',
     component: () => import('../AboutUs.vue'),
     meta: {

@@ -110,7 +110,7 @@
                     class="text-xs-center"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
+                      <!-- <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4"> -->
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
