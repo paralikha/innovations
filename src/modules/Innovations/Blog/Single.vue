@@ -3,7 +3,7 @@
     <main-toolbar></main-toolbar>
 
     <v-container grid-list-lg>
-      <v-layout justify-center align-center row wrap>
+      <v-layout row wrap justify-center align-center>
         <v-flex xl7 lg8 md9 xs12>
           <v-card flat class="pt-4">
             <!-- author -->
@@ -54,12 +54,47 @@
             <p v-html="item.body"></p>
           </v-card>
 
-          <!-- pre-next-article -->
-          <prev-next-article></prev-next-article>
-          <!-- pre-next-article -->
+          <!-- tags -->
+          <v-card flat class="pa-3">
+            <v-chip label color="grey lighten-3">{{ trans('tags') }}</v-chip>
+            <v-chip label color="grey lighten-3">{{ trans('tags') }}</v-chip>
+            <v-chip label color="grey lighten-3">{{ trans('tags') }}</v-chip>
+          </v-card>
+          <!-- tags -->
+
+          <!-- social media links -->
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn icon>
+              <v-icon>mdi-facebook</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon>mdi-bookmark-outline</v-icon>
+            </v-btn>
+            <v-menu offset-y>
+              <v-btn icon slot="activator">
+                <v-icon>more_horiz</v-icon>
+              </v-btn>
+              <v-list desnse>
+                <v-list-tile @click="report">
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ trans('Report Story') }}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+              </v-list>
+            </v-menu>
+          </v-card-actions>
+          <!-- social media links -->
         </v-flex>
       </v-layout>
     </v-container>
+
+    <!-- recommended -->
+    <recommended></recommended>
+    <!-- recommended -->
 
     <footer-component></footer-component>
   </section>
@@ -67,7 +102,7 @@
 
 <script>
 import store from '@/store'
-import PrevNextArticle from './partials/PrevNextArticle'
+import Recommended from './partials/Recommended'
 
 export default {
   store,
@@ -75,11 +110,12 @@ export default {
   name: 'SingleBlog',
 
   components: {
-    PrevNextArticle
+    Recommended
   },
 
   data () {
     return {
+      report: false,
       item: {
         thumbnail: 'http://cdn.dribbble.com/users/904433/screenshots/3884727/usage_dribbble.png',
         category: 'E-Learning',
