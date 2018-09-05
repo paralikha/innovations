@@ -7,6 +7,7 @@
             {{ trans('Our Core Values') }}
           </h1>
         </v-card-text>
+
         <v-layout row wrap>
           <v-flex sm4 xs6>
             <v-card

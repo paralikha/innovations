@@ -3,7 +3,7 @@
     <v-container grid-list-lg>
       <v-card flat class="transparent py-4">
         <v-layout row wrap>
-          <v-flex md5 xs12>
+          <v-flex md4 xs12>
             <v-layout fill-height align-end>
               <v-flex>
                 <h3 class="subheading mb-3 white--text font__weight--bold">
@@ -12,29 +12,16 @@
                 <v-text-field
                   label="Email Address"
                   dark
+                  append-icon="alternate_email"
                   box
                   clearable
                   clear-icon="cancel"
                   hide-details
                 ></v-text-field>
               </v-flex>
-              <v-flex>
-                <v-slide-x-reverse-transition
-                  mode="out-in"
-                  >
-                  <v-icon
-                    color="secondary"
-                    large
-                    class="ml-2"
-                    :key="`icon-${isEditing}`"
-                    @click="isEditing = !isEditing"
-                    v-text="isEditing ? 'mdi-check-outline' : 'mdi-circle-edit-outline'"
-                  ></v-icon>
-                </v-slide-x-reverse-transition>
-              </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex offset-xs1 xs3>
+          <v-flex offset-md1 md3 xs4>
             <div class="mb-3">
               <a class="white--text t__d--n" href="">{{ trans('Home') }}</a>
             </div>
@@ -57,7 +44,7 @@
             </div>
           </v-flex>
         </v-layout>
-        <v-divider class="grey darken-1"></v-divider>
+        <v-divider class="grey"></v-divider>
         <v-card dark flat class="transparent">
           <v-card-actions>
             <v-btn icon small>
