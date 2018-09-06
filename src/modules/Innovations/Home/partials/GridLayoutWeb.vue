@@ -145,7 +145,7 @@ export default {
 
   mounted () {
     // this.followEase()
-    this.followMouse()
+    // this.followMouse()
   },
 
   methods: {
