@@ -4,7 +4,9 @@
     <v-content>
       <!-- Main -->
       <v-fade-transition mode="out-in">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </v-fade-transition>
       <!-- Main -->
     </v-content>
