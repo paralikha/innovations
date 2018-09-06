@@ -19,8 +19,6 @@
     </template> -->
 
     <v-menu offset-y>
-      <!-- <v-btn large flat href="/about-us">About Us</v-btn> -->
-      <router-link href="/about-us">About Us</router-link>
       <v-btn large flat slot="activator">Our Products <v-icon right>keyboard_arrow_down</v-icon></v-btn>
       <v-list light>
         <v-list-tile href="/products/e-learning">
@@ -34,7 +32,9 @@
         </v-list-tile>
       </v-list>
     </v-menu>
-    <v-btn large flat href="/blogs">Blog</v-btn>
+    <v-btn large flat href="/enterprise">Enterprise</v-btn>
+    <v-btn large flat href="/about-us">About Us</v-btn>
+    <!-- <v-btn large flat href="/blogs">Blog</v-btn> -->
   </v-toolbar-items>
 </template>
 

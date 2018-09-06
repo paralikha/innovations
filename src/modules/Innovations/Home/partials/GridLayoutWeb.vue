@@ -84,9 +84,9 @@
 
 <script>
 import store from '@/store'
-import Ripples from '@/assets/images/RipplesBanner.svg'
-import ELearning from '@/assets/images/ELearningBanner.png'
-import Application from '@/assets/images/MobileAppBanner.svg'
+import Ripples from '@/assets/images/RipplesBannerWithBG.png'
+import ELearning from '@/assets/images/ELearningBannerWithBG.png'
+import Application from '@/assets/images/MobileAppBannerWithBG.png'
 
 export default {
   store,
