@@ -32,13 +32,14 @@
         </v-list-tile>
       </v-list>
     </v-menu>
-    <router-link
+    <!-- <router-link
       tag="v-btn"
       class="v-btn--flat v-btn--large"
       active-class="v-btn--active"
       to="/enterprise">
       Enterprise
-    </router-link>
+    </router-link> -->
+    <v-btn large flat href="/enterprise">Enterprise</v-btn>
     <router-link
       tag="v-btn"
       class="v-btn--flat v-btn--large"

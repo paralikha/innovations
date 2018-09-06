@@ -4,7 +4,9 @@
     <v-content>
       <!-- Main -->
       <v-slide-y-transition>
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </v-slide-y-transition>
       <!-- Main -->
     </v-content>
@@ -25,5 +27,11 @@ export default {
       app: 'app/app',
     }),
   },
+
+  mounted () {
+    window.addEventListener('load', function (event) {
+      document.getElementById('loader').style.display = 'none'
+    })
+  }
 }
 </script>

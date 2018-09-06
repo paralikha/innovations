@@ -10,11 +10,46 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100:300,400,500,700,900|Material+Icons" rel="stylesheet">
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <title>Innovations by SSA Group</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .content__loader {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+      .loader__gradient {
+        width: 100wh;
+        height: 100vh;
+        color: #fff;
+        background: #2E0069;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but quill doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <!-- loader -->
+    <section id="loader" class="loader__gradient">
+      <div class="content__loader">
+        <img height="200" width="200" src="/img/innov-logomotion.gif">
+      </div>
+    </section>
+    <!-- loader -->
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

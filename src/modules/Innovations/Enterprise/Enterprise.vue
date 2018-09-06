@@ -110,8 +110,9 @@
                     <v-btn
                       large
                       color="secondary"
+                      href="mailto:abigail.ssagroup.com"
                       >
-                      {{ trans('Get Started') }}
+                      {{ trans('Email Us') }}
                     </v-btn>
                   </v-card>
                 </v-flex>
