@@ -19,7 +19,7 @@
                     <h3 v-if="bannerSubtitle" v-html="item.bannerSubtitle"></h3>
                     <p class="font__weight--bold mb-3" v-html="item.bannerDescription">
                     </p>
-                    <v-btn color="secondary" v-html="item.bannerButton"></v-btn>
+                    <v-btn large color="secondary" v-html="item.bannerButton"></v-btn>
                   </v-card-text>
                 </v-card>
               </v-layout>
@@ -119,7 +119,7 @@
                     class="text-xs-center py-5"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <!-- <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4"> -->
+                      <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
@@ -131,7 +131,7 @@
                 <v-flex xs12>
                   <v-card flat class="py-5 text-xs-center">
                     <h1 class="mb-3">{{ trans('What would you like to learn today?') }}</h1>
-                    <v-btn color="secondary">{{ trans('View Courses') }}</v-btn>
+                    <v-btn large color="secondary">{{ trans('View Courses') }}</v-btn>
                   </v-card>
                 </v-flex>
               </v-layout>

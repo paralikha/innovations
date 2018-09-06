@@ -19,7 +19,13 @@
                     <h3 class="mb-3" v-if="bannerSubtitle" v-html="item.bannerSubtitle"></h3>
                     <p class="font__weight--bold mb-3" v-html="item.bannerDescription">
                     </p>
-                    <v-btn color="secondary" v-html="item.bannerButton"></v-btn>
+                    <v-btn
+                      large
+                      color="secondary"
+                      href="https://www.rippl3s.com/"
+                      target="__blank"
+                      v-html="item.bannerButton">
+                    </v-btn>
                   </v-card-text>
                 </v-card>
               </v-layout>
@@ -76,6 +82,8 @@
                   </v-flex>
                   <v-flex sm4 xs12>
                     <v-card
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
                       flat
                       class="py-3"
                       >
@@ -142,7 +150,7 @@
                     class="text-xs-center py-5 transparent"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <!-- <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4"> -->
+                      <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
@@ -157,7 +165,14 @@
                     class="py-5 text-xs-center"
                     >
                     <h1 class="mb-3">{{ trans('Make every Ripple count today') }}</h1>
-                    <v-btn color="secondary">{{ trans('Let\'s Start') }}</v-btn>
+                    <v-btn
+                      large
+                      color="secondary"
+                      target="__blank"
+                      href="https://www.rippl3s.com/"
+                      >
+                      {{ trans('Let\'s Start') }}
+                    </v-btn>
                   </v-card>
                 </v-flex>
               </v-layout>

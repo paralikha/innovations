@@ -17,12 +17,13 @@
             flat
             color="primary"
             exact
-            :to="item.link">
+            :href="item.link">
             <v-img
               color="secondary"
               :src="item.thumbnail"
               height="200px"
               class="pa-2"
+              :class="item.classMedia"
               >
               <v-layout
                 class="justify-end align-end fill-height grid__layout--text"
@@ -42,13 +43,13 @@
       </v-layout>
 
       <!-- mouseover -->
-      <div>
+      <!-- <div>
         <div id="follower">
           <v-btn fab class="secondary elevation-5">
             <v-icon>add</v-icon>
           </v-btn>
         </div>
-      </div>
+      </div> -->
       <!-- mouseover -->
     </v-container>
   </div>
@@ -76,6 +77,9 @@
     transform: scaleX(1);
   }
   #bee {transition: transform .1s}
+  .third-child .v-image__image {
+    background-position: left !important;
+  }
 </style>
 
 <script>
@@ -101,21 +105,21 @@ export default {
             subtitle: 'Rippl3s',
             thumbnail: Ripples,
             classMedia: 'first-child',
-            link: '/products/ripples',
+            link: '/products/rippl3s',
           },
           {
             title: 'Immersive and interactive courses for the modern student',
             subtitle: 'e-Learning',
             thumbnail: ELearning,
             classMedia: 'second-child',
-            link: '/products/elearning',
+            link: '/products/e-learning',
           },
           {
             title: 'Learning and training made engaging and fun',
             subtitle: 'Training App',
             thumbnail: Application,
             classMedia: 'third-child',
-            link: '/products/application',
+            link: '/products/mobile-apps',
           }
         ]
       }
@@ -123,7 +127,7 @@ export default {
   },
 
   mounted () {
-    this.followEase()
+    // this.followEase()
   },
 
   methods: {

@@ -17,7 +17,7 @@
             flat
             color="primary"
             exact
-            :to="item.link">
+            :href="item.link">
             <v-img
               color="secondary"
               :src="item.thumbnail"
@@ -69,21 +69,21 @@ export default {
             subtitle: 'Rippl3s',
             thumbnail: Ripples,
             classMedia: 'first-child',
-            link: '/products/ripples',
+            link: '/products/rippl3s',
           },
           {
             title: 'Immersive and interactive courses for the modern student',
             subtitle: 'e-Learning',
             thumbnail: ELearning,
             classMedia: 'second-child',
-            link: '/products/elearning',
+            link: '/products/e-learning',
           },
           {
             title: 'Learning and training made engaging and fun',
             subtitle: 'Training App',
             thumbnail: Application,
             classMedia: 'third-child',
-            link: '/products/application',
+            link: '/products/mobile-apps',
           }
         ]
       }

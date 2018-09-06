@@ -7,7 +7,7 @@
             <v-layout fill-height align-end>
               <v-flex>
                 <h3 class="subheading mb-3 white--text font__weight--bold">
-                  {{ trans('SIGN UP TO OUR NEWS LETTER') }}
+                  {{ trans('SIGN UP TO OUR NEWSLETTER') }}
                 </h3>
                 <v-text-field
                   label="Email Address"
@@ -23,24 +23,24 @@
           </v-flex>
           <v-flex offset-md1 md3 xs4>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('Home') }}</a>
+              <a class="white--text t__d--n" href="/">{{ trans('Home') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('About') }}</a>
+              <a class="white--text t__d--n" href="/about-us">{{ trans('About') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('Blogs') }}</a>
+              <a class="white--text t__d--n" href="/blogs">{{ trans('Blogs') }}</a>
             </div>
           </v-flex>
           <v-flex xs4>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('Rippl3s') }}</a>
+              <a class="white--text t__d--n" href="/products/rippl3s">{{ trans('Rippl3s') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('E - Learning') }}</a>
+              <a class="white--text t__d--n" href="/products/e-learning">{{ trans('E - Learning') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="">{{ trans('Mobile Application') }}</a>
+              <a class="white--text t__d--n" href="/products/mobile-apps">{{ trans('Mobile Application') }}</a>
             </div>
           </v-flex>
         </v-layout>

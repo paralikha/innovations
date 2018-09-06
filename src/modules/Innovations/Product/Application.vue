@@ -110,7 +110,7 @@
                     class="text-xs-center"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <!-- <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4"> -->
+                      <source :src="require('@/assets/videos/HirApp.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
@@ -122,7 +122,7 @@
                 <v-flex xs12>
                   <v-card flat class="py-5 text-xs-center">
                     <h1 class="mb-3">{{ trans('Try the future now!') }}</h1>
-                    <v-btn color="secondary">{{ trans('Play Me') }}</v-btn>
+                    <v-btn large color="secondary">{{ trans('Play Me') }}</v-btn>
                   </v-card>
                 </v-flex>
               </v-layout>

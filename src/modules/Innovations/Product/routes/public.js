@@ -14,11 +14,11 @@ export default [
     },
     children: [
       {
-        path: 'elearning',
+        path: 'e-learning',
         name: 'products.elearning',
         component: () => import('../ELearning.vue'),
         meta: {
-          title: 'ELearning',
+          title: 'E - Learning',
           sort: 5,
           external: true,
           excludeFromRoot: true,
@@ -27,11 +27,11 @@ export default [
         },
       },
       {
-        path: 'ripples',
+        path: 'rippl3s',
         name: 'products.ripples',
         component: () => import('../Ripples.vue'),
         meta: {
-          title: 'Ripples',
+          title: 'Rippl3s',
           sort: 5,
           external: true,
           excludeFromRoot: true,
@@ -40,11 +40,11 @@ export default [
         },
       },
       {
-        path: 'application',
+        path: 'mobile-apps',
         name: 'products.application',
         component: () => import('../Application.vue'),
         meta: {
-          title: 'Application',
+          title: 'Mobile Apps',
           sort: 5,
           external: true,
           excludeFromRoot: true,

@@ -5,8 +5,9 @@
       dark
       flat
       >
-      <a href="/">
-        <logo-icon></logo-icon>
+      <a href="/" class="my-3">
+        <!-- <logo-icon></logo-icon> -->
+        <img width="100" height="100" :src="require('@/assets/images/innov-logomotion.gif')" alt="">
       </a>
 
       <v-spacer></v-spacer>

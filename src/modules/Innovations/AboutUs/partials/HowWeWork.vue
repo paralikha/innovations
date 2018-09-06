@@ -30,7 +30,7 @@
             <step-two-icon class="mr-4"></step-two-icon>
             <v-card flat>
               <h4>{{ trans('Step 2') }}</h4>
-              <div v-html="trans('Our writers write <br> the script <br> and storyboard, <br> while our designer <br> start world building')"></div>
+              <div v-html="trans('Our writers write <br> the script <br> and storyboard, <br> while our designers <br> start building worlds')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -44,7 +44,7 @@
               <step-three-icon class="mr-4"></step-three-icon>
             <v-card flat>
               <h4>{{ trans('Step 3') }}</h4>
-              <div v-html="trans('Our designers start <br> to bring the storyboard <br> to their world through <br> dope animation')"></div>
+              <div v-html="trans('Our designers then <br> integrate the storyboard into <br> their world through <br> dope animation')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -72,7 +72,7 @@
               <step-five-icon class="mr-4"></step-five-icon>
             <v-card flat>
               <h4>{{ trans('Step 5') }}</h4>
-              <div v-html="trans('We mix them up <br> in our patented <br> Cement Mixer 9000 tm')"></div>
+              <div v-html="trans('We mix all our <br> outputs in our patented <br> Cement Mixer 9000 tm')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -86,7 +86,7 @@
               <step-six-icon class="mr-4"></step-six-icon>
             <v-card flat>
               <h4>{{ trans('Step 6') }}</h4>
-              <div v-html="trans('We test it and <br> make sure it\'s <br> 101% awesome')"></div>
+              <div v-html="trans('We test the product <br> and make sure it\'s <br> 101% awesome')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -100,7 +100,7 @@
               <step-seven-icon class="mr-4"></step-seven-icon>
             <v-card flat>
               <h4>{{ trans('Step 7') }}</h4>
-              <div v-html="trans('After making sure <br> that it\'s 101% awesome, <br> we unleash it, <br> to the world')"></div>
+              <div v-html="trans('We unleash the product <br> to the world!')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>

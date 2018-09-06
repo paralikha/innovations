@@ -6,7 +6,8 @@
       dark
       >
       <a href="/">
-        <logo-icon></logo-icon>
+        <!-- <logo-icon></logo-icon> -->
+        <img width="100" height="100" :src="require('@/assets/images/innov-logomotion.gif')" alt="">
       </a>
 
       <v-spacer></v-spacer>
@@ -22,6 +23,7 @@
 <script>
 import _public from '@/router/public'
 import { mapGetters } from 'vuex'
+// import LogoMotion from '@/assets/images/innov-logomotion.gif'
 
 export default {
   name: 'MainToolbar',
