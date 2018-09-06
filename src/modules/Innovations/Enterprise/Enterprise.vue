@@ -54,12 +54,6 @@
                       flat
                       class="py-3"
                       >
-                      <!-- <ripples-one-icon
-                        class="mb-3"
-                        width="50"
-                        height="50"
-                        >
-                      </ripples-one-icon> -->
                       <div class="mb-3">
                         <img width="250" :src="require('@/assets/images/ELearningBanner.png')" alt="">
                       </div>
@@ -77,12 +71,6 @@
                       flat
                       class="py-3"
                       >
-                      <!-- <ripples-one-icon
-                        class="mb-3"
-                        width="50"
-                        height="50"
-                        >
-                      </ripples-one-icon> -->
                       <div class="mb-3">
                         <img width="250" :src="require('@/assets/images/RipplesBanner.svg')" alt="">
                       </div>
@@ -100,12 +88,6 @@
                       flat
                       class="py-3"
                       >
-                      <!-- <ripples-one-icon
-                        class="mb-3"
-                        width="50"
-                        height="50"
-                        >
-                      </ripples-one-icon> -->
                       <div class="mb-3">
                         <img width="250" :src="require('@/assets/images/MobileAppBanner.svg')" alt="">
                       </div>

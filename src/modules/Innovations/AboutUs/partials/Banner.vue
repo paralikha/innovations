@@ -1,13 +1,5 @@
 <template>
   <div class="text-xs-center">
-    <!-- <iframe
-      width="100%"
-      height="300px"
-      :src="item.thumbnail"
-      frameborder="0"
-      name="MeetTheTeamWeb"
-      >
-    </iframe> -->
   </div>
 </template>
 
@@ -24,6 +16,6 @@ export default {
   components: {
     // thumbnail: MeetTheTeamWeb,
 
-  }
+  },
 }
 </script>

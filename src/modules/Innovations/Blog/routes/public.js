@@ -1,7 +1,6 @@
 export default [
   {
     path: '/blogs',
-    name: 'blogs',
     component: () => import('@/components/Layouts/Public.vue'),
     meta: {
       title: 'Blog',
