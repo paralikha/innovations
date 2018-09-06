@@ -99,7 +99,7 @@ export default {
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eaque, non cupiditate veritatis minima vitae numquam, ducimus dicta deleniti perferendis aperiam! Debitis consequuntur amet ipsum? Eius odio dolore ab, deserunt. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.',
         timestamp: '2 hours ago',
         author: 'Princess Alto',
-        avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg'
+        avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg',
       }
     }
   }
