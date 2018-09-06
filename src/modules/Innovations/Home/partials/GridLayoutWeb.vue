@@ -50,16 +50,21 @@
           </v-btn>
         </div>
       </div> -->
+
+      <!-- <div id="followmouse">
+        <v-btn fab class="secondary" href="https://www.google.com">
+          <v-icon>add</v-icon>
+        </v-btn>
+      </div> -->
       <!-- mouseover -->
     </v-container>
   </div>
 </template>
 
 <style>
-  #follower {
+ /* #follower {
     position: absolute;
     transform: rotate(90deg);
-    /*transform-origin: 45px -5px;*/
   }
   .follower-container {
     width:100%;
@@ -76,9 +81,21 @@
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
   }
-  #bee {transition: transform .1s}
-  .third-child .v-image__image {
-    background-position: left !important;
+  #bee {
+    transition: transform .1s
+  }*/
+
+  #followmouse {
+    transition: transform .3s;
+    position: absolute;
+    border-radius: 20px;
+    transform: translateY(-30px) translateX(-30px);
+    transform-origin: 50% 50%;
+    opacity: 1;
+    z-index: 999;
+  }
+  #followmouse.linkHover {
+    transform: scale(2) translateX(-5px) translateY(-5px);
   }
 </style>
 
@@ -128,6 +145,7 @@ export default {
 
   mounted () {
     // this.followEase()
+    this.followMouse()
   },
 
   methods: {
@@ -179,6 +197,72 @@ export default {
         } else {
           bee.setAttribute('class', 'left')
         }
+      }
+    },
+
+    followMouse () {
+      /* eslint-disable */
+      function addClass(el, className)
+      {
+        if (el.classList)
+        el.classList.add(className);
+        else
+          el.className += ' ' + className;
+      }
+
+      function removeClass(el, className)
+      {
+        if (el.classList)
+          el.classList.remove(className);
+        else
+          el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+      }
+
+      var followmouse = document.getElementById("followmouse");
+      document.addEventListener("mousemove", getMouse);
+
+      var followmousepos = {x:0, y:0};
+
+      setInterval(followMouse, 30);
+
+      var mouse = {x:0, y:0}; //mouse.x, mouse.y
+
+      function getMouse(e){
+        mouse.x = e.pageX;
+        mouse.y = e.pageY;
+      }
+
+      function followMouse(){
+        //1. find distance X , distance Y
+        var distX = mouse.x - followmousepos.x;
+        var distY = mouse.y - followmousepos.y;
+        //Easing motion
+        //Progressive reduction of distance
+        followmousepos.x += distX/5;
+        followmousepos.y += distY/3;
+
+        followmouse.style.left = followmousepos.x + "px";
+        followmouse.style.top = followmousepos.y + "px";
+      }
+
+
+      var links = document.getElementsByClassName("link");
+      for(let i = 0; i < links.length; i++)
+      {
+        links[i].addEventListener("mouseover", addMouseLinkHover);
+        links[i].addEventListener("mouseout", removeMouseLinkHover);
+      }
+
+      function addMouseLinkHover()
+      {
+        var followmouse = document.getElementById("followmouse");
+        addClass(followmouse, "linkHover");
+      }
+
+      function removeMouseLinkHover()
+      {
+        var followmouse = document.getElementById("followmouse");
+        removeClass(followmouse, "linkHover");
       }
     }
   },

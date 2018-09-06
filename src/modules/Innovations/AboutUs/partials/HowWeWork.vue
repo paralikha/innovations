@@ -44,7 +44,7 @@
               <step-three-icon class="mr-4"></step-three-icon>
             <v-card flat>
               <h4>{{ trans('Step 3') }}</h4>
-              <div v-html="trans('Our designers then <br> integrate the storyboard into <br> their world through <br> dope animation')"></div>
+              <div v-html="trans('Our designers then <br> integrate the <br> storyboard into <br> their world through <br> dope animation')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -72,7 +72,7 @@
               <step-five-icon class="mr-4"></step-five-icon>
             <v-card flat>
               <h4>{{ trans('Step 5') }}</h4>
-              <div v-html="trans('We mix all our <br> outputs in our patented <br> Cement Mixer 9000 tm')"></div>
+              <div v-html="trans('We mix all our <br> outputs in <br> our patented <br> Cement Mixer <br> 9000 tm')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>
@@ -100,7 +100,7 @@
               <step-seven-icon class="mr-4"></step-seven-icon>
             <v-card flat>
               <h4>{{ trans('Step 7') }}</h4>
-              <div v-html="trans('We unleash the product <br> to the world!')"></div>
+              <div v-html="trans('We unleash <br> the product <br> to the world!')"></div>
             </v-card>
           </v-card-actions>
         </v-layout>

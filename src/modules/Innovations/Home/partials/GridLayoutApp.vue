@@ -23,6 +23,7 @@
               :src="item.thumbnail"
               height="200px"
               class="pa-2"
+              :class="item.classMedia"
               >
               <v-layout
                 fill-height
