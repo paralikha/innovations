@@ -12,4 +12,21 @@ module.exports = {
       'Access-Control-Allow-Headers': 'Authorization, X-Requested-With, Origin, X-Auth-Token, X-CSRF-Token, Content-type'
     },
   },
+  configureWebpack: {
+    module: {
+      rules: [
+        // {
+        //   test: /\.html$/,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[hash].[ext]',
+        //       },
+        //     }
+        //   ],
+        // },
+      ],
+    },
+  },
 }

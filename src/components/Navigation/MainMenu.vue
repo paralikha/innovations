@@ -6,9 +6,8 @@
         <v-btn slot="activator" flat large class="mx-1">{{ __(menu.meta.title) }} <v-icon right>keyboard_arrow_down</v-icon></v-btn>
         <v-list>
           <v-list-tile
-            exact
             :key="j"
-            :to="{name: submenu.name}"
+            :href="submenu.path"
             v-for="(submenu, j) in menu.children"
             >
             <v-list-tile-content>{{ submenu.meta.title }}</v-list-tile-content>

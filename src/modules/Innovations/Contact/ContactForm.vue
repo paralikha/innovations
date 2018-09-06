@@ -61,7 +61,7 @@
 
 <script>
 import { scrollIt } from './js/scrollIt.js'
-import { snapScroll } from './js/snapscroll.js'
+// import { snapScroll } from './js/snapscroll.js'
 
 export default {
   name: 'ContactForm',
@@ -102,7 +102,7 @@ export default {
   },
 
   mounted () {
-    snapScroll('#scroller', document)
+    // snapScroll('#scroller', document)
     // this.init()
   },
 }

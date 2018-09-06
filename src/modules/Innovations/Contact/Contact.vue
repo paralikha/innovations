@@ -35,6 +35,8 @@
       <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex xs8>
+            <!-- <component :is="demo"></component> -->
+            <vue-frame text="VueJS" url="https://www.ssagroup.com"></vue-frame>
             <contact-form></contact-form>
           </v-flex>
         </v-layout>
@@ -45,16 +47,21 @@
 
 <script>
 import ContactForm from './ContactForm'
+import VueFrame from 'vue-frame'
+// import demo from './app/about-us/About-Us-H.html'
 
 export default {
   name: 'Contact',
 
   components: {
     ContactForm,
+    VueFrame,
   },
 
   data () {
     return {
+      // demo,
+      // demo: () => import('./app/about-us/About-Us-H.html'),
       contacts: {
         mainline: `+63 905 528 8590`,
         email: 'innovations@ssagroup.com',
