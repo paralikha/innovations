@@ -1,6 +1,6 @@
 <template>
   <v-card flat class="py-5">
-    <v-card-text class="text-xs-center">
+    <v-card-text class="py-5 text-xs-center">
       <h1 class="primary--text mb-3">{{ trans('How We Work') }}</h1>
       <p
         class="mb-3"
@@ -10,100 +10,38 @@
     </v-card-text>
 
     <v-layout row wrap fill-height align-center justify-center>
-      <v-flex md6 xs12>
-        <v-layout>
-          <v-card-actions class="my-3">
-            <step-one-icon class="mr-4"></step-one-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 1') }}</h4>
-              <div>{{ trans('We brainstorm') }}</div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
-
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
+      <v-flex xs12>
+        <v-card flat class="py-5 text-xs-center">
+          <h3 class="mb-3">{{ trans('Our Mission') }}</h3>
+          <p>{{ trans('To provide accessible and engaging innovations that will positively impact people’s way of learning and living') }}</p>
         </v-card>
 
-        <v-layout>
-          <v-card-actions class="my-3">
-            <step-two-icon class="mr-4"></step-two-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 2') }}</h4>
-              <div v-html="trans('Our writers write <br> the script <br> and storyboard, <br> while our designers <br> start building worlds')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
-
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
+        <v-card flat class="text-xs-center py-5">
+          <v-layout row wrap fill-height align-center justify-center>
+            <v-flex lg6 md8 xs12>
+              <div
+                data-aos="flip-up"
+                data-aos-duration="1000"
+                >
+                <img
+                  @contextmenu.prevent="preventRightClick"
+                  width="100%"
+                  :src="require('@/assets/images/icons/missions/all.svg')"
+                  alt=""
+                  >
+              </div>
+            </v-flex>
+          </v-layout>
         </v-card>
 
-        <v-layout>
-          <v-card-actions class="my-3">
-              <step-three-icon class="mr-4"></step-three-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 3') }}</h4>
-              <div v-html="trans('Our designers then <br> integrate the <br> storyboard into <br> their world through <br> dope animation')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
+        <v-card flat class="text-xs-center py-5">
+          <h3 class="mb-3">{{ trans('Our Approach') }}</h3>
 
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
+          <p><strong>Unrestricted:</strong> We ensure that our solutions can be accessed by individuals and communities globally.</p>
+          <p><strong>Future-proofed:</strong> We utilise state-of-the-art technologies and up-to-date ideologies for our clients to get the most bang for their buck.</p>
+          <p><strong>Human-centric:</strong>  We create learning paths where every stakeholder is at the centre of the experience, tailored specifically to suit each need.</p>
+          <p><strong>Engagement value:</strong>  We want to help address life's complexities by crafting gamified experiences.</p>
         </v-card>
-
-        <v-layout>
-          <v-card-actions class="my-3">
-              <step-four-icon class="mr-4"></step-four-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 4') }}</h4>
-              <div v-html="trans('Our developers <br> start to do some <br> mad coding magic')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
-
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
-        </v-card>
-
-        <v-layout>
-          <v-card-actions class="my-3">
-              <step-five-icon class="mr-4"></step-five-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 5') }}</h4>
-              <div v-html="trans('We mix all our <br> outputs in <br> our patented <br> Cement Mixer <br> 9000 tm')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
-
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
-        </v-card>
-
-        <v-layout>
-          <v-card-actions class="my-3">
-              <step-six-icon class="mr-4"></step-six-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 6') }}</h4>
-              <div v-html="trans('We test the product <br> and make sure it\'s <br> 101% awesome')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
-
-        <v-card class="ml-3" flat>
-          <arrow-down-icon></arrow-down-icon>
-        </v-card>
-
-        <v-layout>
-          <v-card-actions class="my-3">
-              <step-seven-icon class="mr-4"></step-seven-icon>
-            <v-card flat>
-              <h4>{{ trans('Step 7') }}</h4>
-              <div v-html="trans('We unleash <br> the product <br> to the world!')"></div>
-            </v-card>
-          </v-card-actions>
-        </v-layout>
       </v-flex>
     </v-layout>
   </v-card>
@@ -111,9 +49,29 @@
 
 <script>
 import store from '@/store'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'HowWeWork',
+
+  components: {
+    AOS
+  },
+
+  created () {
+    AOS.init()
+  },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>
