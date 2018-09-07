@@ -15,6 +15,7 @@
     "aos": "^3.0.0-beta.5",
     "createjs": "^1.0.1",
     "jquery": "^3.3.1",
+    "node": "^10.10.0",
     "particles.js": "^2.0.0",
     "register-service-worker": "^1.5.2",
     "sortablejs": "^1.7.0",
@@ -26,7 +27,7 @@
     "vue-router": "^3.0.1",
     "vue-shortkey": "^3.1.6",
     "vue-virtual-scroll-list": "^1.2.8",
-    "vuetify": "^1.2.2",
+    "vuetify": "^1.2.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -37,6 +38,7 @@
     "@vue/cli-service": "^3.0.1",
     "@vue/eslint-config-standard": "^3.0.1",
     "axios": "^0.18.0",
+    "latest-node": "0.0.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-axios": "0.0.4",

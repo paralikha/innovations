@@ -55,7 +55,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/ELearningBanner.png')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-elearning.svg')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Large scale workforce training')"></strong>
@@ -72,7 +72,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/RipplesBanner.svg')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-ripples.svg')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Effective performance tracking')"></strong>
@@ -89,7 +89,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/MobileAppBanner.svg')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-mobile.svg')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Accessible digital solutions')"></strong>
