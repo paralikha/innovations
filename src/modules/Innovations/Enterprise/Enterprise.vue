@@ -27,7 +27,7 @@
                 flat
                 class="transparent mb-4"
                 >
-                <img :src="item.thumbnail" alt="" width="100%">
+                <img @contextmenu.prevent="preventRightClick" :src="item.thumbnail" alt="" width="100%">
               </v-card>
             </v-flex>
           </v-layout>
@@ -55,7 +55,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img width="250" :src="require('@/assets/images/ELearningBanner.png')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/ELearningBanner.png')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Large scale workforce training')"></strong>
@@ -72,7 +72,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img width="250" :src="require('@/assets/images/RipplesBanner.svg')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/RipplesBanner.svg')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Effective performance tracking')"></strong>
@@ -89,7 +89,7 @@
                       class="py-3"
                       >
                       <div class="mb-3">
-                        <img width="250" :src="require('@/assets/images/MobileAppBanner.svg')" alt="">
+                        <img @contextmenu.prevent="preventRightClick" width="250" :src="require('@/assets/images/MobileAppBanner.svg')" alt="">
                       </div>
                       <p class="mb-3">
                         <strong v-html="trans('Accessible digital solutions')"></strong>
@@ -158,5 +158,15 @@ export default {
       }
     }
   },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>

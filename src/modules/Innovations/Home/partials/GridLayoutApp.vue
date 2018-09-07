@@ -24,6 +24,7 @@
               height="200px"
               class="pa-2"
               :class="item.classMedia"
+              @contextmenu.prevent="preventRightClick"
               >
               <v-layout
                 fill-height
@@ -90,5 +91,15 @@ export default {
       }
     }
   },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>

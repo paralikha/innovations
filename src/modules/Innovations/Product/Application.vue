@@ -27,7 +27,12 @@
 
             <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1>
               <v-card flat class="transparent mb-4">
-                <img :src="item.thumbnail" alt="" width="100%">
+                <img
+                  :src="item.thumbnail"
+                  alt=""
+                  width="100%"
+                  @contextmenu.prevent="preventRightClick"
+                  >
               </v-card>
             </v-flex>
           </v-layout>
@@ -159,11 +164,21 @@ export default {
       bannerSubtitle: false,
       item: {
         thumbnail: MobileAppBanner,
-        bannerTitle: 'Gamified Learning in the Palm of Your Hands',
+        bannerTitle: 'Gamified Learning in the Palm of Your Hand',
         bannerDescription: 'Forged from the depths of  our innovative minds, we offer cutting edge apps for the modern learner.',
         bannerButton: 'Discover'
       }
     }
   },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>

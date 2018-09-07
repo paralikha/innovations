@@ -10,8 +10,8 @@
 
 <script>
 import store from '@/store'
-require('./Website/cjs.js')()
-require('./Website/About-Us-H.js')()
+// require('./Website/cjs.js')()
+// require('./Website/About-Us-H.js')()
 // import MeetTheTeamWeb from './Website/About-Us-H.html'
 // import 'html-loader'
 

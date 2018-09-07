@@ -24,6 +24,7 @@
               height="200px"
               class="pa-2"
               :class="item.classMedia"
+              @contextmenu.prevent="preventRightClick"
               >
               <v-layout
                 class="justify-end align-end fill-height grid__layout--text"
@@ -125,7 +126,7 @@ export default {
             link: '/products/rippl3s',
           },
           {
-            title: 'Immersive and interactive courses for the modern student',
+            title: 'Immersive and interactive courses for learners around the world',
             subtitle: 'e-Learning',
             thumbnail: ELearning,
             classMedia: 'second-child',
@@ -146,6 +147,7 @@ export default {
   mounted () {
     // this.followEase()
     // this.followMouse()
+    this.preventRightClick()
   },
 
   methods: {
@@ -264,6 +266,10 @@ export default {
         var followmouse = document.getElementById("followmouse");
         removeClass(followmouse, "linkHover");
       }
+    },
+
+    preventRightClick () {
+      return false
     }
   },
 }

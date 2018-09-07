@@ -27,7 +27,12 @@
 
             <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1>
               <v-card flat class="transparent mb-4">
-                <img :src="item.thumbnail" alt="" width="100%">
+                <img
+                  @contextmenu.prevent="preventRightClick"
+                  :src="item.thumbnail"
+                  alt=""
+                  width="100%"
+                >
               </v-card>
             </v-flex>
           </v-layout>
@@ -175,5 +180,15 @@ export default {
       }
     }
   },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>
