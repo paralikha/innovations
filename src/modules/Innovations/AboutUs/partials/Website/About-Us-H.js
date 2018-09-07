@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function (cjs, an) {
 
 var p; // shortcut to reference prototypes
