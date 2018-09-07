@@ -6,8 +6,7 @@
       <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12>
-            <!-- <banner></banner> -->
-            <!-- <object width="100%" height="500px" :data="require('@/assets/videos/sample.swf')"></object> -->
+            <banner></banner>
           </v-flex>
         </v-layout>
       </v-container>
