@@ -159,7 +159,7 @@ export default {
       bannerSubtitle: false,
       item: {
         thumbnail: MobileAppBanner,
-        bannerTitle: 'Mobile Solutions on Your Hands',
+        bannerTitle: 'Gamified Learning in the Palm of Your Hands',
         bannerDescription: 'Forged from the depths of  our innovative minds, we offer cutting edge apps for the modern learner.',
         bannerButton: 'Discover'
       }

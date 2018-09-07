@@ -133,7 +133,7 @@ export default {
           },
           {
             title: 'Learning and training made engaging and fun',
-            subtitle: 'Training App',
+            subtitle: 'Mobile Apps',
             thumbnail: Application,
             classMedia: 'third-child',
             link: '/products/mobile-apps',

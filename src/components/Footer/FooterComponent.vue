@@ -37,7 +37,7 @@
               <a class="white--text t__d--n" href="/products/rippl3s">{{ trans('Rippl3s') }}</a>
             </div>
             <div class="mb-3">
-              <a class="white--text t__d--n" href="/products/e-learning">{{ trans('E - Learning') }}</a>
+              <a class="white--text t__d--n" href="/products/e-learning">{{ trans('e-Learning') }}</a>
             </div>
             <div class="mb-3">
               <a class="white--text t__d--n" href="/products/mobile-apps">{{ trans('Mobile Application') }}</a>

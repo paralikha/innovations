@@ -7,8 +7,8 @@
         <v-list light>
           <v-list-tile
             exact
-            :key="j"
-            :href="products/submenu.path"
+            :key="j
+"            :href="products/submenu.path"
             v-for="(submenu, j) in menu.children"
             >
             <v-list-tile-content>{{ submenu.meta.title }}</v-list-tile-content>
@@ -22,7 +22,7 @@
       <v-btn large flat slot="activator">Our Products <v-icon right>keyboard_arrow_down</v-icon></v-btn>
       <v-list light>
         <v-list-tile href="/products/e-learning">
-          <v-list-tile-title>E - Learning</v-list-tile-title>
+          <v-list-tile-title>e-Learning</v-list-tile-title>
         </v-list-tile>
         <v-list-tile href="/products/rippl3s">
           <v-list-tile-title>Rippl3s</v-list-tile-title>
