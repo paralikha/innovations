@@ -6,7 +6,7 @@
       <!-- toolbar -->
 
       <!-- page title -->
-      <div class="content text-xs-center">
+      <div class="content text-xs-center hide-on-hover">
         <v-container grid-list-lg>
           <p class="title font__weight--bold">
             {{ trans('Ready to move forward?') }}
@@ -49,3 +49,13 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+.hide-on-hover {
+  transition: all 0.3s ease-in-out;
+
+  &--active {
+    opacity: 0;
+  }
+}
+</style>

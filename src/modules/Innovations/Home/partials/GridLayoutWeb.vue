@@ -11,6 +11,8 @@
           :key="i"
           v-for="(item, i) in home.products">
           <v-card
+            @mouseover.native="cardHover"
+            @mouseleave.native="cardLeave"
             dark
             ripple
             class="transparent project-card"
@@ -151,6 +153,14 @@ export default {
   },
 
   methods: {
+    cardHover () {
+      let invisible = document.querySelector('.hide-on-hover')
+      invisible.classList.add('hide-on-hover--active')
+    },
+    cardLeave () {
+      let invisible = document.querySelector('.hide-on-hover')
+      invisible.classList.remove('hide-on-hover--active')
+    },
     followEase () {
       var bee = document.getElementById('follower')
       var container = document.querySelector('.follower-container')

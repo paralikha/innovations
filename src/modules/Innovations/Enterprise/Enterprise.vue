@@ -67,7 +67,7 @@
                   <v-flex sm4 xs12>
                     <v-card
                       data-aos="fade-up"
-                      data-aos-duration="1000"
+                      data-aos-duration="1500"
                       flat
                       class="py-3"
                       >
@@ -84,7 +84,7 @@
                   <v-flex sm4 xs12>
                     <v-card
                       data-aos="fade-up"
-                      data-aos-duration="1000"
+                      data-aos-duration="2000"
                       flat
                       class="py-3"
                       >

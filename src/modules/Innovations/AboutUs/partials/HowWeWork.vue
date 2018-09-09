@@ -20,7 +20,7 @@
           <v-layout row wrap fill-height align-center justify-center>
             <v-flex lg6 md8 xs12>
               <div
-                data-aos="flip-up"
+                data-aos="zoom-in"
                 data-aos-duration="1000"
                 >
                 <img
