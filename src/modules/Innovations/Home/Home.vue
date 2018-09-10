@@ -17,7 +17,7 @@
         <grid-layout-web></grid-layout-web>
       </div>
       <div class="hidden-md-and-up">
-        <grid-layout-app></grid-layout-app>
+        <grid-layout-mobile></grid-layout-mobile>
       </div>
     </particles>
   </div>
@@ -27,7 +27,7 @@
 import store from '@/store'
 import LogoIcon from '@/components/Icons/LogoIcon'
 import GridLayoutWeb from './partials/GridLayoutWeb'
-import GridLayoutApp from './partials/GridLayoutApp'
+import GridLayoutMobile from './partials/GridLayoutMobile'
 
 export default {
   store,
@@ -37,7 +37,7 @@ export default {
   components: {
     LogoIcon,
     GridLayoutWeb,
-    GridLayoutApp,
+    GridLayoutMobile,
   },
 }
 </script>

@@ -16,9 +16,9 @@ export default [
       {
         path: 'e-learning',
         name: 'products.elearning',
-        component: () => import('../ELearning.vue'),
+        component: () => import('../eLearning.vue'),
         meta: {
-          title: 'E - Learning',
+          title: 'e-Learning',
           sort: 5,
           external: true,
           excludeFromRoot: true,
@@ -29,7 +29,7 @@ export default [
       {
         path: 'rippl3s',
         name: 'products.ripples',
-        component: () => import('../Ripples.vue'),
+        component: () => import('../Rippl3s.vue'),
         meta: {
           title: 'Rippl3s',
           sort: 5,
@@ -42,7 +42,7 @@ export default [
       {
         path: 'mobile-apps',
         name: 'products.application',
-        component: () => import('../Application.vue'),
+        component: () => import('../MobileApp.vue'),
         meta: {
           title: 'Mobile Apps',
           sort: 5,

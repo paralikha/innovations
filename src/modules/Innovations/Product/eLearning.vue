@@ -124,7 +124,7 @@
                     class="text-xs-center py-5"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <source :src="require('@/assets/videos/ELearning.mp4')" type="video/mp4">
+                      <source :src="require('@/assets/videos/eLearning.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
@@ -153,7 +153,7 @@
 
 <script>
 import store from '@/store'
-import ELearningBanner from '@/assets/images/ELearningBanner.png'
+import eLearningBanner from '@/assets/images/eLearningBanner.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -173,7 +173,7 @@ export default {
     return {
       bannerSubtitle: false,
       item: {
-        thumbnail: ELearningBanner,
+        thumbnail: eLearningBanner,
         bannerTitle: 'Let\'s Be Learning Partners',
         bannerDescription: 'As advocates of lifelong career progressions, our aim is to help anyone with the same purpose. For you who constantly seek to enhance efficiency and value, we will help fix performance gaps through relevant e-Learning programmes suited to meet the demands of today\'s economy.',
         bannerButton: 'Learn More'

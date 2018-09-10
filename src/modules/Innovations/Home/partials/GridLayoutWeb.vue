@@ -32,7 +32,9 @@
                 class="justify-end align-end fill-height grid__layout--text"
                 >
                 <v-card-text class="fade__gradient--overlay">
-                  <p class="mb-2 body-2" v-html="trans(item.subtitle)"></p>
+                  <p class="mb-2 body-2">
+                    <strong v-html="trans(item.category)"></strong>
+                  </p>
                   <h3
                     class="font__weight--bold"
                     v-html="trans(item.title)"
@@ -53,9 +55,9 @@
 
 <script>
 import store from '@/store'
-import Ripples from '@/assets/images/RipplesBannerWithBG.png'
-import ELearning from '@/assets/images/ELearningBannerWithBG.png'
-import Application from '@/assets/images/MobileAppBannerWithBG.png'
+import Rippl3s from '@/assets/images/Rippl3sBannerWithBG.png'
+import eLearning from '@/assets/images/eLearningBannerWithBG.png'
+import MobileApp from '@/assets/images/MobileAppBannerWithBG.png'
 
 export default {
   store,
@@ -70,23 +72,23 @@ export default {
       home: {
         products: [
           {
-            title: 'Customisable platform for collaborative learning anytime, anywhere',
-            subtitle: 'Rippl3s',
-            thumbnail: Ripples,
-            classMedia: 'first-child',
-            link: '/products/rippl3s',
-          },
-          {
             title: 'Immersive and interactive courses for learners around the world',
-            subtitle: 'e-Learning',
-            thumbnail: ELearning,
+            category: 'e-Learning',
+            thumbnail: eLearning,
             classMedia: 'second-child',
             link: '/products/e-learning',
           },
           {
+            title: 'Customisable platform for collaborative learning anytime, anywhere',
+            category: 'Rippl3s',
+            thumbnail: Rippl3s,
+            classMedia: 'first-child',
+            link: '/products/rippl3s',
+          },
+          {
             title: 'Learning and training made engaging and fun',
-            subtitle: 'Mobile Apps',
-            thumbnail: Application,
+            category: 'Mobile Apps',
+            thumbnail: MobileApp,
             classMedia: 'third-child',
             link: '/products/mobile-apps',
           }

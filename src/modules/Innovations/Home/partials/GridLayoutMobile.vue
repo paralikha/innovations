@@ -50,14 +50,14 @@
 
 <script>
 import store from '@/store'
-import Ripples from '@/assets/images/RipplesBannerWithBG.png'
-import ELearning from '@/assets/images/ELearningBannerWithBG.png'
-import Application from '@/assets/images/MobileAppBannerWithBG.png'
+import Rippl3s from '@/assets/images/Rippl3sBannerWithBG.png'
+import eLearning from '@/assets/images/eLearningBannerWithBG.png'
+import MobileApp from '@/assets/images/MobileAppBannerWithBG.png'
 
 export default {
   store,
 
-  name: 'GridLayoutApp',
+  name: 'GridLayoutMobile',
 
   components: {
   },
@@ -67,23 +67,20 @@ export default {
       home: {
         products: [
           {
-            title: 'Customisable platform for collaborative learning anytime, anywhere',
-            subtitle: 'Rippl3s',
-            thumbnail: Ripples,
-            classMedia: 'first-child',
-            link: '/products/rippl3s',
-          },
-          {
             title: 'Immersive and interactive courses for the modern student',
-            subtitle: 'e-Learning',
-            thumbnail: ELearning,
+            thumbnail: eLearning,
             classMedia: 'second-child',
             link: '/products/e-learning',
           },
           {
+            title: 'Customisable platform for collaborative learning anytime, anywhere',
+            thumbnail: Rippl3s,
+            classMedia: 'first-child',
+            link: '/products/rippl3s',
+          },
+          {
             title: 'Learning and training made engaging and fun',
-            subtitle: 'Mobile Apps',
-            thumbnail: Application,
+            thumbnail: MobileApp,
             classMedia: 'third-child',
             link: '/products/mobile-apps',
           }

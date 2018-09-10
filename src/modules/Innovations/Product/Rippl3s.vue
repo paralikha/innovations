@@ -153,7 +153,7 @@
                     class="text-xs-center py-5 transparent"
                     >
                     <video loop width="100%" height="auto" controls>
-                      <source :src="require('@/assets/videos/Ripples.mp4')" type="video/mp4">
+                      <source :src="require('@/assets/videos/Rippl3s.mp4')" type="video/mp4">
                       {{ trans('Your browser does not support HTML5 video.') }}
                     </video>
                   </v-card>
@@ -192,7 +192,7 @@
 
 <script>
 import store from '@/store'
-import RipplesBanner from '@/assets/images/RipplesBanner.svg'
+import Rippl3sBanner from '@/assets/images/Rippl3sBanner.svg'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -212,7 +212,7 @@ export default {
     return {
       bannerSubtitle: true,
       item: {
-        thumbnail: RipplesBanner,
+        thumbnail: Rippl3sBanner,
         bannerTitle: 'Why Rippl3s?',
         bannerSubtitle: 'It’s an engaging learning experience right at your fingertips',
         bannerDescription: 'Through our focused responsive portal where technology and curriculum work seamlessly together, we deliver convenience on different devices, thus cutting down your learning time and keeping track of your milestones without having to leave the comforts of your home.',

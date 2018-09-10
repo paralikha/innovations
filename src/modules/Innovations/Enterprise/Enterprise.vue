@@ -99,9 +99,9 @@
 <script>
 import store from '@/store'
 import EnterpriseBanner from '@/assets/images/EnterpriseBanner.png'
-import EnterpriseELearning from '@/assets/images/enterprise-elearning.png'
-import EnterpriseRippl3s from '@/assets/images/enterprise-ripples.png'
-import EnterpriseMobileApps from '@/assets/images/enterprise-mobile.png'
+import EnterpriseELearning from '@/assets/images/enterprise-eLearning.png'
+import EnterpriseRippl3s from '@/assets/images/enterprise-rippl3s.png'
+import EnterpriseMobileApps from '@/assets/images/enterprise-mobileapp.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
