@@ -47,56 +47,24 @@
               </div>
               <div class="py-5">
                 <v-layout row wrap>
-                  <v-flex sm4 xs12>
-                    <v-card
-                      data-aos="fade-up"
-                      data-aos-duration="1000"
-                      flat
-                      class="py-3"
-                      >
-                      <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-elearning.svg')" alt="">
-                      </div>
-                      <p class="mb-3">
-                        <strong v-html="trans('Large scale workforce training')"></strong>
-                      </p>
-                      <p>{{ trans('We provide customised workplace learning on demand and we help design platforms that would allow organisations to maximise their fullest human capital potential.') }}</p>
-                    </v-card>
-                  </v-flex>
-
-                  <v-flex sm4 xs12>
-                    <v-card
-                      data-aos="fade-up"
-                      data-aos-duration="1500"
-                      flat
-                      class="py-3"
-                      >
-                      <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-ripples.svg')" alt="">
-                      </div>
-                      <p class="mb-3">
-                        <strong v-html="trans('Effective performance tracking')"></strong>
-                      </p>
-                      <p>{{ trans('Through a  combined dashboard channel, access valuable metrics on employee performance, revenue growth, production, and distribution.') }}</p>
-                    </v-card>
-                  </v-flex>
-
-                  <v-flex sm4 xs12>
-                    <v-card
-                      data-aos="fade-up"
-                      data-aos-duration="2000"
-                      flat
-                      class="py-3"
-                      >
-                      <div class="mb-3">
-                        <img @contextmenu.prevent="preventRightClick" width="300" :src="require('@/assets/images/enterprise-mobile.svg')" alt="">
-                      </div>
-                      <p class="mb-3">
-                        <strong v-html="trans('Accessible digital solutions')"></strong>
-                      </p>
-                      <p>{{ trans('Connect with various networks and utilise systems for collaboration as we innovate everyday operations, from content management to billing systems.') }}</p>
-                    </v-card>
-                  </v-flex>
+                  <template v-for="(item, i) in content.items">
+                    <v-flex sm4 xs12 :key="i">
+                      <v-card
+                        data-aos="fade-up"
+                        data-aos-duration="item.aosDuration"
+                        flat
+                        class="py-3"
+                        >
+                        <div class="mb-3">
+                          <img @contextmenu.prevent="preventRightClick" width="300" :src="item.thumbnail" alt="">
+                        </div>
+                        <p class="mb-3">
+                          <strong v-html="trans(item.title)"></strong>
+                        </p>
+                        <p>{{ trans(item.description) }}</p>
+                      </v-card>
+                    </v-flex>
+                  </template>
                 </v-layout>
               </div>
 
@@ -131,6 +99,9 @@
 <script>
 import store from '@/store'
 import EnterpriseBanner from '@/assets/images/EnterpriseBanner.png'
+import EnterpriseELearning from '@/assets/images/enterprise-elearning.png'
+import EnterpriseRippl3s from '@/assets/images/enterprise-ripples.png'
+import EnterpriseMobileApps from '@/assets/images/enterprise-mobile.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -155,6 +126,28 @@ export default {
         bannerSubtitle: 'It’s an engaging learning experience right at your fingertips',
         bannerDescription: 'From streamlining business processes, automating tedious tasks, and enhancing employee performance through mobile productivity, we provide accessible and custom-built support to help drive organisations towards survival in the 21st century.',
         bannerButton: 'Try Now'
+      },
+      content: {
+        items: [
+          {
+            aosDuration: '1000',
+            thumbnail: EnterpriseELearning,
+            title: 'Large scale workforce training',
+            description: 'We provide customised workplace learning on demand and we help design platforms that would allow organisations to maximise their fullest human capital potential.'
+          },
+          {
+            aosDuration: '1500',
+            thumbnail: EnterpriseRippl3s,
+            title: 'Effective performance tracking',
+            description: 'Through a  combined dashboard channel, access valuable metrics on employee performance, revenue growth, production, and distribution.'
+          },
+          {
+            aosDuration: '2000',
+            thumbnail: EnterpriseMobileApps,
+            title: 'Accessible digital solutions',
+            description: 'Connect with various networks and utilise systems for collaboration as we innovate everyday operations, from content management to billing systems.'
+          },
+        ]
       }
     }
   },

@@ -26,7 +26,7 @@
                 <img
                   @contextmenu.prevent="preventRightClick"
                   width="100%"
-                  :src="require('@/assets/images/icons/missions/all.svg')"
+                  :src="require('@/assets/images/our-approach--infographics.svg')"
                   alt=""
                   >
               </div>
@@ -37,10 +37,22 @@
         <v-card flat class="text-xs-center py-5">
           <h3 class="mb-3">{{ trans('Our Approach') }}</h3>
 
-          <p><strong>Unrestricted:</strong> We ensure that our solutions can be accessed by individuals and communities globally.</p>
-          <p><strong>Future-proofed:</strong> We utilise state-of-the-art technologies and up-to-date ideologies for our clients to get the most bang for their buck.</p>
-          <p><strong>Human-centric:</strong>  We create learning paths where every stakeholder is at the centre of the experience, tailored specifically to suit each need.</p>
-          <p><strong>Engagement value:</strong>  We want to help address life's complexities by crafting gamified experiences.</p>
+          <p>
+            <strong>{{ trans('Unrestricted:') }}</strong>
+            {{ trans('We ensure that our solutions can be accessed by individuals and communities globally.') }}
+          </p>
+          <p>
+            <strong>{{ trans('Future-proofed:') }}</strong>
+            {{ trans('We utilise state-of-the-art technologies and up-to-date ideologies for our clients to get the most bang for their buck.') }}
+          </p>
+          <p>
+            <strong>{{ trans('Human-centric:') }}</strong>
+            {{ trans('We create learning paths where every stakeholder is at the centre of the experience, tailored specifically to suit each need.') }}
+          </p>
+          <p>
+            <strong>{{ trans('Engagement value:') }}</strong>
+            {{ trans('We want to help address life\'s complexities by crafting gamified experiences.') }}
+          </p>
         </v-card>
       </v-flex>
     </v-layout>
