@@ -130,7 +130,7 @@
 
 <script>
 import store from '@/store'
-import EnterpriseBanner from '@/assets/images/EnterpriseBanner.svg'
+import EnterpriseBanner from '@/assets/images/EnterpriseBanner.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
