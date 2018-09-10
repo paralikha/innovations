@@ -1,30 +1,24 @@
 <template>
   <div>
     <particles class="home-gradient">
-      <!-- toolbar -->
       <home-toolbar></home-toolbar>
-      <!-- toolbar -->
 
-      <!-- page title -->
       <div class="content text-xs-center hide-on-hover">
         <v-container grid-list-lg>
           <p class="title font__weight--bold">
             {{ trans('Ready to move forward?') }}
           </p>
-          <h1 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')">
-          </h1>
+          <h2 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')">
+          </h2>
         </v-container>
       </div>
-      <!-- page title -->
 
-      <!-- products -->
       <div class="hidden-sm-and-down">
         <grid-layout-web></grid-layout-web>
       </div>
       <div class="hidden-md-and-up">
         <grid-layout-app></grid-layout-app>
       </div>
-      <!-- products -->
     </particles>
   </div>
 </template>
@@ -34,7 +28,6 @@ import store from '@/store'
 import LogoIcon from '@/components/Icons/LogoIcon'
 import GridLayoutWeb from './partials/GridLayoutWeb'
 import GridLayoutApp from './partials/GridLayoutApp'
-// import FollowMouseButton from './partials/FollowMouseButton'
 
 export default {
   store,
@@ -45,12 +38,11 @@ export default {
     LogoIcon,
     GridLayoutWeb,
     GridLayoutApp,
-    // FollowMouseButton,
   },
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .hide-on-hover {
   transition: all 0.3s ease-in-out;
 

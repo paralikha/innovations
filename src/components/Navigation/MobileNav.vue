@@ -22,7 +22,6 @@
           class="transparent pa-4"
           >
           <!-- <logo-icon></logo-icon> -->
-          <img width="100" height="100" :src="require('@/assets/images/innov-logomotion.gif')" alt="">
           <v-spacer></v-spacer>
           <v-btn
             dark

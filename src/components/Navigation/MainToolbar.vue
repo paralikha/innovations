@@ -5,17 +5,27 @@
       class="pa-3 transparent"
       dark
       >
-      <a href="/" class="my-3" @mouseleave="animateLogo($event, false)" @mouseover="animateLogo($event, true)">
+      <a
+        href="/"
+        class="my-3"
+        @mouseleave="animateLogo($event, false)"
+        @mouseover="animateLogo($event, true)">
         <logo-icon style="margin-left:25px" ref="brand"></logo-icon>
-        <img id="animated-brand" class="hidden" width="100" height="100" :src="require('@/assets/images/innov-logomotion.gif')">
+        <img
+          id="animated-brand"
+          class="hidden"
+          width="100"
+          height="100"
+          :src="require('@/assets/images/innov-logomotion.gif')"
+          >
       </a>
 
       <v-spacer></v-spacer>
 
+      <!-- web -->
       <main-menu></main-menu>
-      <!-- mobile menu button -->
+      <!-- mobile -->
       <mobile-nav></mobile-nav>
-      <!-- mobile menu button -->
     </v-toolbar>
   </div>
 </template>
@@ -23,7 +33,6 @@
 <script>
 import _public from '@/router/public'
 import { mapGetters } from 'vuex'
-// import LogoMotion from '@/assets/images/innov-logomotion.gif'
 
 export default {
   name: 'MainToolbar',
@@ -45,10 +54,6 @@ export default {
   },
 
   methods: {
-    toggle (item) {
-      // this.$store.dispatch('mainmenu/toggle', item)
-    },
-
     showToolbar () {
       var prevScrollpos = window.pageYOffset
       window.onscroll = function () {
