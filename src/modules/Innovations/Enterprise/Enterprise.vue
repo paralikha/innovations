@@ -16,7 +16,7 @@
                     <h1 class="display-1 mb-3">
                       <strong v-html="item.bannerTitle"></strong>
                     </h1>
-                    <p class="font__weight--bold mb-3" v-html="item.bannerDescription"></p>
+                    <p class="font_-weight--bold mb-3" v-html="item.bannerDescription"></p>
                   </v-card-text>
                 </v-card>
               </v-layout>
@@ -51,7 +51,7 @@
                     <v-flex sm4 xs12 :key="i">
                       <v-card
                         data-aos="fade-up"
-                        data-aos-duration="item.aosDuration"
+                        :data-aos-duration="item.aosDuration"
                         flat
                         class="py-3"
                         >

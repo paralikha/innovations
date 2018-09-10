@@ -16,11 +16,11 @@ export default {
   props: {
     width: {
       type: [Number, String],
-      default: 18
+      default: 50
     },
     height: {
       type: [Number, String],
-      default: 18
+      default: 50
     },
     primaryColor: {
       type: String,
