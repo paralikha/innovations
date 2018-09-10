@@ -1,8 +1,7 @@
 <template>
   <div>
     <v-btn
-      @click="toggle(!mainmenu.model)"
-      v-model="mainmenu.model"
+      @click="toggle(!navmodel)"
       icon
       dark
       color="secondary"
@@ -11,7 +10,7 @@
       <v-icon>more_horiz</v-icon>
     </v-btn>
     <v-dialog
-      v-model="mainmenu.model"
+      v-model="navmodel"
       fullscreen
       hide-overlay
       transition="dialog-bottom-transition"
@@ -27,7 +26,7 @@
             dark
             icon
             color="secondary"
-            @click.native="toggle(!mainmenu.model)"
+            @click.native="toggle(!navmodel)"
             >
             <v-icon>remove</v-icon>
           </v-btn>
@@ -35,6 +34,7 @@
         <v-divider dark></v-divider>
 
         <!-- mobile-menu -->
+        <!-- <main-menu></main-menu> -->
         <v-list two-line>
           <template
             v-for="(menu, i) in menus"
@@ -90,16 +90,9 @@
 
 <script>
 import _public from '@/router/public'
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'MobileNav',
-
-  computed: {
-    ...mapGetters({
-      'mainmenu': 'mainmenu/mainmenu',
-    }),
-  },
 
   data () {
     return {
@@ -110,7 +103,7 @@ export default {
 
   methods: {
     toggle (model) {
-      this.$store.dispatch('mainmenu/toggle', { model: model })
+      this.navmodel = model
     },
   }
 }
