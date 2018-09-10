@@ -39,14 +39,6 @@
       active-class="v-btn--active"
       to="/enterprise">
       Enterprise
-    </router-link>
-    <router-link
-      tag="v-btn"
-      exact
-      class="v-btn--flat v-btn--large"
-      active-class="v-btn--active"
-      to="/about-us">
-      About Us
     </router-link> -->
     <!-- <v-btn large flat href="/enterprise">Enterprise</v-btn> -->
     <!-- <v-btn large flat href="/about-us">About Us</v-btn> -->

@@ -96,7 +96,7 @@ export default {
 
   data () {
     return {
-      navmodel: true,
+      navmodel: false,
       menus: _public.children
     }
   },
