@@ -8,5 +8,5 @@ export default [
       sort: 0,
       excludeInMenu: true,
     },
-  }
+  },
 ]
