@@ -1,10 +1,20 @@
 <template>
-  <div id="form-container" class="form-wrap py-4">
+  <div id="form-container" class="py-4">
     <v-form class="fs-form fs-form-full" autocomplete="off">
       <span class="steps text--disabled" v-html="currentStep"></span>
+      <scrollactive
+        class="scrollactive__nav"
+        :offset="80"
+        :duration="800"
+        bezier-easing-value=".5,0,.35,1"
+        @itemchanged="scrollActiveChanged">
+        <a href="#scroll-1" class="scrollactive-item scrollactive__nav__button"></a>
+        <a href="#scroll-2" class="scrollactive-item scrollactive__nav__button"></a>
+        <a href="#scroll-3" class="scrollactive-item scrollactive__nav__button"></a>
+      </scrollactive>
       <div id="scroller" class="form-fields slider">
         <!-- nav-container="#nav-container" -->
-        <div id="scroll-1" class="tns-item page-section section layout row wrap ma-0 align-center">
+        <div id="scroll-1" class="scrollactive__slide">
           <div>
             <div class="field-group">
               <v-text-field
@@ -19,7 +29,7 @@
           </div>
         </div>
 
-        <div id="scroll-2" class="tns-item page-section section layout row wrap ma-0 align-center">
+        <div id="scroll-2" class="scrollactive__slide">
           <div>
             <div class="field-group">
               <v-text-field
@@ -34,7 +44,7 @@
           </div>
         </div>
 
-        <div id="scroll-3" class="tns-item page-section section layout row wrap ma-0 align-center">
+        <div id="scroll-3" class="scrollactive__slide">
           <div>
             <div class="field-group">
               <v-text-field
@@ -61,14 +71,17 @@
 
 <script>
 import { scrollIt } from './js/scrollIt.js'
-// import { snapScroll } from './js/snapscroll.js'
+import Vue from 'vue'
+import VueScrollactive from 'vue-scrollactive'
+
+Vue.use(VueScrollactive)
 
 export default {
   name: 'ContactForm',
 
   computed: {
     currentStep () {
-      return `${this.steps.current}/${this.steps.total}`
+      return 0 // `${this.steps.current}/${this.steps.total}`
     },
   },
 
@@ -84,6 +97,9 @@ export default {
   },
 
   methods: {
+    scrollActiveChanged (event, currentItem, lastActiveItem) {
+      console.log('changeds')
+    },
     scrollTo (el) {
       let element = document.querySelector(el)
       scrollIt(element)
@@ -112,88 +128,23 @@ export default {
 body {
   scroll-behavior: smooth;
 }
-
-.nav {
-  &-wrap {
-    position: relative;
+.scrollactive {
+  &__nav {
+    position: fixed;
+    top: 1em;
+    right: 1em;
   }
-
-  &-container {
-    position: absolute;
-    top: 0;
-    right: -2rem;
-  }
-}
-.fs-form {
-  overflow: hidden;
-  // padding-top: 2em;
-  &__actions {
+  &__nav__button {
     display: block;
-    width: 100%;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 50%;
+    margin: 0.5em;
   }
-}
-.form-wrap {
-  .steps {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-}
-.form-fields {
-  // overflow: hidden;
-  .section {
-    border: 1px solid red;
+
+  &__slide {
     min-height: 100vh;
   }
-
-  .field-group {
-    // min-height: 500px;
-    // height: 400px;
-    padding: 6em 0;
-    // border: 1px solid red;
-    // padding-top: 2em;
-    // transform: scale(2.3);
-    // transform-origin: 0 0;
-    >>> .v-text-field .v-label--active {
-      transform: translateY(-25px) scale(0.75);
-    }
-
-    >>> label {
-      height: 4em;
-    }
-
-    >>> input, >>> label {
-      font-size: 2em;
-      max-height: 80px
-      line-height: 1;
-    }
-  }
-}
-
-/*= Parallax */
-#parallax-navigation {
-  position: fixed;
-  top: 50%;
-  z-index: 10000000;
-  width: 12px;
-  right: 1em;
-}
-
-#parallax-navigation a {
-  display: block;
-  width: 12px;
-  height: 12px;
-  text-indent: -9999em;
-  transition: all 400ms ease-in;
-  background: #fff;
-  border-radius: 50%;
-  margin-bottom: 0.9em;
-}
-
-#parallax-navigation a:hover,
-#parallax-navigation a.parallax-navigation-current {
-  background: #f30000;
 }
 </style>
