@@ -130,12 +130,23 @@
             <v-tooltip bottom>
               <h3
                 slot="activator"
-                class="subheading font__weight--bold mb-3 title__text--ellipsis"
+                class="subheading font__weight--bold title__text--ellipsis"
                 v-html="trans(props.item.title)"
                 >
               </h3>
               <span v-html="trans(props.item.title)"></span>
             </v-tooltip>
+            <v-rating
+              background-color="grey"
+              class="mb-3"
+              color="orange"
+              dense
+              half-increments
+              hover
+              readonly
+              size="16"
+              v-model="props.item.rating"
+            ></v-rating>
             <p>
               <span
                 class="text--ellipsis"

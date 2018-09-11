@@ -69,7 +69,8 @@ export default {
             timestamp: '2 hours ago',
             description: 'People in middle age are flocking in record numbers to intense workouts and challenging races. What are they chasing?',
             author: 'Princess Alto',
-            avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg'
+            avatar: 'https://cdn.dribbble.com/users/548596/screenshots/2640778/coffee.jpg',
+            rating: 3.0,
           },
           {
             id: '2',
@@ -79,7 +80,8 @@ export default {
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'John Dionisio',
-            avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif'
+            avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif',
+            rating: 3.5,
           },
           {
             id: '3',
@@ -89,7 +91,8 @@ export default {
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'Sandy Duaso',
-            avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif'
+            avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif',
+            rating: 4.0,
           },
           {
             id: '4',
@@ -99,7 +102,8 @@ export default {
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'Jane Doe',
-            avatar: '//source.unsplash.com/random'
+            avatar: '//source.unsplash.com/random',
+            rating: 4.5,
           },
         ]
       },

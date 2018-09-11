@@ -56,12 +56,18 @@
           </v-card>
           <!-- tags -->
 
-          <!-- social media links -->
+          <!-- social media links and rating -->
           <v-card-actions>
+            <v-rating
+              background-color="grey"
+              class="mb-3"
+              color="orange"
+              v-model="item.rating"
+            ></v-rating>
             <v-spacer></v-spacer>
             <socials></socials>
           </v-card-actions>
-          <!-- social media links -->
+          <!-- social media links and rating -->
         </v-flex>
       </v-layout>
     </v-container>
@@ -100,6 +106,7 @@ export default {
         timestamp: '2 hours ago',
         author: 'Princess Alto',
         avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg',
+        rating: 4.5
       }
     }
   }
