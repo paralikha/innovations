@@ -19,6 +19,12 @@
         <grid-layout-mobile></grid-layout-mobile>
       </div>
     </particles>
+
+    <div id="bee" class="hidden-sm-and-down">
+      <v-btn fab color="secondary" medium class="elevation-3">
+        <v-icon>add</v-icon>
+      </v-btn>
+    </div>
   </div>
 </template>
 
