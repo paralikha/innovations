@@ -26,7 +26,7 @@
       </a>
 
       <a href="/" class="hidden-md-and-up">
-        <img width="46" :src="require('@/assets/logo.png')" alt="">
+        <img width="40" :src="require('@/assets/logo.png')" alt="">
       </a>
 
       <v-spacer></v-spacer>
