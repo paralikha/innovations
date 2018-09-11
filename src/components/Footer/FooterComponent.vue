@@ -32,7 +32,7 @@
               <a class="white--text t__d--n" href="/blogs">{{ trans('Blogs') }}</a>
             </div>
           </v-flex>
-          <v-flex xs4>
+          <v-flex md4 xs6>
             <div class="mb-3">
               <a class="white--text t__d--n" href="/products/rippl3s">{{ trans('Rippl3s') }}</a>
             </div>

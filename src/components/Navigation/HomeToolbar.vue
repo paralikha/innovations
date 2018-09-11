@@ -7,17 +7,26 @@
       >
       <a
         href="/"
-        class="my-3"
+        class="my-3 hidden-sm-and-down"
         @mouseleave="animateLogo($event, false)"
         @mouseover="animateLogo($event, true)">
-        <logo-icon style="margin-left:25px" ref="brand"></logo-icon>
+        <img
+          width="46"
+          id="brand"
+          style="margin-left:25px"
+          :src="require('@/assets/logo.png')"
+          lt=""
+          >
         <img
           id="animated-brand"
           class="hidden"
           width="100"
-          height="100"
           :src="require('@/assets/images/innov-logomotion.gif')"
           >
+      </a>
+
+      <a href="/" class="hidden-md-and-up">
+        <img width="46" :src="require('@/assets/logo.png')" alt="">
       </a>
 
       <v-spacer></v-spacer>
@@ -52,11 +61,10 @@ export default {
   methods: {
     animateLogo (e, hide = true) {
       if (hide) {
-        // console.log(this.$refs['brand'])
-        this.$refs['brand'].$el.classList.add('hidden')
+        document.getElementById('brand').classList.add('hidden')
         document.getElementById('animated-brand').classList.remove('hidden')
       } else {
-        this.$refs['brand'].$el.classList.remove('hidden')
+        document.getElementById('brand').classList.remove('hidden')
         document.getElementById('animated-brand').classList.add('hidden')
       }
     }

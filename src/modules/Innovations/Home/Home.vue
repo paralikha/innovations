@@ -8,8 +8,7 @@
           <p class="title font__weight--bold">
             {{ trans('Ready to move forward?') }}
           </p>
-          <h2 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')">
-          </h2>
+          <h2 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')"></h2>
         </v-container>
       </div>
 

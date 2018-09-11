@@ -53,5 +53,15 @@ export default {
       }
     }
   },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
 }
 </script>

@@ -114,7 +114,7 @@ export default {
 
     preventRightClick () {
       return false
-    }
+    },
   },
 }
 </script>

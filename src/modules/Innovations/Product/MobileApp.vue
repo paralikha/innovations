@@ -1,18 +1,16 @@
 <template>
-  <v-slide-y-transition>
-    <section>
-      <v-card dark class="gradient__withAnimation">
-        <particles>
-          <home-toolbar></home-toolbar>
-          <product-banner :item="banner"></product-banner>
-        </particles>
-      </v-card>
+  <section>
+    <v-card dark class="gradient__withAnimation">
+      <particles>
+        <home-toolbar></home-toolbar>
+        <product-banner :item="banner"></product-banner>
+      </particles>
+    </v-card>
 
-      <product-content :item="content"></product-content>
+    <product-content :item="content"></product-content>
 
-      <footer-component></footer-component>
-    </section>
-  </v-slide-y-transition>
+    <footer-component></footer-component>
+  </section>
 </template>
 
 <script>
@@ -75,15 +73,5 @@ export default {
       }
     }
   },
-
-  mounted () {
-    this.preventRightClick()
-  },
-
-  methods: {
-    preventRightClick () {
-      return false
-    }
-  }
 }
 </script>
