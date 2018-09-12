@@ -3,35 +3,48 @@
     <v-container grid-list-lg>
       <v-card flat class="transparent py-4">
         <v-layout row wrap>
-          <v-flex md5 xs12>
+          <v-flex md4 xs12>
             <v-layout fill-height align-end>
               <v-flex>
-                <v-card dark flat class="transparent">
-                  <h3 class="subheading mb-3 font__weight--bold">
-                    {{ trans('SIGN UP TO OUR NEWS LETTER') }}
-                  </h3>
-                  <v-text-field
-                    label="Email Address"
-                    dark
-                    append-icon="alternate_email"
-                    box
-                    clearable
-                    clear-icon="cancel"
-                    hide-details
-                    class="mb-3"
-                  ></v-text-field>
-                </v-card>
+                <h3 class="subheading mb-3 white--text font__weight--bold">
+                  {{ trans('SIGN UP TO OUR NEWSLETTER') }}
+                </h3>
+                <v-text-field
+                  label="Email Address"
+                  dark
+                  append-icon="alternate_email"
+                  box
+                  clearable
+                  clear-icon="cancel"
+                  hide-details
+                ></v-text-field>
               </v-flex>
             </v-layout>
           </v-flex>
-          <v-flex sm3 xs3>
-            <list :items="footer.links"></list>
+          <v-flex offset-md1 md3 xs4>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/">{{ trans('Home') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/about-us">{{ trans('About') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/blogs">{{ trans('Blogs') }}</a>
+            </div>
           </v-flex>
-          <v-flex sm3 xs3>
-            <list :items="footer.links"></list>
+          <v-flex xs4>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/products/rippl3s">{{ trans('Rippl3s') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/products/e-learning">{{ trans('e-Learning') }}</a>
+            </div>
+            <div class="mb-3">
+              <a class="white--text t__d--n" href="/products/mobile-apps">{{ trans('Mobile Application') }}</a>
+            </div>
           </v-flex>
         </v-layout>
-        <v-divider class="grey darken-1"></v-divider>
+        <v-divider class="grey"></v-divider>
         <v-card dark flat class="transparent">
           <v-card-actions>
             <v-btn icon small>
@@ -74,28 +87,9 @@ export default {
   data () {
     return {
       dataset: {},
+      isEditing: false,
       footer: {
-        links: {
-          dense: true,
-          listClass: 'mb-0 transparent',
-          dark: true,
-          headerTitle: 'Links',
-          subheaderClass: 'secondary--text',
-          items: [
-            {
-              title: 'About Us'
-            },
-            {
-              title: 'Our Products'
-            },
-            // {
-            //   title: 'Blog'
-            // },
-            // {
-            //   title: 'Talk To Us'
-            // }
-          ]
-        },
+
       }
     }
   },

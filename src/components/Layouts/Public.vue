@@ -3,11 +3,11 @@
     <!-- Main Content -->
     <v-content>
       <!-- Main -->
-      <v-fade-transition mode="out-in">
+      <v-slide-y-transition>
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
-      </v-fade-transition>
+      </v-slide-y-transition>
       <!-- Main -->
     </v-content>
     <!-- Main Content -->
@@ -27,5 +27,11 @@ export default {
       app: 'app/app',
     }),
   },
+
+  mounted () {
+    window.addEventListener('load', function (event) {
+      document.getElementById('loader').style.display = 'none'
+    })
+  }
 }
 </script>

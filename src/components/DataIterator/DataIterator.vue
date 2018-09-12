@@ -26,7 +26,7 @@
           :href="dataset.hover ? dataset.cardLink : ''"
           >
           <v-tooltip bottom>
-            <v-card-media
+            <v-img
               :class="dataset.cardMediaClass"
               :height="dataset.cardMediaHeight"
               :src="props.item.thumbnail"
@@ -48,7 +48,7 @@
                   {{ props.item.status }}
                 </v-chip>
               </v-layout>
-            </v-card-media>
+            </v-img>
             <span v-html="trans(props.item.title)"></span>
           </v-tooltip>
 
@@ -163,6 +163,13 @@
                   >
                 </v-list-tile-sub-title>
               </v-list-tile-content>
+
+              <v-list-tile-action>
+                <v-tooltip bottom>
+                  <v-icon slot="activator">mdi-bookmark-outline</v-icon>
+                  <span>{{ trans('Bookmark this story to read later') }}</span>
+                </v-tooltip>
+              </v-list-tile-action>
             </v-list-tile>
           </v-list>
           <!-- author -->

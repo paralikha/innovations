@@ -1,0 +1,89 @@
+<template>
+  <v-slide-y-transition>
+    <section>
+      <v-card dark class="gradient__withAnimation">
+        <particles>
+          <home-toolbar></home-toolbar>
+          <product-banner :item="banner"></product-banner>
+        </particles>
+      </v-card>
+
+      <product-content :item="content"></product-content>
+
+      <footer-component></footer-component>
+    </section>
+  </v-slide-y-transition>
+</template>
+
+<script>
+import store from '@/store'
+import ProductBanner from './template/Banner'
+import ProductContent from './template/Content'
+import MobileAppBanner from '@/assets/images/MobileAppBanner.svg'
+import iconOne from './icons/MobileApp/1.svg'
+import iconTwo from './icons/MobileApp/2.svg'
+import iconThree from './icons/MobileApp/3.svg'
+import iconFour from './icons/MobileApp/4.svg'
+import video from '@/assets/videos/MobileApp.mp4'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+export default {
+  store,
+  name: 'Ripples',
+
+  components: {
+    ProductBanner,
+    ProductContent,
+    AOS,
+  },
+
+  created () {
+    AOS.init()
+  },
+
+  data () {
+    return {
+      banner: {
+        thumbnail: MobileAppBanner,
+        title: 'Gamified Learning in the Palm of Your Hand',
+        description: 'Forged from the depths of our innovative minds, we offer cutting edge apps for the modern learner.',
+        button: 'Discover',
+      },
+
+      content: {
+        heading: 'Function better in a technological-driven society',
+        iconOne: iconOne,
+        titleOne: 'Real-life simulations',
+        descriptionOne: 'Familiarise with everyday hustles, without the worries of committing real errors',
+
+        iconTwo: iconTwo,
+        titleTwo: 'Integrated gamification',
+        descriptionTwo: 'Acquiring knowledge can still be fun',
+
+        iconThree: iconThree,
+        titleThree: 'Life-centric applications',
+        descriptionThree: 'Equip yourself with essential life skills and knowledge for your professional growth',
+
+        iconFour: iconFour,
+        titleFour: 'Digitised lifestyle toolkits',
+        descriptionFour: 'Instantly available solutions whenever you need them',
+
+        video: video,
+        endTitle: 'Try the future now!',
+        buttonTitle: 'Play Me',
+      }
+    }
+  },
+
+  mounted () {
+    this.preventRightClick()
+  },
+
+  methods: {
+    preventRightClick () {
+      return false
+    }
+  }
+}
+</script>

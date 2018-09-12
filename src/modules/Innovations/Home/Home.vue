@@ -1,34 +1,33 @@
 <template>
-  <section id="home">
-    <particles>
-      <!-- toolbar -->
+  <div>
+    <particles class="home-gradient">
       <home-toolbar></home-toolbar>
-      <!-- toolbar -->
 
-      <!-- page title -->
-      <div class="content text-xs-center">
+      <div class="content text-xs-center hide-on-hover">
         <v-container grid-list-lg>
           <p class="title font__weight--bold">
             {{ trans('Ready to move forward?') }}
           </p>
-          <h1 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')">
-          </h1>
+          <h2 v-html="trans('Explore our accessible and engaging innovations <br/> for learning and living.')">
+          </h2>
         </v-container>
       </div>
-      <!-- page title -->
 
-      <!-- products -->
-      <grid-layout></grid-layout>
-      <!-- products -->
+      <div class="hidden-sm-and-down">
+        <grid-layout-web></grid-layout-web>
+      </div>
+      <div class="hidden-md-and-up">
+        <grid-layout-mobile></grid-layout-mobile>
+      </div>
     </particles>
-  </section>
+  </div>
 </template>
 
 <script>
 import store from '@/store'
 import LogoIcon from '@/components/Icons/LogoIcon'
-import GridLayout from './partials/GridLayout'
-// import FollowMouseButton from './partials/FollowMouseButton'
+import GridLayoutWeb from './partials/GridLayoutWeb'
+import GridLayoutMobile from './partials/GridLayoutMobile'
 
 export default {
   store,
@@ -37,21 +36,18 @@ export default {
 
   components: {
     LogoIcon,
-    GridLayout,
-    // FollowMouseButton,
-  },
-
-  data () {
-    return {
-    }
-  },
-
-  mounted () {
-    //
-  },
-
-  methods: {
-    //
+    GridLayoutWeb,
+    GridLayoutMobile,
   },
 }
 </script>
+
+<style lang="stylus" scoped>
+.hide-on-hover {
+  transition: all 0.3s ease-in-out;
+
+  &--active {
+    opacity: 0;
+  }
+}
+</style>

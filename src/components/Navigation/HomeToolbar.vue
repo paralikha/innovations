@@ -5,31 +5,29 @@
       dark
       flat
       >
-      <a href="/">
-        <logo-icon></logo-icon>
+      <a
+        href="/"
+        class="my-3"
+        @mouseleave="animateLogo($event, false)"
+        @mouseover="animateLogo($event, true)">
+        <logo-icon style="margin-left:25px" ref="brand"></logo-icon>
+        <img
+          id="animated-brand"
+          class="hidden"
+          width="100"
+          height="100"
+          :src="require('@/assets/images/innov-logomotion.gif')"
+          >
       </a>
 
       <v-spacer></v-spacer>
 
-      <!-- <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn
-          flat
-          large
-          v-for="(menu, i) in menus"
-          exact
-          :to="menu.path"
-          :key="i"
-          class="mx-1">
-          {{ __(menu.meta.title) }}
-        </v-btn>
-      </v-toolbar-items> -->
+      <!-- web -->
       <main-menu></main-menu>
-      <!-- mobile menu button -->
+      <!-- mobile -->
       <mobile-nav></mobile-nav>
-      <!-- mobile menu button -->
     </v-toolbar>
   </div>
-
 </template>
 
 <script>
@@ -52,9 +50,23 @@ export default {
   },
 
   methods: {
-    toggle (item) {
-      // this.$store.dispatch('mainmenu/toggle', item)
-    },
+    animateLogo (e, hide = true) {
+      if (hide) {
+        // console.log(this.$refs['brand'])
+        this.$refs['brand'].$el.classList.add('hidden')
+        document.getElementById('animated-brand').classList.remove('hidden')
+      } else {
+        this.$refs['brand'].$el.classList.remove('hidden')
+        document.getElementById('animated-brand').classList.add('hidden')
+      }
+    }
   }
 }
 </script>
+
+<style>
+.hidden {
+  display: none;
+  transition: all 0.3s ease-in;
+}
+</style>

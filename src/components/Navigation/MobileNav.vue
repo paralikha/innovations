@@ -1,8 +1,7 @@
 <template>
   <div>
     <v-btn
-      @click="toggle(!mainmenu.model)"
-      v-model="mainmenu.model"
+      @click="toggle(!navmodel)"
       icon
       dark
       color="secondary"
@@ -11,7 +10,7 @@
       <v-icon>more_horiz</v-icon>
     </v-btn>
     <v-dialog
-      v-model="mainmenu.model"
+      v-model="navmodel"
       fullscreen
       hide-overlay
       transition="dialog-bottom-transition"
@@ -27,27 +26,63 @@
             dark
             icon
             color="secondary"
-            @click.native="toggle(!mainmenu.model)"
+            @click.native="toggle(!navmodel)"
             >
             <v-icon>remove</v-icon>
           </v-btn>
         </v-toolbar>
         <v-divider dark></v-divider>
-        <!-- <v-list three-line>
-          <v-list-tile
-            :key="i"
-            v-for="(item, i) in menus"
-            href=""
-            ripple
+
+        <!-- mobile-menu -->
+        <!-- <main-menu></main-menu> -->
+        <v-list two-line>
+          <template
+            v-for="(menu, i) in menus"
             >
-            <v-list-tile-content>
-              <v-list-tile-title>
-                <strong class="title" v-html="trans(item.meta.title)"></strong>
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list> -->
-        <main-menu></main-menu>
+            <template v-if="menu.meta.excludeInMenu"></template>
+
+            <v-list-group
+              :key="i"
+              no-action
+              ripple
+              v-else-if="menu.meta.withSubmenu"
+              >
+              <v-list-tile
+                ripple
+                slot="activator"
+                >
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+
+              <v-list-tile
+                :key="j"
+                :to="{name: submenu.name}"
+                exact
+                ripple
+                v-for="(submenu, j) in menu.children"
+                >
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ __(submenu.meta.title) }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list-group>
+
+            <v-list-tile
+              :key="i"
+              :to="{name: menu.name}"
+              exact
+              ripple
+              v-else
+              >
+              <v-list-tile-content>
+                <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </template>
+        </v-list>
+        <!-- mobile-menu -->
       </v-card>
     </v-dialog>
   </div>
@@ -55,27 +90,20 @@
 
 <script>
 import _public from '@/router/public'
-import { mapGetters } from 'vuex'
 
 export default {
   name: 'MobileNav',
 
-  computed: {
-    ...mapGetters({
-      'mainmenu': 'mainmenu/mainmenu',
-    }),
-  },
-
   data () {
     return {
-      navmodel: true,
+      navmodel: false,
       menus: _public.children
     }
   },
 
   methods: {
     toggle (model) {
-      this.$store.dispatch('mainmenu/toggle', {model: model})
+      this.navmodel = model
     },
   }
 }

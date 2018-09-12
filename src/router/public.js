@@ -18,8 +18,7 @@ requireRoute.keys().forEach(route => {
 
 export default {
   path: '/',
-  name: 'public',
-  redirect: { name: 'home' },
+  // redirect: { name: 'home' },
   component: () => import('@/components/Layouts/Public.vue'),
   meta: { title: 'Welcome', authenticatable: false },
   children: routes.sort((a, b) => { return a.meta.sort - b.meta.sort }),

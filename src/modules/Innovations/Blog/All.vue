@@ -1,27 +1,35 @@
 <template>
-  <section id="public">
+  <section>
     <main-toolbar></main-toolbar>
 
     <v-container grid-list-lg>
-      <v-layout row wrap>
-        <v-flex xs12>
-          <v-card flat>
-            <v-card-text class="px-0 py-4">
-              <h1>{{ trans('What\'s Brewing') }}</h1>
-              <p>{{ trans('Read some musings from our geniuses while caffeine is still kicking through their veins.') }}</p>
-            </v-card-text>
-          </v-card>
+      <v-layout row wrap justify-center align-center>
+        <v-flex xl10 lg10 xs12>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <v-card flat>
+                <v-card-text class="px-0 py-4">
+                  <h1>{{ trans('What\'s Brewing') }}</h1>
+                  <p>{{ trans('Read some musings from our geniuses while caffeine is still kicking through their veins.') }}</p>
+                </v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
 
-      <v-layout row wrap>
-        <v-flex md3 xs12 order-md1 order-sm2 order-xs2>
-          <list :items="archives"></list>
-          <list :items="categories"></list>
-        </v-flex>
+      <v-layout row wrap justify-center align-center>
+        <v-flex xl10 lg10 xs12>
+          <v-layout row wrap>
+            <v-flex md3 xs12 order-md1 order-sm2 order-xs2>
+              <list :items="archives"></list>
+              <list :items="categories"></list>
+            </v-flex>
 
-        <v-flex md9 xs12 order-md2 order-sm1 order-xs1>
-          <data-iterator class="mt-2" :items="blogs"></data-iterator>
+            <v-flex md9 xs12 order-md2 order-sm1 order-xs1>
+              <data-iterator class="mt-2" :items="blogs"></data-iterator>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
     </v-container>

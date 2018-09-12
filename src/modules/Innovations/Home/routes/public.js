@@ -1,6 +1,6 @@
 export default [
   {
-    path: '/',
+    path: '',
     name: 'home',
     component: () => import('../Home.vue'),
     meta: {
@@ -8,6 +8,7 @@ export default [
       sort: 1,
       external: true,
       excludeFromRoot: true,
+      excludeInMenu: true,
       authenticatable: false,
       icon: 'mdi-book-multiple-variant',
     },
