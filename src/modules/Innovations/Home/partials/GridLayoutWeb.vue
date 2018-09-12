@@ -138,7 +138,6 @@ export default {
       var bee = document.getElementById("bee");
       document.addEventListener("mousemove", getMouse);
 
-
       bee.style.position = "absolute"; //css
       var beepos = {x:0, y:0};
 
@@ -170,14 +169,12 @@ export default {
         bee.style.left = beepos.x + "px";
         bee.style.top = beepos.y + "px";
 
-
-          //Apply css class
-          if (dir == "right"){
-            bee.setAttribute("class", "right");
-          } else {
-            bee.setAttribute("class", "left");
-          }
-
+        //Apply css class
+        if (dir == "right"){
+          bee.setAttribute("class", "right");
+        } else {
+          bee.setAttribute("class", "left");
+        }
       }
     }
   },
