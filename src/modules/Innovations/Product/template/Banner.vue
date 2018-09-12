@@ -31,7 +31,8 @@
             @contextmenu.prevent="preventRightClick"
             :src="item.thumbnail"
             alt=""
-            width="100%">
+            width="100%"
+          >
         </v-card>
       </v-flex>
     </v-layout>

@@ -19,7 +19,7 @@
                     flat
                     class="py-3"
                     >
-                    <img class="mb-3" width="50" :src="item.iconOne" alt="">
+                    <div><img class="mb-3" width="50" :src="item.iconOne" alt=""></div>
                     <p class="mb-3">
                       <strong v-html="trans(item.titleOne)"></strong>
                     </p>

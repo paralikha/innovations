@@ -24,8 +24,7 @@
           :height="dataset.cardHeight"
           :hover="dataset.hover"
           :href="dataset.hover ? dataset.cardLink : ''"
-          :data-aos="props.item.aos"
-          :data-aos-duration="props.item.aosDuration"
+          data-aos-easing="ease-in-out"
           >
           <v-tooltip bottom>
             <v-img
@@ -207,9 +206,7 @@ export default {
   },
 
   created () {
-    AOS.init({
-      easing: 'ease-in-out',
-    })
+    AOS.init()
   },
 
   computed: {
