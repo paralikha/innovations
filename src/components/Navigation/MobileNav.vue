@@ -18,9 +18,9 @@
       <v-card dark>
         <v-toolbar
           flat
-          class="transparent pa-4"
+          class="transparent pa-3"
           >
-          <!-- <logo-icon></logo-icon> -->
+          <img width="40" :src="require('@/assets/logo.png')" alt="">
           <v-spacer></v-spacer>
           <v-btn
             dark

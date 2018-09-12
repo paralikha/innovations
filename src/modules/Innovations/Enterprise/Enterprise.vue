@@ -27,7 +27,12 @@
                 flat
                 class="transparent mb-4"
                 >
-                <img @contextmenu.prevent="preventRightClick" :src="item.thumbnail" alt="" width="100%">
+                <img
+                  @contextmenu.prevent="preventRightClick"
+                  :src="item.thumbnail"
+                  alt=""
+                  width="100%"
+                >
               </v-card>
             </v-flex>
           </v-layout>
@@ -56,7 +61,12 @@
                         class="py-3"
                         >
                         <div class="mb-3">
-                          <img @contextmenu.prevent="preventRightClick" width="300" :src="item.thumbnail" alt="">
+                          <img
+                            @contextmenu.prevent="preventRightClick"
+                            width="300"
+                            :src="item.thumbnail"
+                            alt=""
+                          >
                         </div>
                         <p class="mb-3">
                           <strong v-html="trans(item.title)"></strong>
@@ -114,7 +124,9 @@ export default {
   },
 
   created () {
-    AOS.init()
+    AOS.init({
+      easing: 'ease-in-out'
+    })
   },
 
   data () {

@@ -24,8 +24,8 @@
           :height="dataset.cardHeight"
           :hover="dataset.hover"
           :href="dataset.hover ? dataset.cardLink : ''"
-          data-aos="fade-right"
-          :data-aos-duration="dataset.aosDelay"
+          :data-aos="props.item.aos"
+          :data-aos-duration="props.item.aosDuration"
           >
           <v-tooltip bottom>
             <v-img

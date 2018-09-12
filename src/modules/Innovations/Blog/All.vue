@@ -73,7 +73,8 @@ export default {
             author: 'Princess Alto',
             avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg',
             rating: 3.0,
-            aosDelay: 400,
+            aos: 'fade-right',
+            aosDuration: 400,
           },
           {
             id: '2',
@@ -85,7 +86,8 @@ export default {
             author: 'John Dionisio',
             avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif',
             rating: 3.5,
-            aosDelay: 500,
+            aos: 'fade-right',
+            aosDuration: 500,
           },
           {
             id: '3',
@@ -97,7 +99,8 @@ export default {
             author: 'Sandy Duaso',
             avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif',
             rating: 4.0,
-            aosDelay: 1000,
+            aos: 'fade-right',
+            aosDuration: 600,
           },
           {
             id: '4',
@@ -109,7 +112,7 @@ export default {
             author: 'Jane Doe',
             avatar: '//source.unsplash.com/random',
             rating: 4.5,
-            aosDelay: 2000,
+            aosDuration: 700,
           },
         ]
       },

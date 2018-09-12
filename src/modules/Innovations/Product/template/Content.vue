@@ -125,7 +125,6 @@ export default {
 
   created () {
     AOS.init({
-      delay: 400,
       easing: 'ease-in-out'
     })
   },
