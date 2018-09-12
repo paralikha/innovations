@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar
-      class="pa-4 transparent"
+      class="pa-3 transparent"
       dark
       flat
       >

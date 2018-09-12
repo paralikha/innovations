@@ -23,8 +23,6 @@ import iconTwo from './icons/Rippl3s/2.svg'
 import iconThree from './icons/Rippl3s/3.svg'
 import iconFour from './icons/Rippl3s/4.svg'
 import video from '@/assets/videos/Rippl3s.mp4'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 export default {
   store,
@@ -33,11 +31,6 @@ export default {
   components: {
     ProductBanner,
     ProductContent,
-    AOS,
-  },
-
-  created () {
-    AOS.init()
   },
 
   data () {

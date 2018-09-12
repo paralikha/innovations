@@ -130,19 +130,19 @@ export default {
       content: {
         items: [
           {
-            aosDuration: '1000',
+            aosDuration: '400',
             thumbnail: EnterpriseELearning,
             title: 'Large scale workforce training',
             description: 'We provide customised workplace learning on demand and we help design platforms that would allow organisations to maximise their fullest human capital potential.'
           },
           {
-            aosDuration: '1500',
+            aosDuration: '500',
             thumbnail: EnterpriseRippl3s,
             title: 'Effective performance tracking',
             description: 'Through a  combined dashboard channel, access valuable metrics on employee performance, revenue growth, production, and distribution.'
           },
           {
-            aosDuration: '2000',
+            aosDuration: '600',
             thumbnail: EnterpriseMobileApps,
             title: 'Accessible digital solutions',
             description: 'Connect with various networks and utilise systems for collaboration as we innovate everyday operations, from content management to billing systems.'

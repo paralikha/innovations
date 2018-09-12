@@ -70,6 +70,20 @@
             </v-list-group>
 
             <v-list-tile
+              v-else-if="!menu.name"
+              ripple
+              exact
+              :to="menu.path"
+              :key="i"
+              >
+              <v-list-tile-content>
+                <v-list-tile-title>
+                  {{ __(menu.meta.title) }}
+                </v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile
               :key="i"
               :to="{name: menu.name}"
               exact

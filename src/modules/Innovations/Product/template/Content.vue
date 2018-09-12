@@ -9,7 +9,6 @@
                 <v-flex sm3 xs12>
                   <h1
                     data-aos="fade-up"
-                    data-aos-duration="1000"
                     class="primary--text"
                     v-html="trans(item.heading)">
                   </h1>
@@ -17,7 +16,6 @@
                 <v-flex sm4 offset-sm1 xs12>
                   <v-card
                     data-aos="fade-up"
-                    data-aos-duration="1000"
                     flat
                     class="py-3"
                     >
@@ -31,7 +29,6 @@
                 <v-flex sm4 xs12>
                   <v-card
                     data-aos="fade-up"
-                    data-aos-duration="1000"
                     flat
                     class="py-3"
                     >
@@ -45,7 +42,6 @@
                 <v-flex offset-sm4 sm4 xs12>
                   <v-card
                     data-aos="fade-up"
-                    data-aos-duration="1000"
                     flat
                     class="py-3"
                     >
@@ -59,7 +55,6 @@
                 <v-flex sm4 xs12>
                   <v-card
                     data-aos="fade-up"
-                    data-aos-duration="1000"
                     flat
                     class="py-3"
                     >
@@ -78,7 +73,6 @@
               <v-flex xs12>
                 <v-card
                   data-aos="fade-up"
-                  data-aos-duration="1000"
                   flat
                   class="text-xs-center py-5 transparent"
                   >
@@ -118,10 +112,23 @@
 
 <script>
 import store from '@/store'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'ProductContent',
+
+  components: {
+    AOS,
+  },
+
+  created () {
+    AOS.init({
+      delay: 400,
+      easing: 'ease-in-out'
+    })
+  },
 
   props: {
     item: {

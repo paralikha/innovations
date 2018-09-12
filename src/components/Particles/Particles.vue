@@ -19,7 +19,6 @@ export default {
   },
 
   mounted () {
-    // this.initParticlesJS(),
     setTimeout(this.initParticlesJS, 500)
   },
 }

@@ -34,6 +34,8 @@
       </v-layout>
     </v-container>
 
+    <v-card height="100"></v-card>
+
     <footer-component></footer-component>
   </section>
 </template>
@@ -64,35 +66,38 @@ export default {
           {
             id: '1',
             title: 'Extreme Athleticism Is the New Midlife Crisis',
-            thumbnail: '//cdn.dribbble.com/users/904433/screenshots/3884727/usage_dribbble.png',
+            thumbnail: '//images.unsplash.com/photo-1523958359188-26c5f0d234ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d69506281c09af1fc68886c28d35f0c0&auto=format&fit=crop&w=957&q=80',
             category: 'E-Learning',
             timestamp: '2 hours ago',
             description: 'People in middle age are flocking in record numbers to intense workouts and challenging races. What are they chasing?',
             author: 'Princess Alto',
-            avatar: 'https://cdn.dribbble.com/users/548596/screenshots/2640778/coffee.jpg',
+            avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg',
             rating: 3.0,
+            aosDelay: 400,
           },
           {
             id: '2',
             title: 'An Economy of Desire',
-            thumbnail: '//cdn.dribbble.com/users/904433/screenshots/3884768/conversion_dribbble.png',
+            thumbnail: '//images.unsplash.com/photo-1521510024457-e4a37f8abd33?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ea42eaa8f2c00f644fff2c9d29da9bc4&auto=format&fit=crop&w=1051&q=80',
             category: 'E-Learning',
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'John Dionisio',
             avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif',
             rating: 3.5,
+            aosDelay: 500,
           },
           {
             id: '3',
             title: 'Javascript Fundamentals',
-            thumbnail: '//cdn.dribbble.com/users/904433/screenshots/3884774/engagement_dribbble.png',
+            thumbnail: '//images.unsplash.com/photo-1519377483941-d4c7ea7ae521?ixlib=rb-0.3.5&s=56987893d5b34445b86aaec9e484efde&auto=format&fit=crop&w=844&q=80',
             category: 'Mobile Application',
             timestamp: '2 hours ago',
             description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
             author: 'Sandy Duaso',
             avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif',
             rating: 4.0,
+            aosDelay: 1000,
           },
           {
             id: '4',
@@ -104,6 +109,7 @@ export default {
             author: 'Jane Doe',
             avatar: '//source.unsplash.com/random',
             rating: 4.5,
+            aosDelay: 2000,
           },
         ]
       },

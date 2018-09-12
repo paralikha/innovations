@@ -7,14 +7,16 @@
         <v-list light>
           <v-list-tile
             exact
-            :key="j
-"           :to="{name: submenu.name}"
+            :key="j"
+            :to="{name: submenu.name}"
             v-for="(submenu, j) in menu.children"
             >
             <v-list-tile-content>{{ submenu.meta.title }}</v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-menu>
+
+      <v-btn v-else-if="!menu.name" flat large exact :to="menu.path" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
       <v-btn v-else flat large exact :to="{name: menu.name}" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
     </template>
 

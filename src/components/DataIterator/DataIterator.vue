@@ -24,6 +24,8 @@
           :height="dataset.cardHeight"
           :hover="dataset.hover"
           :href="dataset.hover ? dataset.cardLink : ''"
+          data-aos="fade-right"
+          :data-aos-duration="dataset.aosDelay"
           >
           <v-tooltip bottom>
             <v-img
@@ -193,10 +195,22 @@
 <script>
 import store from '@/store'
 import { mapGetters } from 'vuex'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
   name: 'DataIterator',
+
+  components: {
+    AOS,
+  },
+
+  created () {
+    AOS.init({
+      easing: 'ease-in-out',
+    })
+  },
 
   computed: {
     ...mapGetters({
@@ -222,15 +236,5 @@ export default {
   mounted () {
     this.dataset = Object.assign({}, this.dataiterator, this.items)
   },
-
-  methods: {
-    show () {
-      this.$store.dispatch('dataiterator/PROMPT_DIALOG', { model: true })
-    },
-
-    hide () {
-      this.$store.dispatch('dataiterator/PROMPT_DIALOG', { model: false })
-    }
-  }
 }
 </script>

@@ -30,9 +30,11 @@
             </v-list>
             <!-- author -->
 
-            <v-card class="mb-3">
-              <v-img :src="item.thumbnail" height="260"></v-img>
-            </v-card>
+            <!-- featured image -->
+            <v-responsive :aspect-ratio="16/9">
+              <v-img :src="item.thumbnail"></v-img>
+            </v-responsive>
+            <!-- featured image -->
 
             <v-card-text class="px-0">
               <p class="body-2 mb-2 primary--text text--lighten-2">
@@ -44,9 +46,38 @@
             </v-card-text>
           </v-card>
 
+          <!-- body -->
           <v-card flat class="pb-5">
             <p v-html="item.body"></p>
+
+            <p>
+              {{ trans('Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.') }}
+            </p>
+
+            <blockquote>
+              <p>{{ trans('The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.') }}</p>
+            </blockquote>
+
+            <p>
+              {{ trans('When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.') }}
+            </p>
+
+            <h3 class="mb-3">{{ trans('On her way she met a copy') }}</h3>
+            <ol class="mb-3">
+              <li>{{ trans('Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.') }}</li>
+              <li>{{ trans('A small river named Duden flows by their place and supplies it with the necessary regelialia.') }}</li>
+              <li>{{ trans('And if she hasn’t been rewritten, then they are still using her.') }}</li>
+            </ol>
+
+            <p>{{ trans('On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.') }}</p>
+
+            <ul class="mb-3">
+              <li>{{ trans('Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.') }}</li>
+              <li>{{ trans('A small river named Duden flows by their place and supplies it with the necessary regelialia.') }}</li>
+              <li>{{ trans('And if she hasn’t been rewritten, then they are still using her.') }}</li>
+            </ul>
           </v-card>
+          <!-- body -->
 
           <!-- tags -->
           <v-card flat class="py-3">
@@ -56,7 +87,7 @@
           </v-card>
           <!-- tags -->
 
-          <!-- social media links and rating -->
+          <!-- rating and socials-->
           <v-card-actions>
             <v-rating
               background-color="grey"
@@ -67,13 +98,13 @@
             <v-spacer></v-spacer>
             <socials></socials>
           </v-card-actions>
-          <!-- social media links and rating -->
+          <!-- rating and socials-->
         </v-flex>
       </v-layout>
     </v-container>
 
     <!-- recommended -->
-    <recommended></recommended>
+    <recommended class="mt-4"></recommended>
     <!-- recommended -->
 
     <footer-component></footer-component>
@@ -99,7 +130,7 @@ export default {
     return {
       report: false,
       item: {
-        thumbnail: 'http://cdn.dribbble.com/users/904433/screenshots/3884727/usage_dribbble.png',
+        thumbnail: '//images.unsplash.com/photo-1530518309799-9db5fc42276b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b784735a7a03b5fee7bf5cc1150957ed&auto=format&fit=crop&w=1075&q=80',
         category: 'E-Learning',
         title: 'Extreme Athleticism Is the New Midlife Crisis',
         body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas eaque, non cupiditate veritatis minima vitae numquam, ducimus dicta deleniti perferendis aperiam! Debitis consequuntur amet ipsum? Eius odio dolore ab, deserunt. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.',

@@ -23,8 +23,6 @@ import iconTwo from './icons/eLearning/2.svg'
 import iconThree from './icons/eLearning/3.svg'
 import iconFour from './icons/eLearning/4.svg'
 import video from '@/assets/videos/eLearning.mp4'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 
 export default {
   store,
@@ -33,11 +31,6 @@ export default {
   components: {
     ProductBanner,
     ProductContent,
-    AOS,
-  },
-
-  created () {
-    AOS.init()
   },
 
   data () {
