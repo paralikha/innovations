@@ -109,5 +109,18 @@ export default {
   store,
 
   name: 'Error',
+
+  mounted () {
+    this.terminalWindow()
+  },
+
+  methods: {
+    terminalWindow () {
+      /* eslint-disable */
+      $(function() {
+        $(".terminal").draggable();
+      });
+    }
+  }
 }
 </script>

@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
     <title>Innovations by SSA Group</title>
     <style>
       body {
@@ -76,11 +79,6 @@
         align-items: center;
       }
 
-      .terminal__text a {
-        padding: 20px 5%;
-        line-height: 1.5;
-      }
-
       .terminal__text__span:before {
         content: '$   ';
         color: #52a563;
@@ -144,7 +142,7 @@
       /* eslint-disable */
       var aText = new Array(
         "<span class='terminal__text__span'>The page you're looking for doesn't exist</span>",
-        "<span class='terminal__text__span'>Go back to <a href='/'>Home</a> Page instead.",
+        "<span class='terminal__text__span'>Go back to <a href='/'>Home</a> instead",
       );
       var iSpeed = 50;
       var iIndex = 0;
@@ -177,9 +175,9 @@
        }
       }
 
-      // $(function() {
-      //   $( ".terminal" ).draggable();
-      // });
+      $(function() {
+        $( ".terminal" ).draggable();
+      });
     </script>
   </body>
 </html>
