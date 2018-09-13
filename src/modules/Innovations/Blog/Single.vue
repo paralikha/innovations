@@ -140,6 +140,6 @@ export default {
         rating: 4.5
       }
     }
-  }
+  },
 }
 </script>

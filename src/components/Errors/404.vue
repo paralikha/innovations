@@ -1,11 +1,6 @@
 <template>
   <body>
     <particles class="error-gradient">
-      <!-- <section class="error--container">
-        <v-layout row wrap justify-center align-center>
-          <h1>404</h1>
-        </v-layout>
-      </section> -->
       <div class="wrapper">
         <div class="terminal">
           <div class="terminal__head">
@@ -109,18 +104,5 @@ export default {
   store,
 
   name: 'Error',
-
-  mounted () {
-    this.terminalWindow()
-  },
-
-  methods: {
-    terminalWindow () {
-      /* eslint-disable */
-      $(function() {
-        $(".terminal").draggable();
-      });
-    }
-  }
 }
 </script>
