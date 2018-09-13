@@ -4,6 +4,13 @@
     <slot></slot>
   </div>
 </template>
+
+<!-- <style>
+  #particles-js {
+    z-index: 999;
+  }
+</style> -->
+
 <script>
 import options from './json/options.json'
 import 'particles.js'
