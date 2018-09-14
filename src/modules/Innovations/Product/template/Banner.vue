@@ -3,7 +3,11 @@
     <v-layout row wrap justify-center align-center>
       <v-flex md5 xs12 order-md1 order-sm2 order-xs2>
         <v-layout align-center justify-center row fill-height>
-          <v-card flat class="pt-4 transparent">
+          <v-card
+            flat
+            class="pt-4 transparent"
+            data-aos="fade-right"
+            >
             <v-card-text>
               <h1 class="display-1 mb-3">
                 <strong v-html="item.title"></strong>
@@ -26,6 +30,7 @@
         <v-card
           flat
           class="transparent mb-4"
+          data-aos="fade-left"
           >
           <img
             @contextmenu.prevent="preventRightClick"
@@ -41,6 +46,8 @@
 
 <script>
 import store from '@/store'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 export default {
   store,
@@ -53,6 +60,17 @@ export default {
         return {}
       }
     }
+  },
+
+  components: {
+    AOS,
+  },
+
+  created () {
+    AOS.init({
+      easing: 'ease-in-out',
+      once: true,
+    })
   },
 
   mounted () {

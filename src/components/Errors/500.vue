@@ -111,20 +111,8 @@
               </div>
               <div class="astronaut-body"></div>
             </div>
-            <!-- <svg class="astronaut-wire" viewBox="-9 -9 259 823" width="259" height="823">
-              <path d="M241 0c-24 54-30 113-78 148S63 159 27 215c-35 55 32 102 73 141s103 94 98 166c-6 97-169 66-192 157-10 43-8 84 9 126" fill="none" stroke-width="6" stroke="#FFF"></path>
-            </svg> -->
-            <!-- <div class="circle planet">
-              <div class="craters">
-                <div class="crater crater--1"></div>
-                <div class="crater crater--2"></div>
-                <div class="crater crater--3"></div>
-                <div class="crater crater--4"></div>
-                <div class="crater crater--5"></div>
-                <div class="crater crater--6"></div>
-              </div>
-            </div> -->
-            <div class="circle"><logo-icon width="160" height="160"></logo-icon></div>
+            <!-- <div class="circle"><logo-icon width="160" height="160"></logo-icon></div> -->
+            <div class="circle"><img width="160" :src="require('@/assets/logo.png')" alt=""></div>
             <div class="astronaut-hands">
               <div class="astronaut-hand hand--left">
                 <svg width="35" height="75">
