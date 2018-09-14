@@ -13,6 +13,7 @@
               <v-layout align-center justify-center row fill-height>
                 <v-card
                   data-aos="fade-right"
+                  data-aos-delay="200"
                   flat
                   class="pt-4 transparent"
                   >
@@ -29,6 +30,7 @@
             <v-flex md6 offset-md1 xs12 order-md2 order-sm1 order-xs1>
               <v-card
                 data-aos="fade-left"
+                data-aos-delay="200"
                 flat
                 class="transparent mb-4"
                 >
@@ -128,13 +130,6 @@ export default {
     AOS
   },
 
-  created () {
-    AOS.init({
-      easing: 'ease-in-out',
-      once: true,
-    })
-  },
-
   data () {
     return {
       bannerSubtitle: true,
@@ -172,6 +167,11 @@ export default {
 
   mounted () {
     this.preventRightClick()
+    setTimeout(function () {
+      AOS.init({
+        once: true,
+      })
+    }, 500)
   },
 
   methods: {

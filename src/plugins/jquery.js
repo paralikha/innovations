@@ -1,1 +1,1 @@
-import 'jquery'
+import 'jquery/dist/jquery.min.js'

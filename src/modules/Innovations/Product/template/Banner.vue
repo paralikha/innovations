@@ -7,6 +7,7 @@
             flat
             class="pt-4 transparent"
             data-aos="fade-right"
+            data-aos-delay="200"
             >
             <v-card-text>
               <h1 class="display-1 mb-3">
@@ -31,6 +32,7 @@
           flat
           class="transparent mb-4"
           data-aos="fade-left"
+          data-aos-delay="200"
           >
           <img
             @contextmenu.prevent="preventRightClick"
@@ -66,15 +68,13 @@ export default {
     AOS,
   },
 
-  created () {
-    AOS.init({
-      easing: 'ease-in-out',
-      once: true,
-    })
-  },
-
   mounted () {
     this.preventRightClick()
+    setTimeout(function () {
+      AOS.init({
+        once: true,
+      })
+    }, 500)
   },
 
   methods: {

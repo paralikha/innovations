@@ -123,11 +123,12 @@ export default {
     AOS,
   },
 
-  created () {
-    AOS.init({
-      easing: 'ease-in-out',
-      once: true,
-    })
+  mounted () {
+    setTimeout(function () {
+      AOS.init({
+        once: true,
+      })
+    }, 500)
   },
 
   props: {
