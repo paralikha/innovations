@@ -2,7 +2,7 @@ export default [
   {
     path: '*',
     name: 'error.404',
-    component: () => import('@/components/Errors/404.vue'),
+    component: () => import('@/components/Errors/500.vue'),
     meta: {
       title: '404 Not Found',
       excludeInMenu: true,
