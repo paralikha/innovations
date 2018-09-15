@@ -109,7 +109,7 @@
       /* terminalWindow */
     </style>
   </head>
-  <body onload="typewriter();">
+  <body>
     <noscript id="deferred-styles">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900|Material+Icons">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Palanquin:400,500,600,700|Raleway:400,700,900|Roboto:300,400,500,700|Material+Icons&style=twotone">
@@ -140,42 +140,7 @@
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
 
-      //terminalWindow
-      /* eslint-disable */
-      var aText = new Array(
-        "<span class='terminal__text__span'>The page you're looking for doesn't exist</span>",
-        "<span class='terminal__text__span'>Go back to <a href='/'>Home</a> instead",
-      );
-      var iSpeed = 50;
-      var iIndex = 0;
-      var iArrLength = aText[0].length;
-      var iScrollAt = 20;
 
-      var iTextPos = 0;
-      var sContents = '';
-      var iRow;
-
-      function typewriter() {
-        sContents =  ' ';
-        iRow = Math.max(0, iIndex-iScrollAt);
-        var destination = document.getElementById("typedtext");
-
-        while ( iRow < iIndex ) {
-          sContents += aText[iRow++] + '<br />';
-        }
-        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-        if ( iTextPos++ == iArrLength ) {
-          iTextPos = 0;
-          iIndex++;
-          if ( iIndex != aText.length ) {
-            iArrLength = aText[iIndex].length;
-            setTimeout("typewriter()", 200);
-          }
-        }
-        else {
-          setTimeout("typewriter()", iSpeed);
-        }
-      }
     </script>
   </body>
 </html>
