@@ -89,7 +89,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
 .hidden {
   display: none;
   transition: all 0.3s ease-in;

@@ -1,6 +1,6 @@
 <template>
   <body>
-    <particles class="error-gradient">
+    <particles class="error__page--gradient">
       <div class="wrapper">
         <div class="terminal">
           <div class="terminal__head">
@@ -39,9 +39,9 @@
   .terminal{
     width: 90%;
     font-family: 'Poppins', sans-serif;
-    max-width: 600px;
+    max-width: 900px;
     height: 40%;
-    min-height: 300px;
+    min-height: 400px;
     background: #263238;
     border-radius: 7px 7px;
     transition: box-shadow .3s linear;
@@ -70,6 +70,7 @@
       &__span:before{
         content: '$ ' !important;
         color: #52a563;
+        margin-right: 10px;
       }
     }
   }
@@ -145,5 +146,7 @@ export default {
       }
     }
   }
+=======
+  name: 'Error404',
 }
 </script>
