@@ -56,13 +56,17 @@
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+  overflow: hidden;
 }
+
 .right {
   -moz-transform: scaleX(1);
   -o-transform: scaleX(1);
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
+  overflow: hidden;
 }
+
 #bee {
   transition: transform .1s
   overflow: hidden;
@@ -115,7 +119,7 @@ export default {
 
   mounted () {
     this.preventRightClick()
-    // this.followMouse()
+    this.followMouse()
   },
 
   methods: {
@@ -149,12 +153,10 @@ export default {
       function getMouse(e){
         mouse.x = e.pageX;
         mouse.y = e.pageY;
-          //Checking directional change
-          if(mouse.x > beepos.x){
-            dir = "right";
-          } else {
-            dir = "left";
-          }
+        //Checking directional change
+        if(mouse.x > beepos.x){
+          dir = "right";
+        }
       }
 
       function followMouse(){

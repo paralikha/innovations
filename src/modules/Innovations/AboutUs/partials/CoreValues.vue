@@ -125,8 +125,12 @@ export default {
     AOS
   },
 
-  created () {
-    AOS.init()
+  mounted () {
+    setTimeout(function () {
+      AOS.init({
+        once: true,
+      })
+    }, 400)
   },
 }
 </script>

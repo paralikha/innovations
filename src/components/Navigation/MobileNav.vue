@@ -20,7 +20,9 @@
           flat
           class="transparent pa-3"
           >
-          <img width="40" :src="require('@/assets/logo.png')" alt="">
+          <a href="/">
+            <img width="40" :src="require('@/assets/logo.png')" alt="">
+          </a>
           <v-spacer></v-spacer>
           <v-btn
             dark
@@ -34,7 +36,6 @@
         <v-divider dark></v-divider>
 
         <!-- mobile-menu -->
-        <!-- <main-menu></main-menu> -->
         <v-list two-line>
           <template
             v-for="(menu, i) in menus"
@@ -50,21 +51,27 @@
               <v-list-tile
                 ripple
                 slot="activator"
+                :class="current === menu.name ? 'primary--text v-list__group__header--active' : ''"
                 >
                 <v-list-tile-content>
-                  <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+                  <v-list-tile-title>
+                    {{ __(menu.meta.title) }}
+                  </v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
 
               <v-list-tile
                 :key="j"
-                :to="{name: submenu.name}"
-                exact
                 ripple
+                :href="`${menu.path}/${submenu.path}`"
+                :class="current === submenu.name ? 'primary--text v-list__tile--active' : ''"
                 v-for="(submenu, j) in menu.children"
                 >
                 <v-list-tile-content>
-                  <v-list-tile-title>{{ __(submenu.meta.title) }}</v-list-tile-title>
+                  <v-list-tile-title
+                    >
+                    {{ __(submenu.meta.title) }}
+                  </v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
             </v-list-group>
@@ -72,9 +79,8 @@
             <v-list-tile
               v-else-if="!menu.name"
               ripple
-              exact
-              :to="menu.path"
-              :key="i"
+              :href="`${menu.path}`"
+              :key="i" :class="current === menu.children[0].name ? 'primary--text v-list__tile--active' : ''"
               >
               <v-list-tile-content>
                 <v-list-tile-title>
@@ -85,13 +91,15 @@
 
             <v-list-tile
               :key="i"
-              :to="{name: menu.name}"
-              exact
+              :class="current === menu.name ? 'primary--text v-list__tile--active' : ''"
+              :href="`/${menu.path}`"
               ripple
               v-else
               >
               <v-list-tile-content>
-                <v-list-tile-title>{{ __(menu.meta.title) }}</v-list-tile-title>
+                <v-list-tile-title>
+                  {{ __(menu.meta.title) }}
+                </v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </template>
@@ -111,6 +119,7 @@ export default {
   data () {
     return {
       navmodel: false,
+      current: this.$route.name || this.$route.path,
       menus: _public.children
     }
   },

@@ -72,12 +72,14 @@ export default {
     AOS
   },
 
-  created () {
-    AOS.init()
-  },
-
   mounted () {
     this.preventRightClick()
+
+    setTimeout(function () {
+      AOS.init({
+        once: true,
+      })
+    }, 400)
   },
 
   methods: {

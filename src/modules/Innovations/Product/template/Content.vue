@@ -128,7 +128,7 @@ export default {
       AOS.init({
         once: true,
       })
-    }, 500)
+    }, 400)
   },
 
   props: {

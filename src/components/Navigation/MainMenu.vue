@@ -2,22 +2,56 @@
   <v-toolbar-items class="hidden-sm-and-down">
     <template v-for="(menu, i) in menus">
       <template v-if="menu.meta.excludeInMenu"></template>
-      <v-menu offset-y v-else-if="menu.meta.withSubmenu" :key="i">
-        <v-btn slot="activator" flat large class="mx-1">{{ __(menu.meta.title) }} <v-icon right>keyboard_arrow_down</v-icon></v-btn>
+      <v-menu
+        offset-y
+        v-else-if="menu.meta.withSubmenu"
+        :key="i"
+        >
+        <v-btn
+          slot="activator"
+          flat
+          large
+          :class="current === menu.name ? 'v-list__tile--active' : ''"
+          class="mx-1"
+          >
+          {{ __(menu.meta.title) }}
+          <v-icon right>keyboard_arrow_down</v-icon>
+        </v-btn>
         <v-list light>
           <v-list-tile
-            exact
             :key="j"
-            :to="{name: submenu.name}"
+            :href="`${menu.path}/${submenu.path}`"
+            :class="current === submenu.name ? 'primary--text v-list__tile--active' : ''"
             v-for="(submenu, j) in menu.children"
             >
-            <v-list-tile-content>{{ submenu.meta.title }}</v-list-tile-content>
+            <v-list-tile-content>
+              {{ submenu.meta.title }}
+            </v-list-tile-content>
           </v-list-tile>
         </v-list>
       </v-menu>
 
-      <v-btn v-else-if="!menu.name" flat large exact :to="menu.path" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
-      <v-btn v-else flat large exact :to="{name: menu.name}" :key="i" class="mx-1">{{ __(menu.meta.title) }}</v-btn>
+      <v-btn
+        v-else-if="!menu.name"
+        flat
+        large
+        :href="`${menu.path}`"
+        :key="i" :class="current === menu.children[0].name ? 'v-btn--active' : ''"
+        class="mx-1"
+        >
+        {{ __(menu.meta.title) }}
+      </v-btn>
+      <v-btn
+        v-else
+        flat
+        large
+        :href="`/${menu.path}`"
+        :key="i"
+        class="mx-1"
+        :class="current === menu.name ? 'v-btn--active' : ''"
+        >
+        {{ __(menu.meta.title) }}
+      </v-btn>
     </template>
 
     <!-- <v-menu offset-y>
@@ -55,12 +89,9 @@ export default {
 
   data () {
     return {
+      current: this.$route.name || this.$route.path,
       menus: _public.children
     }
   },
-
-  mounted () {
-    //
-  }
 }
 </script>

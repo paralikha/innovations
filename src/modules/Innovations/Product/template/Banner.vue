@@ -71,10 +71,8 @@ export default {
   mounted () {
     this.preventRightClick()
     setTimeout(function () {
-      AOS.init({
-        once: true,
-      })
-    }, 500)
+      AOS.init()
+    }, 400)
   },
 
   methods: {

@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <body onload="typewriter();">
     <particles class="error__page--gradient">
       <div class="wrapper">
         <div class="terminal">
@@ -27,7 +27,7 @@
   }
 
   //terminalWindow
-  .wrapper{
+  .wrapper {
     width: 100%;
     height: 100%;
     display: flex;
@@ -47,55 +47,55 @@
     transition: box-shadow .3s linear;
     backdrop-filter: blur(6px);
     z-index: 999;
-    &:active{
-      cursor:move;
-      box-shadow:0px 2px 6px 0px rgba(0,0,0,0.05);
-    }
-    &__head{
-      width: 100%;
-      height: 1.875rem;
-      background: #E0E8F0;
-      border-radius: 7px 7px 0 0;
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-    &__text{
-      padding: 20px 5%;
-      line-height: 1.5;
-      a{
-        color: #52a563;
-        text-decoration: none;
-      }
-      &__span:before{
-        content: '$ ' !important;
-        color: #52a563;
-        margin-right: 10px;
-      }
-    }
   }
 
-  .head{
-    &__circle{
-      position: relative;
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin-left: 4px;
-      font-size: 0;
-      font-weight: 700;
-      border-radius: 10px;
-      &--close{
-        background: #3BB662;
-        margin-left: 7px;
-      }
-      &--turn{
-        background: #E5C30F;
-      }
-      &--expand{
-        background: #E75448;
-      }
-    }
+  .terminal:active {
+    cursor:move;
+    box-shadow:0px 2px 6px 0px rgba(0,0,0,0.05);
+  }
+
+  .terminal__head {
+    width: 100%;
+    height: 1.875rem;
+    background: #E0E8F0;
+    border-radius: 7px 7px 0 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .terminal__text__span {
+    font-size: 20px;
+  }
+
+  .terminal__text__span:before {
+    content: '$ ';
+    color: #52a563;
+    margin-right: 10px;
+  }
+
+  .head__circle {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 4px;
+    font-size: 0;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+
+  .head__circle--close {
+    background: #3BB662;
+    margin-left: 7px;
+  }
+
+  .head__circle--turn {
+    background: #E5C30F;
+  }
+
+  .head__circle--expand {
+    background: #E75448;
   }
 </style>
 
@@ -103,18 +103,16 @@
 export default {
   name: 'Error404',
 
-  created () {
-    window.addEventListener('load', (event) => {
-      this.typewriter()
-    })
+  mounted () {
+    this.typewriter()
   },
 
   methods: {
     typewriter () {
       /* eslint-disable */
       var aText = new Array(
-        "<span class='terminal__text__span'>The page you're looking for doesn't exist</span>",
-        "<span class='terminal__text__span'>Go back to <a href='/'>Home</a> instead",
+        "<span class='terminal__text__span'>The page you're looking for doesn't exist.</span>",
+        "<span class='terminal__text__span'>Go back to <a href='/'>Home</a> page instead.",
       );
       var iSpeed = 50;
       var iIndex = 0;
@@ -125,28 +123,28 @@ export default {
       var sContents = '';
       var iRow;
 
-      sContents =  ' ';
-      iRow = Math.max(0, iIndex-iScrollAt);
-      var destination = document.getElementById("typedtext");
+      function typewriter() {
+        sContents =  ' ';
+        iRow = Math.max(0, iIndex-iScrollAt);
+        var destination = document.getElementById("typedtext");
 
-      while ( iRow < iIndex ) {
-        sContents += aText[iRow++] + '<br />';
-      }
-      destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
-      if ( iTextPos++ == iArrLength ) {
-        iTextPos = 0;
-        iIndex++;
-        if ( iIndex != aText.length ) {
-          iArrLength = aText[iIndex].length;
-          setTimeout(this.typewriter(), 200);
+        while ( iRow < iIndex ) {
+          sContents += aText[iRow++] + '<br />';
         }
-      }
-      else {
-        setTimeout(this.typewriter(), iSpeed);
+        destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+        if ( iTextPos++ == iArrLength ) {
+          iTextPos = 0;
+          iIndex++;
+          if ( iIndex != aText.length ) {
+            iArrLength = aText[iIndex].length;
+            setTimeout("typewriter()", 100);
+          }
+        }
+        else {
+          setTimeout("typewriter()", iSpeed);
+        }
       }
     }
   }
-=======
-  name: 'Error404',
 }
 </script>

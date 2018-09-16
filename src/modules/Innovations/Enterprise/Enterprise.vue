@@ -60,7 +60,7 @@
               <div class="py-5">
                 <v-layout row wrap>
                   <template v-for="(item, i) in content.items">
-                    <v-flex sm4 xs12 :key="i">
+                    <v-flex md4 xs12 :key="i">
                       <v-card
                         data-aos="fade-up"
                         :data-aos-duration="item.aosDuration"
@@ -167,11 +167,10 @@ export default {
 
   mounted () {
     this.preventRightClick()
-    setTimeout(function () {
-      AOS.init({
-        once: true,
-      })
-    }, 500)
+
+    AOS.init({
+      once: true,
+    })
   },
 
   methods: {
