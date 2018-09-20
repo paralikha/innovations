@@ -29,7 +29,7 @@ import CoreValues from './partials/CoreValues'
 export default {
   store,
 
-  name: 'AboutUs',
+  name: 'About',
 
   components: {
     Banner,

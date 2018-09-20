@@ -119,7 +119,7 @@ export default {
 
   mounted () {
     this.preventRightClick()
-    this.followMouse()
+    // this.followMouse()
   },
 
   methods: {

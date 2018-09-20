@@ -1,10 +1,10 @@
 export default [
   {
-    path: 'about-us',
-    name: 'about-us',
-    component: () => import('../AboutUs.vue'),
+    path: 'contact',
+    name: 'contact',
+    component: () => import('../Contact.vue'),
     meta: {
-      title: 'About Us',
+      title: 'Contact',
       sort: 6,
       external: true,
       excludeFromRoot: true,
