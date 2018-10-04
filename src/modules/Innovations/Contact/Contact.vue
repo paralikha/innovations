@@ -1,65 +1,138 @@
 <template>
-  <div class="upform">
-    <form>
-      <div class="upform-header"></div>
-      <div class="upform-main">
-        <div class="input-block">
-          <div class="label">
-            <div class="mb-5">
-              <h1 class="primary--text">
-                {{ trans('What\'s your name?') }}
-              </h1>
-            </div>
-            <div>
-              <v-text-field
-                box
-                label="Name"
-                single-line
-              ></v-text-field>
-            </div>
-          </div>
-          <!-- <div class="input-control">
-            <v-btn id="toggle-on-q1" class="toggle toggle-left" color="secondary">{{ trans('Next Step') }}</v-btn>
-          </div> -->
-          <div class="input-control">
-            <input id="toggle-on-q1" class="toggle toggle-left" name="q1" value="yes" type="radio">
-            <label for="toggle-on-q1" class="btn"><span>A</span> Yes</label>
-            <v-btn for="toggle-on-q1" class="btn">Next</v-btn>
-          </div>
-        </div>
+  <section>
+    <v-card dark class="gradient__withAnimation">
+      <particles>
+        <!-- toolbar -->
+        <home-toolbar></home-toolbar>
+        <!-- toolbar -->
 
-        <div class="input-block">
-          <div class="label">Q2. Would you be willing to invest at least 30 minutes per day to make it work?</div>
-          <div class="input-control">
-            <input id="toggle-on-q2" class="toggle toggle-left" name="q2" value="yes" type="radio">
-            <label for="toggle-on-q2" class="btn"><span>A</span> Yes</label>
-            <input id="toggle-off-q2" class="toggle toggle-right" name="q2" value="no" type="radio">
-            <label for="toggle-off-q2" class="btn"><span>B</span> No</label>
-          </div>
-        </div>
+        <!-- banner -->
+        <v-container grid-list-lg>
+          <v-layout row wrap justify-center align-center>
+            <v-flex xs12>
+              <v-card flat class="transparent py-5">
+                <h1 class="mb-3">
+                  {{ trans('Let\'s grab some imaginary coffee and talk!') }}
+                </h1>
+                <div><span>{{ __('innovations@ssagroup.com') }}</span></div>
+                <div><span>{{ __('Pearl Drive, Ortigas, Philippines') }}</span></div>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <!-- banner -->
+      </particles>
+    </v-card>
 
-        <div class="input-block">
-          <div class="label">Q3. Would you like to get started NOW?</div>
-          <div class="input-control">
-            <input id="toggle-on-q3" class="toggle toggle-left" name="q3" value="yes" type="radio">
-            <label for="toggle-on-q3" class="btn"><span>A</span> Yes</label>
-            <input id="toggle-off-q3" class="toggle toggle-right" name="q3" value="no" type="radio">
-            <label for="toggle-off-q3" class="btn"><span>B</span> No</label>
-          </div>
-        </div>
+    <!-- content -->
+    <v-container grid-list-lg>
+      <v-layout row wrap justify-center align-center>
+        <v-flex xl8 lg9 md12 xs12>
+          <v-layout row wrap>
+            <v-flex xs12>
+              <div class="upform">
+                <div class="upform-header"></div>
+                <div class="upform-main">
+                  <form action="messages/store" ref="submitForm">
+                    <div class="input-block">
+                      <div class="label">
+                        <div class="mb-5">
+                          <h1 class="primary--text">
+                            {{ trans('What\'s your name?') }}
+                          </h1>
+                        </div>
+                        <div>
+                          <v-text-field
+                            box
+                            label="Name"
+                            single-line
+                          ></v-text-field>
+                        </div>
+                      </div>
+                      <div class="input-control">
+                        <input
+                          id="name"
+                          class="toggle toggle-left"
+                          name="name"
+                          value="yes"
+                          type="radio">
+                        <label
+                          for="name"
+                          class="v-btn--large v-btn theme--dark secondary"
+                          >
+                          {{ trans('Next Step') }}
+                        </label>
+                      </div>
+                    </div>
 
-        <div class="input-block">
-          <div class="label">What is your name?</div>
-          <div class="input-control">
-            <input type="text" class="required" autocomplete="off">
-          </div>
-        </div>
-      </div>
-      <div class="upform-footer">
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-      </div>
-    </form>
-  </div>
+                    <div class="input-block">
+                      <div class="label">
+                        <div class="mb-5">
+                          <h1 class="primary--text">
+                            {{ trans('How can we reach you?') }}
+                          </h1>
+                        </div>
+                        <div>
+                          <v-text-field
+                            box
+                            label="Email"
+                            single-line
+                          ></v-text-field>
+                        </div>
+                      </div>
+                      <div class="input-control">
+                        <input
+                          id="email"
+                          class="toggle toggle-left"
+                          name="email"
+                          value="yes"
+                          type="radio">
+                        <label
+                          for="email"
+                          class="v-btn--large v-btn theme--dark secondary"
+                          >
+                          {{ trans('Next Step') }}
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="input-block">
+                      <div class="label">
+                        <div class="mb-5">
+                          <h1 class="primary--text">
+                            {{ trans('What do you have in mind?') }}
+                          </h1>
+                        </div>
+                        <div>
+                          <v-text-field
+                            box
+                            label="Message"
+                            single-line
+                          ></v-text-field>
+                        </div>
+                      </div>
+                      <div class="input-control">
+                        <v-btn
+                          color="secondary"
+                          large
+                          dark
+                          @click.prevent="submit">
+                          {{ trans('Submit') }}
+                        </v-btn>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <!-- content -->
+
+    <footer-component></footer-component>
+  </section>
 </template>
 
 <style lang="stylus" scoped>
@@ -120,7 +193,7 @@
   input[type="radio"].toggle:checked + label {
     background: #FFF;
     cursor: default;
-    color: #000;
+    // color: #000;
   }
   input[type="radio"].toggle:checked + label:after {
     left: 0;
@@ -137,7 +210,6 @@
     color: #FFF;
   }
   .upform {
-    font-family: 'Open Sans', sans-serif;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -145,10 +217,10 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                   supported by Chrome and Opera */
-    max-width: 900px;
-    margin: 300px auto;
-    margin-bottom: 500px;
-    padding: 0 20px;
+    // max-width: 900px;
+    // margin: 100px auto;
+    // margin-bottom: 500px;
+    // padding: 0 20px;
   }
 
   .upform .upform-main {
@@ -208,6 +280,10 @@ export default {
   },
 
   methods: {
+    submit () {
+      this.$refs['submitForm'].submit()
+    },
+
     tellForm () {
       /* eslint-disable */
       $.fn.upform = function() {
@@ -331,7 +407,6 @@ export default {
             $(this).blur();
           });
           $(e).addClass("active");
-          /*$(e).find('input').focus();*/
         }
 
         function rescroll(e) {
