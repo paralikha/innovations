@@ -2,11 +2,8 @@
   <section>
     <v-card dark class="gradient__withAnimation">
       <particles>
-        <!-- toolbar -->
         <home-toolbar></home-toolbar>
-        <!-- toolbar -->
 
-        <!-- banner -->
         <v-container grid-list-lg>
           <v-layout row wrap justify-center align-center>
             <v-flex xs12>
@@ -19,12 +16,10 @@
               </v-card>
             </v-flex>
           </v-layout>
-        </v-container>
-        <!-- banner -->
-      </particles>
+        </v-container
+>      </particles>
     </v-card>
 
-    <!-- content -->
     <v-container grid-list-lg>
       <v-layout row wrap justify-center align-center>
         <v-flex xl8 lg9 md12 xs12>
@@ -49,22 +44,9 @@
                             name="name"
                             v-model="resource.name"
                             single-line
+                            @keyup.enter="wemoveNext($event)"
                           ></v-text-field>
                         </div>
-                      </div>
-                      <div class="input-control">
-                        <input
-                          id="name"
-                          class="toggle toggle-left"
-                          name="name"
-                          value="yes"
-                          type="radio">
-                        <label
-                          for="name"
-                          class="v-btn--large v-btn theme--dark secondary"
-                          >
-                          {{ trans('Next Step') }}
-                        </label>
                       </div>
                     </div>
 
@@ -83,20 +65,6 @@
                             single-line
                           ></v-text-field>
                         </div>
-                      </div>
-                      <div class="input-control">
-                        <input
-                          id="email"
-                          class="toggle toggle-left"
-                          name="email"
-                          value="yes"
-                          type="radio">
-                        <label
-                          for="email"
-                          class="v-btn--large v-btn theme--dark secondary"
-                          >
-                          {{ trans('Next Step') }}
-                        </label>
                       </div>
                     </div>
 
@@ -134,35 +102,12 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <!-- content -->
 
     <footer-component></footer-component>
   </section>
 </template>
 
 <style lang="stylus" scoped>
-  .btn {
-    border: 1px solid #808080;
-    display: inline-block;
-    padding: 5px 10px;
-    font-size: 20px;
-    position: relative;
-    text-align: left;
-    border-radius: 3px;
-    -webkit-transition: background 600ms ease, color 600ms ease;
-    transition: background 600ms ease, color 600ms ease;
-  }
-  .btn span {
-    border: 1px solid #808080;
-    display: inline-block;
-    padding: 1px 6px;
-    font-size: 12px;
-    border-radius: 5px;
-    vertical-align: middle;
-    text-align: center;
-    margin-top: -5px;
-  }
-
   input[type="radio"].toggle {
     display: none;
   }
@@ -204,7 +149,6 @@
     left: 0;
   }
 
-  /* ENDS */
   /* UPFORM STYLE STARTS*/
   .upform input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
@@ -222,13 +166,6 @@
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                   supported by Chrome and Opera */
-    // max-width: 900px;
-    // margin: 100px auto;
-    // margin-bottom: 500px;
-    // padding: 0 20px;
-  }
-
-  .upform .upform-main {
   }
   .upform .upform-main .input-block {
     padding: 30px 0;
@@ -251,11 +188,9 @@
     font-size: 35px;
     padding-bottom: 10px;
   }
-
   .upform .upform-main .input-block.active {
     opacity: 1;
   }
-
   .upform .upform-footer {
     margin-top: 60px;
   }
@@ -264,7 +199,7 @@
     font-weight: bold;
     padding: 5px 20px;
   }
-  /* UPFORM STYLE ENDS*/
+  /* UPFORM STYLE ENDS */
 </style>
 
 <script>
@@ -451,6 +386,10 @@ export default {
       };
 
       $(".upform").upform();
+    },
+
+    wemoveNext(e) {
+      $(e).parent().parent().next().click();
     }
   }
 }
