@@ -2,9 +2,7 @@
   <section>
     <v-card class="gradient__withAnimation">
       <home-toolbar></home-toolbar>
-      <div class="text-xs-center">
-        <banner></banner>
-      </div>
+      <banner></banner>
     </v-card>
 
     <v-container grid-list-lg>

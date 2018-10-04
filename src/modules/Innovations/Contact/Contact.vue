@@ -33,7 +33,7 @@
               <div class="upform">
                 <div class="upform-header"></div>
                 <div class="upform-main">
-                  <form action="messages/store" ref="submitForm">
+                  <form method="POST" @submit.prevent="formSubmit">
                     <div class="input-block">
                       <div class="label">
                         <div class="mb-5">
@@ -44,7 +44,10 @@
                         <div>
                           <v-text-field
                             box
+                            autofocus
                             label="Name"
+                            name="name"
+                            v-model="resource.name"
                             single-line
                           ></v-text-field>
                         </div>
@@ -76,6 +79,7 @@
                           <v-text-field
                             box
                             label="Email"
+                            v-model="resource.email"
                             single-line
                           ></v-text-field>
                         </div>
@@ -107,6 +111,7 @@
                           <v-text-field
                             box
                             label="Message"
+                            v-model="resource.body"
                             single-line
                           ></v-text-field>
                         </div>
@@ -116,7 +121,7 @@
                           color="secondary"
                           large
                           dark
-                          @click.prevent="submit">
+                          type="submit">
                           {{ trans('Submit') }}
                         </v-btn>
                       </div>
@@ -266,6 +271,7 @@
 import store from '@/store'
 import ScrollTo from 'jquery.scrollto'
 import $ from 'jquery'
+import axios from '@/plugins/axios.js'
 
 export default {
   store,
@@ -273,6 +279,17 @@ export default {
 
   components: {
     ScrollTo,
+    axios,
+  },
+
+  data () {
+    return {
+      resource: {
+        name: '',
+        email: '',
+        body: '',
+      }
+    }
   },
 
   mounted () {
@@ -280,8 +297,11 @@ export default {
   },
 
   methods: {
-    submit () {
-      this.$refs['submitForm'].submit()
+    formSubmit () {
+      /* eslint-disable */
+      // console.log(this.resource);
+      axios.post('/messages/store/', this.resource, {
+      }).then(r => console.log('r: ', JSON.stringify(r, null, 2)));
     },
 
     tellForm () {
