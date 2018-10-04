@@ -2687,9 +2687,36 @@
 
 <script>
 import store from '@/store'
+import jQuery from 'jquery'
+
 export default {
   store,
 
   name: 'Error500',
+
+  components: {
+    jQuery
+  },
+
+  mounted () {
+    this.astronaut()
+  },
+
+  methods: {
+    astronaut () {
+      /* eslint-disable */
+      var oh = document.querySelector('.circle.oh');
+
+      document.addEventListener('mousemove', function (event) {
+        var domainX = [0, document.body.clientWidth],
+        domainY = [0, document.body.clientHeight],
+        range = [-10, 10];
+
+        var translate = {
+          x: range[0] + (event.clientX - domainX[0]) * (range[1] - range[0]) / (domainX[1] - domainX[0]),
+          y: range[0] + (event.clientY - domainY[0]) * (range[1] - range[0]) / (domainY[1] - domainY[0]) };
+      });
+    }
+  }
 }
 </script>

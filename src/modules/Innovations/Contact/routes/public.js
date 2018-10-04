@@ -1,7 +1,7 @@
 export default [
   {
-    path: 'contact',
-    name: 'contact',
+    path: 'contact-us',
+    name: 'contact-us',
     component: () => import('../Contact.vue'),
     meta: {
       title: 'Contact',
