@@ -236,6 +236,7 @@ export default {
   methods: {
     formSubmit () {
       /* eslint-disable */
+      alert(this.$axios)
       this.$axios({url: '/messages/store', data: this.resource, method: 'POST'})
       .then(response => {
       });
