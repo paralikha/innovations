@@ -29,6 +29,7 @@
                 <div class="upform-header"></div>
                 <div class="upform-main">
                   <form method="POST" @submit.prevent="formSubmit">
+
                     <div class="input-block">
                       <div class="label">
                         <div class="mb-5">
@@ -36,7 +37,7 @@
                             {{ trans('What\'s your name?') }}
                           </h1>
                         </div>
-                        <div>
+                        <div class="input-control">
                           <v-text-field
                             box
                             autofocus
@@ -44,7 +45,6 @@
                             name="name"
                             v-model="resource.name"
                             single-line
-                            @keyup.enter="wemoveNext($event)"
                           ></v-text-field>
                         </div>
                       </div>
@@ -57,13 +57,14 @@
                             {{ trans('How can we reach you?') }}
                           </h1>
                         </div>
-                        <div>
+                        <div class="input-control">
                           <v-text-field
                             box
                             label="Email"
                             v-model="resource.email"
                             single-line
-                          ></v-text-field>
+                            >
+                          </v-text-field>
                         </div>
                       </div>
                     </div>
@@ -234,9 +235,9 @@ export default {
   methods: {
     formSubmit () {
       /* eslint-disable */
-      // console.log(this.resource);
+      console.log(this.resource);
       axios.post('/messages/store/', this.resource, {
-      }).then(r => console.log('r: ', JSON.stringify(r, null, 2)));
+      });
     },
 
     tellForm () {
