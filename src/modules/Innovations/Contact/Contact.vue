@@ -28,7 +28,7 @@
               <div class="upform">
                 <div class="upform-header"></div>
                 <div class="upform-main">
-                  <form method="POST" @submit.prevent="formSubmit">
+                  <form @submit="formSubmit">
 
                     <div class="input-block">
                       <div class="label">
@@ -230,13 +230,14 @@ export default {
 
   mounted () {
     this.tellForm()
+    this.formSubmit()
   },
 
   methods: {
     formSubmit () {
       /* eslint-disable */
-      console.log(this.resource);
-      axios.post('/messages/store/', this.resource, {
+      this.$axios({url: '/messages/store', data: this.resource, method: 'POST'})
+      .then(response => {
       });
     },
 
