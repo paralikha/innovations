@@ -5,7 +5,7 @@ export default [
     component: () => import('../Contact.vue'),
     meta: {
       title: 'Contact',
-      sort: 6,
+      sort: 7,
       external: true,
       excludeFromRoot: true,
       authenticatable: false,

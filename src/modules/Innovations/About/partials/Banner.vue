@@ -1,15 +1,17 @@
 <template>
   <section>
-    <v-card flat class="text-xs-center transparent hidden-sm-and-down">
-      <div class="iframe__container">
-        <iframe
-        class="web"
-        src="/frames/about/web/About-Us-H(Version2).html"
-        frameborder="0"
-        >
-      </iframe>
-      </div>
-    </v-card>
+      <v-card flat class="transparent hidden-sm-and-down">
+    <div class="text-xs-center">
+        <div class="iframe__container">
+          <iframe
+          class="web"
+          src="/frames/about/web/About-Us-H(Version2).html"
+          frameborder="0"
+          >
+        </iframe>
+        </div>
+    </div>
+      </v-card>
 
     <v-card flat class="transparent hidden-md-and-up">
       <!-- <div class="iframe-container">
@@ -58,6 +60,10 @@
   iframe {
     width: 100% !important;
   }
+  .iframe__container .web {
+  width: 100%;
+  height: 84vh !important;
+}
 </style>
 
 <script>
