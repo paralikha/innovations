@@ -25,10 +25,10 @@
         <v-flex xl8 lg9 md12 xs12>
           <v-layout row wrap>
             <v-flex xs12>
-              <div class="upform">
-                <div class="upform-header"></div>
-                <div class="upform-main">
-                  <form @submit="formSubmit">
+              <div class="upform--x">
+                <div class="upform-header--x"></div>
+                <div class="upform-main--x">
+                  <v-form v-model="resource.form.model" @keyup.enter="beforeFormSubmit" @submit.prevent="beforeFormSubmit">
 
                     <div class="input-block">
                       <div class="label">
@@ -39,12 +39,14 @@
                         </div>
                         <div class="input-control">
                           <v-text-field
+                            :data-vv-as="trans('Name')"
+                            :error-messages="errors.collect('name')"
+                            v-validate="'required'"
                             box
                             autofocus
                             label="Name"
                             name="name"
                             v-model="resource.name"
-                            single-line
                           ></v-text-field>
                         </div>
                       </div>
@@ -59,10 +61,14 @@
                         </div>
                         <div class="input-control">
                           <v-text-field
+                            :data-vv-as="trans('Email')"
+                            :error-messages="errors.collect('email')"
                             box
+                            name="email"
                             label="Email"
                             v-model="resource.email"
-                            single-line
+                            required
+                            v-validate="'required|email'"
                             >
                           </v-text-field>
                         </div>
@@ -78,10 +84,15 @@
                         </div>
                         <div>
                           <v-text-field
+                            :error-messages="errors.collect('body')"
                             box
+                            :data-vv-as="trans('Message')"
                             label="Message"
-                            v-model="resource.body"
+                            name="body"
+                            required
                             single-line
+                            v-model="resource.body"
+                            v-validate="'required'"
                           ></v-text-field>
                         </div>
                       </div>
@@ -95,7 +106,7 @@
                         </v-btn>
                       </div>
                     </div>
-                  </form>
+                  </v-form>
                 </div>
               </div>
             </v-flex>
@@ -210,6 +221,10 @@ import $ from 'jquery'
 import axios from '@/plugins/axios.js'
 
 export default {
+  $_veeValidate: {
+    validator: 'new'
+  },
+
   store,
   name: 'Contact',
 
@@ -221,24 +236,43 @@ export default {
   data () {
     return {
       resource: {
-        name: '',
-        email: '',
-        body: '',
+        form: {
+          model: false,
+        },
+        name: null,
+        email: null,
+        body: null,
+        metadata: null,
       }
     }
   },
 
   mounted () {
     this.tellForm()
-    this.formSubmit()
   },
 
   methods: {
+    beforeFormSubmit () {
+      // this.$validator.reset()
+      this.$validator.validateAll()
+        .then(ok => {
+          if (ok) {
+            this.formSubmit()
+          }
+          // this.resource.form.loading = false
+        })
+    },
+
     formSubmit () {
       /* eslint-disable */
-      alert(this.$axios)
-      this.$axios({url: '/messages/store', data: this.resource, method: 'POST'})
-      .then(response => {
+      this.$axios({
+        url: '/api/v1/messages/store',
+        data: this.resource,
+        method: 'POST'
+      }).then(response => {
+        console.log('success', response)
+      }).catch(response => {
+        console.log('error', response)
       });
     },
 
