@@ -16,8 +16,8 @@
               </v-card>
             </v-flex>
           </v-layout>
-        </v-container
->      </particles>
+        </v-container>
+      </particles>
     </v-card>
 
     <v-container grid-list-lg>
@@ -28,7 +28,11 @@
               <div class="upform--x">
                 <div class="upform-header--x"></div>
                 <div class="upform-main--x">
-                  <v-form v-model="resource.form.model" @keyup.enter="beforeFormSubmit" @submit.prevent="beforeFormSubmit">
+                  <v-form
+                    v-model="resource.form.model"
+                    @keyup.enter="beforeFormSubmit"
+                    @submit.prevent="beforeFormSubmit"
+                    >
 
                     <div class="input-block">
                       <div class="label">
