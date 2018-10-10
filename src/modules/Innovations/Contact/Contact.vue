@@ -25,7 +25,7 @@
         <v-flex xl8 lg9 md12 xs12>
           <v-layout row wrap>
             <v-flex xs12>
-              <div class="upform--x">
+              <div class="my-5 upform--x">
                 <div class="upform-header--x"></div>
                 <div class="upform-main--x">
                   <v-form

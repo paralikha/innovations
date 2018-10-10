@@ -27,7 +27,95 @@
             </v-flex>
 
             <v-flex md9 xs12 order-md2 order-sm1 order-xs1>
-              <data-iterator class="mt-2" :items="blogs"></data-iterator>
+              <v-data-iterator
+                v-bind:items="resource.items"
+                :pagination.sync="resource.pagination"
+                :rows-per-page-items="resource.rowsPerPageItems"
+                content-tag="v-layout"
+                row
+                wrap
+                :search="resource.search"
+                >
+                <v-flex
+                  md4 sm6 xs12
+                  slot-scope="props"
+                  slot="item"
+                  >
+                  <v-card
+                    height="100%"
+                    hover
+                    href="/"
+                    data-aos-easing="ease-in-out"
+                    >
+                    <v-tooltip bottom>
+                      <v-img
+                        height="160"
+                        :src="props.item.feature"
+                        slot="activator"
+                        >
+                      </v-img>
+                      <span v-html="trans(props.item.title)"></span>
+                    </v-tooltip>
+
+                    <!-- card-text -->
+                    <v-card-text>
+                      <p
+                        class="body-2 mb-2 primary--text text--lighten-2">
+                        <strong v-html="trans(props.item.categoryname)"></strong>
+                      </p>
+                      <v-tooltip bottom>
+                        <h3
+                          slot="activator"
+                          class="subheading font__weight--bold title__text--ellipsis"
+                          v-html="trans(props.item.title)"
+                          >
+                        </h3>
+                        <span v-html="trans(props.item.title)"></span>
+                      </v-tooltip>
+                      <v-rating
+                        background-color="grey"
+                        class="mb-3"
+                        color="orange"
+                        dense
+                        half-increments
+                        hover
+                        readonly
+                        size="16"
+                        v-model="props.item.rating"
+                      ></v-rating>
+                      <p>
+                        <span
+                          class="text--ellipsis"
+                          v-html="trans(props.item.body)"
+                          >
+                        </span>
+                      </p>
+                    </v-card-text>
+                    <!-- card-text -->
+
+                    <!-- author -->
+                    <v-list two-line>
+                      <v-list-tile>
+                        <v-list-tile-avatar>
+                          <img :src="props.item.avatar">
+                        </v-list-tile-avatar>
+
+                        <v-list-tile-content>
+                          <v-list-tile-title
+                            class="mini__title"
+                            v-html="props.item.author">
+                          </v-list-tile-title>
+                          <v-list-tile-sub-title
+                            v-html="props.item.created"
+                            >
+                          </v-list-tile-sub-title>
+                        </v-list-tile-content>
+                      </v-list-tile>
+                    </v-list>
+                    <!-- author -->
+                  </v-card>
+                </v-flex>
+              </v-data-iterator>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -50,64 +138,14 @@ export default {
 
   data () {
     return {
-      blogs: {
-        selected: [],
-        bulkDestroy: false,
-        selectAll: true,
+      resource: {
+        rowsPerPageItems: [3, 6, 9, 12, 'All'],
+        pagination: {
+          rowsPerPage: 3,
+        },
         search: '',
-        cardLink: '/blogs/single',
-        chip: true,
-        hover: true,
-        lg3: false,
-        showMimetype: false,
-        cardMediaHeight: '160',
-        showToolbar: false,
-        items: [
-          {
-            id: '1',
-            title: 'Extreme Athleticism Is the New Midlife Crisis',
-            thumbnail: '//images.unsplash.com/photo-1523958359188-26c5f0d234ab?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d69506281c09af1fc68886c28d35f0c0&auto=format&fit=crop&w=957&q=80',
-            category: 'E-Learning',
-            timestamp: '2 hours ago',
-            description: 'People in middle age are flocking in record numbers to intense workouts and challenging races. What are they chasing?',
-            author: 'Princess Alto',
-            avatar: '//cdn.dribbble.com/users/1391772/screenshots/4173353/psd.jpg',
-            rating: 3.0,
-          },
-          {
-            id: '2',
-            title: 'An Economy of Desire',
-            thumbnail: '//images.unsplash.com/photo-1521510024457-e4a37f8abd33?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ea42eaa8f2c00f644fff2c9d29da9bc4&auto=format&fit=crop&w=1051&q=80',
-            category: 'E-Learning',
-            timestamp: '2 hours ago',
-            description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
-            author: 'John Dionisio',
-            avatar: '//cdn.dribbble.com/users/759083/screenshots/4891533/dribbble.gif',
-            rating: 3.5,
-          },
-          {
-            id: '3',
-            title: 'Javascript Fundamentals',
-            thumbnail: '//images.unsplash.com/photo-1519377483941-d4c7ea7ae521?ixlib=rb-0.3.5&s=56987893d5b34445b86aaec9e484efde&auto=format&fit=crop&w=844&q=80',
-            category: 'Mobile Application',
-            timestamp: '2 hours ago',
-            description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
-            author: 'Sandy Duaso',
-            avatar: '//cdn.dribbble.com/users/2009763/screenshots/4304250/joel_signature.gif',
-            rating: 4.0,
-          },
-          {
-            id: '4',
-            title: 'Throw Your Stone in the Pond',
-            thumbnail: '//cdn.dribbble.com/users/2559/screenshots/3145041/illushome_1x.png',
-            category: 'E-Learning',
-            timestamp: '2 hours ago',
-            description: 'Apply knowledge and skills such as establishing personal goals and relating them to workplace goals. Far far away, behind the word',
-            author: 'Jane Doe',
-            avatar: '//source.unsplash.com/random',
-            rating: 4.5,
-          },
-        ]
+        selected: [],
+        items: [],
       },
       archives: {
         dense: true,
