@@ -139,7 +139,11 @@ export default {
   name: 'All',
   data () {
     return {
-      resources: [],
+      resources: [
+        {
+          name: '',
+        }
+      ],
 
       // resource: {
       //   rowsPerPageItems: [3, 6, 9, 12, 'All'],
@@ -185,5 +189,6 @@ export default {
         ]
       }
     }
-  },
+  }
+}
 </script>
