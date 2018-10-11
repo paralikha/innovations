@@ -27,7 +27,7 @@
             </v-flex>
 
             <v-flex md9 xs12 order-md2 order-sm1 order-xs1>
-              <!-- <v-data-iterator
+              <v-data-iterator
                 v-bind:items="resource.items"
                 :pagination.sync="resource.pagination"
                 :rows-per-page-items="resource.rowsPerPageItems"
@@ -111,13 +111,7 @@
                     </v-list>
                   </v-card>
                 </v-flex>
-              </v-data-iterator> -->
-              <template v-for="(resource, i) in resources">
-                <div :key="i">
-                  <p v-html="resource.title"></p>
-                  <p v-html="resource.code"></p>
-                </div>
-              </template>
+              </v-data-iterator>
             </v-flex>
           </v-layout>
         </v-flex>
@@ -132,28 +126,49 @@
 
 <script>
 import store from '@/store'
+import axios from 'axios'
 
 export default {
   store,
-
   name: 'All',
+
+  mounted () {
+    /*eslint-disable*/
+    axios
+    .get('/api/v1/blogs/all')
+    .then(response => (this.resource.items = response))
+  },
+
+  // created () {
+  //   this.getBlogs()
+  //   console.log(this.$axios)
+  // },
+
+  // methods: {
+  //   getBlogs () {
+  //     this.$axios.get({
+  //       url: '/api/v1/blogs/all',
+  //       method: 'GET'
+  //     }).then(response => {
+  //       console.log('success', response)
+  //     }).catch(response => {
+  //       console.log('error', response)
+  //     })
+  //   },
+  // },
+
   data () {
     return {
-      resources: [
-        {
-          name: '',
-        }
-      ],
-
-      // resource: {
-      //   rowsPerPageItems: [3, 6, 9, 12, 'All'],
-      //   pagination: {
-      //     rowsPerPage: 3,
-      //   },
-      //   search: '',
-      //   selected: [],
-      //   items: [],
-      // },
+      resource: {
+        rowsPerPageItems: [3, 6, 9, 12, 'All'],
+        pagination: {
+          rowsPerPage: 3,
+        },
+        search: '',
+        selected: [],
+        items: [],
+        data: null,
+      },
       archives: {
         dense: true,
         subheaderClass: 'secondary--text grey lighten-4',
