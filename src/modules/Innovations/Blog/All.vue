@@ -134,28 +134,15 @@ export default {
 
   mounted () {
     /*eslint-disable*/
-    axios
-    .get('/api/v1/blogs/all')
-    .then(response => (this.resource.items = response))
+    // axios
+    // .get('/api/v1/blogs/all')
+    // .then(response => (this.resource.items = response))
+
+    axios.get('/api/v1/blogs/all').then(response => {
+    console.log(this.resource.items)
+      this.resource.items = response.data
+    })
   },
-
-  // created () {
-  //   this.getBlogs()
-  //   console.log(this.$axios)
-  // },
-
-  // methods: {
-  //   getBlogs () {
-  //     this.$axios.get({
-  //       url: '/api/v1/blogs/all',
-  //       method: 'GET'
-  //     }).then(response => {
-  //       console.log('success', response)
-  //     }).catch(response => {
-  //       console.log('error', response)
-  //     })
-  //   },
-  // },
 
   data () {
     return {
