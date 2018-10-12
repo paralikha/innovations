@@ -134,10 +134,6 @@ export default {
 
   mounted () {
     /*eslint-disable*/
-    // axios
-    // .get('/api/v1/blogs/all')
-    // .then(response => (this.resource.items = response))
-
     axios.get('/api/v1/blogs/all').then(response => {
     console.log(this.resource.items)
       this.resource.items = response.data
