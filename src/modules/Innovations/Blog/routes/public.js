@@ -25,7 +25,8 @@ export default [
         },
       },
       {
-        path: 'single',
+        path: ':code',
+        props: true,
         name: 'blog.single',
         component: () => import('../Single.vue'),
         meta: {

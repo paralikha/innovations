@@ -274,9 +274,9 @@ export default {
         data: this.resource,
         method: 'POST'
       }).then(response => {
-        console.log('success', response)
+        // console.log('success', response)
       }).catch(response => {
-        console.log('error', response)
+        // console.log('error', response)
       });
     },
 

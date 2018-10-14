@@ -44,7 +44,14 @@
                   <v-card
                     height="100%"
                     hover
-                    href="/"
+                    exact
+                    :to="{
+                      name: 'blog.single',
+                      params: {
+                        code: props.item.code,
+                        meta: { item: props.item }
+                      },
+                    }"
                     data-aos-easing="ease-in-out"
                     >
                     <v-tooltip bottom>
@@ -94,7 +101,7 @@
                     <v-list two-line>
                       <v-list-tile>
                         <v-list-tile-avatar>
-                          <img :src="props.item.avatar">
+                          <img :src="props.item.authoravatar">
                         </v-list-tile-avatar>
 
                         <v-list-tile-content>
@@ -135,8 +142,7 @@ export default {
   mounted () {
     /*eslint-disable*/
     axios.get('/api/v1/blogs/all').then(response => {
-    console.log(this.resource.items)
-      this.resource.items = response.data
+      this.resource.items = response.data.data
     })
   },
 
