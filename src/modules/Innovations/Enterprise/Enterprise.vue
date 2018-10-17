@@ -115,10 +115,10 @@
 
 <script>
 import store from '@/store'
-import EnterpriseBanner from '@/assets/images/EnterpriseBanner.png'
-import EnterpriseELearning from '@/assets/images/enterprise-eLearning.png'
-import EnterpriseRippl3s from '@/assets/images/enterprise-rippl3s.png'
-import EnterpriseMobileApps from '@/assets/images/enterprise-mobileapp.png'
+import EnterpriseBanner from '@/modules/Innovations/Enterprise/assets/images/EnterpriseBanner.png'
+import EnterpriseELearning from '@/modules/Innovations/Enterprise/assets/images/enterprise-eLearning.png'
+import EnterpriseRippl3s from '@/modules/Innovations/Enterprise/assets/images/enterprise-rippl3s.png'
+import EnterpriseMobileApps from '@/modules/Innovations/Enterprise/assets/images/enterprise-mobileapp.png'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 

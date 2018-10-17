@@ -17,12 +17,12 @@
 import store from '@/store'
 import ProductBanner from './template/Banner'
 import ProductContent from './template/Content'
-import Rippl3sBanner from '@/assets/images/Rippl3sBanner.svg'
-import iconOne from './icons/Rippl3s/1.svg'
-import iconTwo from './icons/Rippl3s/2.svg'
-import iconThree from './icons/Rippl3s/3.svg'
-import iconFour from './icons/Rippl3s/4.svg'
-import video from '@/assets/videos/Rippl3s.mp4'
+import Rippl3sBanner from '@/modules/Innovations/Product/assets/images/Rippl3sBanner.svg'
+import iconOne from './assets/icons/Rippl3s/1.svg'
+import iconTwo from './assets/icons/Rippl3s/2.svg'
+import iconThree from './assets/icons/Rippl3s/3.svg'
+import iconFour from './assets/icons/Rippl3s/4.svg'
+import video from './assets/videos/Rippl3s.mp4'
 
 export default {
   store,

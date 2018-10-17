@@ -75,9 +75,9 @@
 
 <script>
 import store from '@/store'
-import Rippl3s from '@/assets/images/Rippl3sBannerWithBG.png'
-import eLearning from '@/assets/images/eLearningBannerWithBG.png'
-import MobileApp from '@/assets/images/MobileAppBannerWithBG.png'
+import Rippl3s from '@/modules/Innovations/Home/assets/images/Rippl3sBannerWithBG.png'
+import eLearning from '@/modules/Innovations/Home/assets/images/eLearningBannerWithBG.png'
+import MobileApp from '@/modules/Innovations/Home/assets/images/MobileAppBannerWithBG.png'
 
 export default {
   store,

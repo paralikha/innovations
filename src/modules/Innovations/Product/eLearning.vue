@@ -17,12 +17,12 @@
 import store from '@/store'
 import ProductBanner from './template/Banner'
 import ProductContent from './template/Content'
-import eLearningBanner from '@/assets/images/eLearningBanner.png'
-import iconOne from './icons/eLearning/1.svg'
-import iconTwo from './icons/eLearning/2.svg'
-import iconThree from './icons/eLearning/3.svg'
-import iconFour from './icons/eLearning/4.svg'
-import video from '@/assets/videos/eLearning.mp4'
+import eLearningBanner from '@/modules/Innovations/Product/assets/images/eLearningBanner.png'
+import iconOne from './assets/icons/eLearning/1.svg'
+import iconTwo from './assets/icons/eLearning/2.svg'
+import iconThree from './assets/icons/eLearning/3.svg'
+import iconFour from './assets/icons/eLearning/4.svg'
+import video from './assets/videos/eLearning.mp4'
 
 export default {
   store,
